@@ -1,0 +1,275 @@
+Scusami, hai perfettamente ragione. Ho recuperato la memoria esatta di quel passaggio.
+
+Tre scambi fa tu mi hai incollato il codice definitivo di b2c.html (quello con la frase "Se fosse possibile, i vostri CRM e le vostre piattaforme di AI cloud lo starebbero già facendo"). Io avevo recepito quello e stavo per mandarti il pacchetto completo aggiornato, che include:
+
+Il platform.html con le modifiche "verticali" che mi avevi chiesto (titolo "Come facciamo a connettere...", via la riga "Molte aziende...", ecc.).
+
+Il b2c.html con il tuo testo.
+
+Tutti gli altri file di raccordo (business, founders, ecc.) con i link relativi corretti per il test in locale.
+
+Visto che index.html e style.css li hai già caricati, il prossimo file logico e fondamentale è platform.html.
+
+Eccolo, rivisto esattamente come mi avevi chiesto prima del blackout (testi aggiornati, spazio guadagnato, link relativi).
+
+Copia questo codice in un file chiamato platform.html:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Piattaforma CtD - Il Nostro IP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="platform.html">Platform</a>
+                <a href="services.html">Services</a>
+                <a href="business.html">Business</a>
+                <a href="founders.html">Founders</a>
+                <a href="about.html">Chi Siamo</a>
+            </div>
+        </nav>
+
+        <div class="hero-text platform-hero">
+            <h1>Come facciamo a connettere la domanda con la offerta</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="platform-intro">
+            <p>Clicca su ognuno dei 15 "Intellectual Property" della Piattaforma CtD per scoprire come abbiamo superato le sfide che i sistemi cloud tradizionali non possono risolvere.</p>
+        </section>
+
+        <section class="ip-grid">
+            <div class="ip-block block-yellow" onclick="showInfo('ip1')">1. Modello KG</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip2')">2. DOT</div>
+            <div class="ip-block block-yellow" onclick="showInfo('ip3')">3. SWOT</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip4')">4. ROI</div>
+            <div class="ip-block block-yellow" onclick="showInfo('ip5')">5. Connect</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip6')">6. Inpuls</div> 
+            <div class="ip-block block-yellow" onclick="showInfo('ip7')">7. Next Best</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip8')">8. Profile</div>
+            <div class="ip-block block-yellow" onclick="showInfo('ip9')">9. Prompting</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip10')">10. Onboarding</div>
+            <div class="ip-block block-yellow" onclick="showInfo('ip11')">11. Sinapsi</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip12')">12. Confidential</div>
+            <div class="ip-block block-yellow" onclick="showInfo('ip13')">13. Multimodal</div>
+            <div class="ip-block block-purple" onclick="showInfo('ip14')">14. Coach</div>
+            <div class="ip-block block-yellow" onclick="showInfo('ip15')">15. Agentic AI</div>
+        </section>
+
+        <section id="info-box-container">
+            <div id="info-box">
+                <p>Clicca su un blocco per leggerne la descrizione e il valore strategico.</p>
+            </div>
+        </section>
+
+        <section class="platform-cta">
+            <h3>Questa è la nostra architettura.</h3>
+            <p>Ora che hai visto il <i>Cosa</i>, scopri il <i>Come</i>. Guarda come applichiamo questa piattaforma per rivoluzionare i modelli di business o come puoi unirti a noi per costruirci sopra.</p>
+            <a href="business.html" class="cta-button">Guarda le Soluzioni Business</a>
+            <a href="founders.html" class="cta-button">Unisciti ai Founders</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Connect the DOTS (CtD). Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        // Database con tutte le 15 descrizioni che abbiamo scritto
+        const ipDescriptions = {
+            'ip1': `
+                <h3>1. Modello di Conoscenza Unificato (Vector KG)</h3>
+                <p><strong>Il Valore:</strong> Fonde i 3 domini di conoscenza (Profilo Persona, Business SME, Logica AI) in un unico "cervello" strategico.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Invece di gestire la conoscenza in silos (CRM, database, modelli AI), il nostro IP applica un <strong>unico modello</strong> per gestire 3 domini fondamentali: il Profilo della Persona (P), l'Expertise del Business (SME) e la logica dell'IA (AI).
+                    La vera innovazione è che la Piattaforma <i>fonde</i> questi domini in un <strong>unico Knowledge Graph (KG)</strong> per quella specifica Persona. <strong>Il vantaggio per la Persona è enorme:</strong> non interagisce più con 3 sistemi separati (il suo profilo, il sito B2C, un chatbot AI), ma con un <i>singolo</i> assistente (blocco 14) che ha già tutto il contesto P+B.
+                    Tecnicamente, utilizziamo <strong>vettori</strong> per rappresentare ogni nodo del grafo (bisogni, prodotti, concetti). Questo abilita potenti <strong>ricerche per similitudine</strong> (similarity search), permettendo al sistema di trovare soluzioni non solo per <i>ciò che la Persona chiede</i>, ma per <i>ciò che la Persona intende</i>.</p>`,
+            'ip2': `
+                <h3>2. DOT (L'Atomo della Conoscenza)</h3>
+                <p><strong>Il Valore:</strong> È l'unità fondamentale di "senso" della piattaforma.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP è il cuore della filosofia "Connect the DOTS". Il DOT non è un semplice <i>dato</i>; è l'<strong>"atomo"</strong> (l'elemento più piccolo) con cui il sistema pensa. Un DOT può essere qualsiasi cosa: un <i>argomento</i> della Persona, un <i>bisogno</i> latente, una tua <i>routine</i> di SME, un <i>prodotto</i> del Business, un <i>task</i>.
+                    La piattaforma è progettata per permettere alla Persona e al Business di "scoprire" continuamente nuovi DOT che non conoscevano.
+                    L'innovazione sta nel modo in cui studiamo questi atomi per "perseguire i nostri scopi":
+                    1. <strong>In Profondità (Gerarchia):</strong> Possiamo "scendere" dentro un DOT per capire come è fatto e analizzare i suoi "figli" (es. un Progetto è un DOT composto da DOT-Task).
+                    2. <strong>In Larghezza (Logica):</strong> Possiamo vedere come un DOT è collegato agli altri attraverso le <strong>Sinapsi</strong> (blocco 11).
+                    È studiando questa rete atomica che il sistema (e l'utente) "impara e memorizza le cose utili" e crea il <i>matching</i> perfetto tra P e B.</p>`,
+            'ip3': `
+                <h3>3. SWOT: Il Supporto Strategico AI</h3>
+                <p><strong>Il Valore:</strong> Trasforma l'analisi strategica da report statico a <i>supporto decisionale continuo</i> fornito dall'AI.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    La SWOT tradizionale è uno strumento statico usato dal Business. Il nostro IP trasforma la SWOT nel principale <strong>supporto strategico che l'AI fornisce alla Persona</strong> (e, di conseguenza, al Business).
+                    L'innovazione sta nel <i>come</i>: l'AI della piattaforma <strong>elabora dinamicamente e personalmente le informazioni già incamerate nel profilo</strong> della Persona (i suoi <strong>DOT</strong>, blocco 2, di <i>Competenze</i>, <i>Bisogni</i>, <i>Risorse</i>).
+                    Incrociando questi dati con i <strong>DOT</strong> del Business (Opportunità) e del mercato (Minacce), l'AI non genera un report, ma un <i>dialogo strategico continuo</i>. La Persona ottiene un consulente AI privato che la guida nelle scelte (cosa imparare, cosa comprare). Il Business non deve più "vendere", ma solo rispondere a un bisogno già qualificato e consapevole, identificato dall'AI della Persona stessa.</p>`,
+            'ip4': `
+                <h3>4. ROI Decisionale (Il Costo dell'Inazione)</h3>
+                <p><strong>Il Valore:</strong> Applica un calcolo del Ritorno sull'Investimento (ROI) a <i>ogni</i> decisione quotidiana, inclusa l'alternativa del non decidere.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo è un IP fondamentale che trasforma la relazione P-B.
+                    <strong>Per la Persona:</strong> Le persone prendono la maggior parte delle decisioni "di pancia", spesso sollecitate da un'attività "push" del venditore. Il nostro IP ribalta questo modello. L'AI (usando lo SWOT, blocco 3) calcola e <strong>associa a ogni Nodo (DOT) un ROI decisionale chiaro</strong>. Per la prima volta, la Persona può confrontare in modo oggettivo il ROI di una scelta (es. acquistare un servizio) contro la potente alternativa del <strong>non decidere</strong>, vedendone il costo o l'opportunità mancata. È un consulente strategico tascabile.
+                    <strong>Per il Business:</strong> Il Business smette di "spingere" prodotti e inizia a <i>provare</i> il suo valore in modo analitico. La metrica di successo per il Business diventa il <strong>"Ritorno sul Coinvolgimento"</strong> (Return on Involvement): non misura più quante volte "vende", ma quante volte la Persona <i>si affida</i> a questo IP (e quindi alle soluzioni del Business) per prendere una decisione migliore.</p>`,
+            'ip5': `
+                <h3>5. Connect (Il Matching Ultra-Qualificato)</h3>
+                <p><strong>Il Valore:</strong> Crea l'incontro perfetto tra un bisogno ultra-qualificato della Persona e una soluzione ultra-personalizzata del Business.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP è il "luogo" strategico dove si realizza la promessa di "Connect the DOTS". È qui che <strong>facciamo incontrare</strong> due elementi che nei sistemi tradizionali non comunicano mai:
+                    1. Una <strong>domanda ultra-qualificata</strong>: Questa non è un semplice "lead", ma è l'<strong>espressione diretta del profilo della Persona</strong> (i suoi <strong>DOT</strong>, l'analisi <strong>SWOT</strong>, il <strong>ROI</strong> decisionale). È un bisogno consapevole, validato e strategicamente chiaro.
+                    2. Una <strong>value proposition ultra-specializzata e personalizzata</strong>: Il provider di prodotti e servizi non risponde con un'offerta standard, ma con una soluzione <i>costruita</i> (o assemblata) appositamente per quella domanda unica.
+                    Questo non è "lead generation". È <i>Solution Generation</i> 1:1, dove la domanda consapevole della Persona incontra la perfetta capacità di esecuzione del Business.</p>`,
+            'ip6': `
+                <h3>6. Inpuls (Lo Stimolo al Nuovo)</h3> 
+                <p><strong>Il Valore:</strong> Fornisce la scintilla strategica per superare l'inerzia e guardare a un'opportunità sconosciuta.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Hai definito perfettamente lo scopo di questo IP: <strong>CtD deve essere in grado di fornirti l'impulso o lo stimolo a guardare qualche cosa di nuovo che non conoscevi sino al giorno prima.</strong>
+                    Questo blocco non è un "piano", è l'<strong>innesco</strong>. Analizza il profilo della Persona (usando <strong>SWOT</strong> e <strong>ROI</strong>) per identificare un <strong>DOT</strong> (un'opportunità, un'idea, un rischio) ad alto potenziale che la Persona sta ignorando a causa dell'inerzia.
+                    Il suo unico compito è generare la curiosità iniziale e dare la "spinta" per la prima azione. Come hai detto tu, <strong>poi il resto dei processi</strong> (come il <i>Connect</i>, il <i>Next Best</i>, o l'Assistente) <strong>ti può prendere per mano</strong> per farti fare le cose necessarie per cambiare.
+                    Per il Business, questo è il "gancio" strategico che vince la resistenza al cambiamento del cliente. Per la Persona, è la scintilla che accende una nuova consapevolezza.</p>`,
+            'ip7': `
+                <h3>7. Next Best (La Guida Proattiva)</h3>
+                <p><strong>Il Valore:</strong> La guida non invasiva che ti suggerisce la prossima azione migliore per continuare a progredire e non fermarti mai.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP è la garanzia che CtD non ti lascia <strong>mai "dormire sugli allori" o bloccato sui problemi</strong>. Dopo che l' "Inpuls" (blocco 6) ti ha messo in moto, il "Next Best" diventa la tua guida proattiva. 
+                    L'innovazione sta nel modo in cui lo fa: <strong>senza essere invasivo</strong>, l'Assistente AI ti propone la <i>prossima migliore attività</i> per:
+                    1. <strong>Raggiungere un obiettivo prefissato</strong> (es. "Il prossimo passo per completare il tuo progetto è...").
+                    2. <strong>Completare lo studio di un subject</strong> (es. "Per padroneggiare questo argomento, ora dovresti analizzare questo DOT collegato...").
+                    3. <strong>Esporre la Persona a un insight critico</strong>: A volte, l'AI ti espone a <strong>qualche cosa che solo CtD sa che hai bisogno di capire</strong>, unendo il tuo profilo privato (blocco 9) alla sua conoscenza (blocco 1) in un modo che nessun altro sistema può fare.
+                    Per il Business, questo è il motore che assicura l'uso continuo e il valore a lungo termine della loro soluzione, guidando il cliente verso il successo.</p>`,
+            'ip8': `
+                <h3>8. Profile (La Chiave Digitale AI)</h3>
+                <p><strong>Il Valore:</strong> Trasforma i tuoi dati personali da "rischio" a "chiave strategica" per diventare un power user dell'Intelligenza Artificiale.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Nei sistemi attuali, il tuo "profilo" è un set di dati controllato dal Business. Il nostro IP lo ribalta: il <strong>Profile</strong> di CtD è la tua <strong>chiave "digitale" personale</strong> per il mondo AI.
+                    È il "digital dynamic copy" di te stesso che <i>solo tu</i> controlli. L'innovazione è che, invece di essere "usato" dall'AI (che si addestra sui tuoi dati in cloud), sei tu che <strong>usi l'AI come un "power user"</strong> in tutto ciò che ti interessa: <strong>salute, professione, lavoro</strong>.
+                    È l'asset centrale che permette all'AI di CtD (come lo <strong>SWOT</strong> o il <strong>Next Best</strong>) di lavorare <i>per te</i> con una precisione chirurgica. Il Business non interagisce più con un "lead", ma con un "power user" consapevole, che usa il proprio Profilo per ottenere esattamente ciò di cui ha bisogno.</p>`,
+            'ip9': `
+                <h3>9. Prompting (Ingegneria di Contesto)</h3>
+                <p><strong>Il Valore:</strong> Automatizza la creazione di prompt perfetti, massimizzando l'efficacia dell'AI a costo zero e in totale sicurezza.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    L'efficacia di qualsiasi AI dipende dal "prompt engineering". Il nostro IP automatizza questo processo per la Persona e il Business.
+                    <strong>Spieghiamo quanto serve usare il "Profile" (blocco 8) per massimizzare l'efficacia del prompt engineering</strong>: l'Assistente AI (blocco 14) non fa una domanda generica all'AI. "Prende" il tuo <strong>Profile</strong> e lo usa come <i>contesto automatico</i> per costruire un prompt ricco, dettagliato e perfetto, ottenendo una risposta infinitamente più utile.
+                    Il vantaggio è doppio e cruciale:
+                    1. <strong>Sicurezza:</strong> <strong>Riusciamo a farlo in modo sicuro su un device della Persona</strong>. I tuoi dati privati (il Profilo) arricchiscono il prompt, ma non lasciano <i>mai</i> il tuo dispositivo.
+                    2. <strong>Costo:</strong> Questo processo è istantaneo e <strong>senza i costi dell'AI</strong> che abbiamo già sostenuto noi in fase di pre-produzione. Sfrutta il nostro "Router Distillato" on-device, dandoti la potenza di un'AI costosa, ma gratuitamente e in privato.</p>`,
+            'ip10': `
+                <h3>10. Onboarding (Il Profilatore Dinamico)</h3>
+                <p><strong>Il Valore:</strong> Trasforma la profilazione da "questionario statico" a "dialogo interattivo e automatico" che impara da te.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    L'onboarding tradizionale è l'ostacolo principale alla profilazione: un questionario lungo, rigido e "piatto", che chiede a te le stesse cose che ha chiesto a tutti gli altri.
+                    Il nostro IP è un sistema di profilazione radicalmente diverso:
+                    1. <strong>È Dinamico:</strong> Non è un blocco unico. Puoi <strong>avviare l'esercizio di profilazione e fermarlo quando vuoi</strong>. Non perdi mai i tuoi progressi.
+                    2. <strong>È Automatico:</strong> Non ti chiede tutto. Inizia a <strong>memorizzare automaticamente i tuoi comportamenti, gusti e intenzioni</strong> (i tuoi <strong>DOT</strong>) mentre usi la piattaforma.
+                    3. <strong>È Totalmente Personalizzato:</strong> Quando ti fa una domanda, questa si basa sulle <strong>tue risposte precedenti</strong>. È un dialogo che si adatta, non un modulo statico.
+                    Per la Persona, è un'esperienza gratificante. Per il Business, è un motore che raccoglie dati di profondità e qualità inarrivabili, perché basati sull'interazione reale e non su risposte forzate.</p>`,
+            'ip11': `
+                <h3>11. Sinapsi (La Rete Logica)</h3>
+                <p><strong>Il Valore:</strong> È il "tessuto connettivo" della piattaforma, l'IP che permette di creare connessioni logiche tra qualsiasi elemento.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    I sistemi tradizionali costringono l'utente in gerarchie rigide (cartelle, file). Il nostro IP è la <strong>Sinapsi</strong>, l'elemento strategico che ti permette di <strong>collegare DOTS di qualunque tipo tra loro</strong>, creando una rete logica che mappa il tuo modo di pensare.
+                    Questo IP ti permette di:
+                    - <strong>Prendere note</strong> in modo contestuale (creando una Sinapsi tra un tuo pensiero e un DOT-Progetto).
+                    - <strong>Associare idee a contenuti</strong> (collegando un tuo <strong>DOT</strong>-Idea a un <strong>DOT</strong>-Articolo).
+                    - <strong>Collegare eventi</strong> e tracciare il tuo percorso.
+                    Quest'ultimo punto è cruciale: puoi usare le Sinapsi per <strong>collegare i singoli step che vai ad intraprendere nel tuo journey</strong> (come quelli del "Motore della Motivazione", blocco 6). È l'atto di <i>creare</i> (Persona) o <i>scoprire</i> (AI) queste connessioni che genera il vero valore e la vera intelligenza della piattaforma.</p>`,
+            'ip12': `
+                <h3>12. Confidential (Il Token di Permesso)</h3>
+                <p><strong>Il Valore:</strong> Mette la Persona al centro, trasformando la privacy da "impostazione statica" a "processo attivo di autorizzazione granulare".</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP è il motore operativo della fiducia e la chiave della piattaforma. Come hai definito, in CtD <strong>la Persona è al centro di tutti i processi</strong>. I suoi dati (il <strong>Profile</strong>, blocco 8) sono confidenziali per impostazione predefinita.
+                    L'innovazione sta nel <i>come</i> il Business interagisce: <strong>diamo al Business la possibilità di <i>richiedere</i> un'informazione, ma solo dietro la puntuale autorizzazione della Persona a condividere <i>quella singola informazione</i></strong>.
+                    È <strong>proprio come se fosse un token di una blockchain</strong>: la Persona "conia" un permesso unico, tracciabile e revocabile per un singolo <strong>DOT</strong> e per un singolo scopo. Il Business non "accede" al database della Persona; riceve questo "token" di permesso. Questo ribalta il modello B2C: la privacy non è un muro, ma un ponte sicuro, controllato 1:1 dalla Persona.</p>`,
+            'ip13': `
+                <h3>13. Multimodal (Interazione Adattiva)</h3>
+                <p><strong>Il Valore:</strong> Permette alla Persona di interagire con la piattaforma nel modo più naturale (testo, voce, immagini) e riceve contenuti personalizzati a livello multimediale.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP definisce il "come" la Persona e il Business dialogano. <strong>Grazie all'AI, usiamo nativamente testo, voce e immagini</strong> per rendere l'interazione (come l'<strong>Onboarding</strong>, blocco 10) fluida e naturale.
+                    Ma il vero <strong>valore aggiunto</strong> (che abiliteremo nelle versioni "Pro" o "Ultra") è un passo oltre: non solo <i>capiamo</i> la multimedialità, ma la <i>creiamo</i>.
+                    La piattaforma avrà la capacità di <strong>personalizzare il singolo contenuto multimediale</strong> (un audio, un video, un'infografica) <strong>usando il "Profile" della Persona</strong> (blocco 8). Il Business non invierà più "un video uguale per tutti", ma invierà una "logica" (blocco 6) che l'AI on-device userà per assemblare un contenuto multimediale creato <i>solo per quella Persona</i>, garantendo un livello di personalizzazione 1:1 e di impatto irraggiungibile.</p>`,
+            'ip14': `
+                <h3>14. Coach (Il Consulente AI Privato)</h3>
+                <p><strong>Il Valore:</strong> Sintetizza tutti gli IP della piattaforma per agire come un vero e proprio Coach strategico personale, on-device e fidato.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP è il "volto" della piattaforma e il risultato finale di tutto il nostro lavoro. Come hai giustamente definito, <strong>la combinazione personalizzata di <i>tutti</i> gli IP di CtD porta a far agire la piattaforma come un vero e proprio Coach.</strong>
+                    Non è un "chatbot" (che risponde a domande) e non è un "assistente" (che esegue comandi). È un <strong>Coach</strong> che lavora solo per la Persona:
+                    - Usa l'<strong>Inpuls</strong> (blocco 6) per stimolarti e vincere l'inerzia. 
+                    - Usa il <strong>Next Best</strong> (blocco 7) per guidarti nel tuo percorso.
+                    - Usa lo <strong>SWOT</strong> (blocco 3) e il <strong>ROI</strong> (blocco 4) per darti consigli strategici sulle tue decisioni.
+                    - Usa il <strong>Prompting</strong> (blocco 9) per ottenere il massimo dall'AI, in privato.
+                    Per la Persona, è un consulente fidato. Per il Business, l'interazione cambia radicalmente: non parla più a un "cliente" confuso, ma dialoga con il "Coach" della Persona, un'entità che ha già qualificato i bisogni e validato il valore dell'offerta.</p>`,
+            'ip15': `
+                <h3>15. Agentic AI (Intelligenza Aumentata)</h3>
+                <p><strong>Il Valore:</strong> Aumenta la potenza degli algoritmi di CtD con un'analisi AI confidenziale, confrontando il profilo della Persona con il mondo esterno.</p>
+                <p><strong>L'Innovazione (per la relazione P<->B):</strong>
+                    Questo IP è l'evoluzione del nostro "Router Distillato". Non ci limitiamo ad algoritmi pre-scritti. Come hai definito, <strong>dove utile, gli algoritmi già sviluppati in CtD vedranno i loro comportamenti ulteriormente "aumentati"</strong> da un'intelligenza superiore.
+                    L'innovazione sta nell'<strong>analisi in tempo reale che solo la AI può fare</strong> in due modi:
+                    1. <strong>Confidenziale:</strong> L'AI analizza in modo <strong>assolutamente confidenziale il "Profile" della Persona</strong> (blocco 8) sul suo dispositivo.
+                    2. <strong>Benchmark:</strong> Confronta questi dati privati con <strong>il resto del mondo</strong> (dati di mercato, tendenze, medie anonimizzate), eseguendo un <i>benchmarking</i> strategico costante.
+                    Questo crea un sistema ibrido: gli agenti AI locali gestiscono i dati sensibili, mentre possono interagire con agenti cloud per ottenere un contesto esterno. Questo offre alla Persona una visione (e un <strong>Coach</strong>, blocco 14) che non è solo personale, ma anche consapevole del mondo.</p>`
+        };
+
+        // Funzione per mostrare le informazioni nel box
+        function showInfo(ipId) {
+            const infoBox = document.getElementById('info-box');
+            if (ipDescriptions[ipId]) {
+                infoBox.innerHTML = ipDescriptions[ipId];
+            } else {
+                infoBox.innerHTML = '<p>Descrizione non trovata. Clicca su un altro blocco.</p>';
+            }
+            
+            // Aggiorna i nomi visualizzati nella griglia
+            const blocks = {
+                'ip1': '1. Modello KG', 'ip2': '2. DOT', 'ip3': '3. SWOT', 'ip4': '4. ROI', 'ip5': '5. Connect',
+                'ip6': '6. Inpuls', 'ip7': '7. Next Best', 'ip8': '8. Profile', 'ip9': '9. Prompting', 'ip10': '10. Onboarding',
+                'ip11': '11. Sinapsi', 'ip12': '12. Confidential', 'ip13': '13. Multimodal', 'ip14': '14. Coach', 'ip15': '15. Agentic AI'
+            };
+            const gridBlocks = document.querySelectorAll('.ip-block');
+            let i = 1;
+            gridBlocks.forEach(block => {
+                block.textContent = blocks['ip'+i];
+                // Assegna la classe di colore corretta
+                if (i % 2 !== 0) { // Dispari -> Giallo
+                    block.classList.remove('block-purple');
+                    block.classList.add('block-yellow');
+                } else { // Pari -> Viola
+                    block.classList.remove('block-yellow');
+                    block.classList.add('block-purple');
+                }
+                i++;
+            });
+        }
+        
+        // Al caricamento, aggiorno i nomi sulla griglia
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const blocks = {
+                'ip1': '1. Modello KG', 'ip2': '2. DOT', 'ip3': '3. SWOT', 'ip4': '4. ROI', 'ip5': '5. Connect',
+                'ip6': '6. Inpuls', 'ip7': '7. Next Best', 'ip8': '8. Profile', 'ip9': '9. Prompting', 'ip10': '10. Onboarding',
+                'ip11': '11. Sinapsi', 'ip12': '12. Confidential', 'ip13': '13. Multimodal', 'ip14': '14. Coach', 'ip15': '15. Agentic AI'
+            };
+            const gridBlocks = document.querySelectorAll('.ip-block');
+            let i = 1;
+            gridBlocks.forEach(block => {
+                block.textContent = blocks['ip'+i];
+                // Assegna la classe di colore corretta all'inizializzazione
+                if (i % 2 !== 0) { // Dispari -> Giallo
+                    block.classList.add('block-yellow');
+                } else { // Pari -> Viola
+                    block.classList.add('block-purple');
+                }
+                i++;
+            });
+        });
+    </script>
+
+</body>
+</html>
