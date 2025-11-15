@@ -1,10 +1,11 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VC & Partner Solution - CtD</title>
-    <link rel="stylesheet" href="../style.css"> </head>
+    <link rel="stylesheet" href="../style.css"> <!-- Link a style.css -->
+</head>
 <body>
     <header>
         <nav class="main-nav">
@@ -16,6 +17,7 @@
                 <a href="../business.html">Business</a>
                 <a href="../founders.html">Founders</a>
                 <a href="../leadership.html">Leadership</a>
+                <!-- BOTTONE LINGUA AGGIUNTO -->
                 | <a href="../bvc.html" style="color: #FAE100; font-weight: bold;">IT</a>
             </div>
         </nav>
@@ -57,6 +59,10 @@
             <h2 style="text-align: center; font-size: 2em; margin-bottom: 20px;">Speak with our Founder</h2>
             
             <form id="contact-form" action="https://formspree.io/f/xwpwyvlv" method="POST">
+                
+                <!-- RIGA AGGIUNTA PER OGGETTO EMAIL CON TAG LINGUA -->
+                <input type="hidden" name="_subject" value="[EN] New VC Request">
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="nome">Your Name</label>
