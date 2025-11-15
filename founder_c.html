@@ -53,6 +53,10 @@
             <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 20px;">La tua Candidatura (Carriera)</h2>
             
             <form id="contact-form" action="https://formspree.io/f/xwpwyvlv" method="POST">
+                
+                <!-- RIGA AGGIUNTA PER OGGETTO EMAIL CON TAG LINGUA -->
+                <input type="hidden" name="_subject" value="[IT] Nuova Candidatura Founder C - Carriera">
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="nome">Il tuo Nome</label>
@@ -79,7 +83,7 @@
                     <textarea id="sfida" name="sfida" rows="3" placeholder="Es. Cambiare lavoro, ottenere una promozione, acquisire nuove skill AI..."></textarea>
                 </div>
 
-                <!-- ***** CORREZIONE QUI ***** -->
+                <!-- ***** CORREZIONE ID DUPLICATO ***** -->
                 <div class="form-group">
                     <label for="sfida_ai">Vedi l'AI più come un pericolo o come una opportunità?</label> <!-- 'for' corretto -->
                     <textarea id="sfida_ai" name="sfida_ai" rows="3" placeholder="Es. Una minaccia al mio ruolo, un'opportunità per crescere..."></textarea> <!-- 'id' e 'name' corretti -->
