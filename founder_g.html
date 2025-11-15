@@ -1,12 +1,3 @@
-Ricevuto founder_g.html. Codice validato e corretto.
-
-Procediamo esattamente come prima. Formato HTML semplice, con la cartella en per l'inglese.
-
-1. File IT (Italiano) — founder_g.html
-(Questo è il tuo codice, con solo il bottone lingua EN aggiunto alla riga 19)
-
-HTML
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -62,6 +53,10 @@ HTML
             <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 20px;">La tua Candidatura (Studio)</h2>
             
             <form id="contact-form" action="https://formspree.io/f/xwpwyvlv" method="POST">
+                
+                <!-- RIGA AGGIUNTA PER OGGETTO EMAIL CON TAG LINGUA -->
+                <input type="hidden" name="_subject" value="[IT] Nuova Candidatura Founder G - Studio">
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="nome">Il tuo Nome</label>
