@@ -8,25 +8,31 @@ body {
     background-color: #1a1a1a;
     color: #f0f0f0;
 }
+
 header, main, footer, section {
     width: 90%;
     max-width: 1100px;
     margin: 20px auto;
     padding: 0;
 }
+
 main { margin-top: 0; }
 section { margin-bottom: 40px; }
+
 h1, h2, h3, h4 {
     color: #ffffff;
     font-weight: 600;
 }
+
 p {
     line-height: 1.6;
     font-size: 1.1em;
 }
+
 a {
-    color: #F7B731;
+    color: #FAE100; /* <<< GIALLO BANNER AGGIORNATO */
 }
+
 /* ===================================================
    HEADER E BARRA DI NAVIGAZIONE
    =================================================== */
@@ -37,6 +43,7 @@ header {
     background-color: #111;
     border-bottom: 1px solid #333;
 }
+
 .main-nav {
     width: 90%;
     max-width: 1100px;
@@ -46,16 +53,14 @@ header {
     align-items: center;
     padding: 15px 0;
 }
+
 .nav-logo {
     font-size: 1.4em;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
 }
-.nav-links {
-    display: flex;
-    align-items: center;
-}
+
 .nav-links a {
     color: #ccc;
     text-decoration: none;
@@ -63,18 +68,11 @@ header {
     font-weight: 500;
     transition: color 0.2s ease;
 }
+
 .nav-links a:hover {
-    color: #F7B731;
+    color: #FAE100; /* <<< GIALLO BANNER AGGIORNATO */
 }
-.nav-lang {
-    margin-left: 25px;
-    border-left: 1px solid #444;
-    padding-left: 25px;
-}
-.nav-lang a {
-    font-weight: bold;
-    color: #F7B731;
-}
+
 /* --- TITOLI DI PAGINA --- */
 .hero-text {
     width: 90%;
@@ -104,6 +102,7 @@ header {
     overflow: hidden; 
     text-overflow: ellipsis;
 }
+
 /* ===================================================
    PULSANTI CTA (Call to Action)
    =================================================== */
@@ -111,7 +110,7 @@ header {
     display: inline-block;
     padding: 12px 24px;
     margin-top: 15px;
-    background-color: #F7B731; 
+    background-color: #FAE100; /* <<< GIALLO BANNER AGGIORNATO */
     color: #1a1a1a;
     font-weight: bold;
     text-decoration: none;
@@ -121,38 +120,48 @@ header {
     cursor: pointer;
     font-size: 1em;
 }
+
 .cta-button:hover {
-    background-color: #ffd270;
+    background-color: #FFF280; /* <<< GIALLO BANNER HOVER AGGIORNATO */
     transform: translateY(-2px);
 }
+
 /* ===================================================
    STILI PER: index.html (Hub Grid)
    =================================================== */
 .hub-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 15px; /* Compattato */
 }
+
 .hub-card {
     border: 1px solid #555; 
-    padding: 20px;
+    padding: 20px; /* Compattato */
     border-radius: 12px;
     background-color: #252525;
     display: flex;
     flex-direction: column;
 }
+
 .hub-card h2 {
     margin-top: 0;
-    margin-bottom: 10px;
-    color: #F7B731;
+    margin-bottom: 10px; /* Spazio ridotto */
+    color: #FAE100; /* <<< GIALLO BANNER AGGIORNATO */
 }
+
 .hub-card .cta-button {
     margin-top: auto;
 }
-.hub-founders { border-top: 5px solid #333; }
-.hub-business { border-top: 5px solid #8A4FFF; }
-.hub-platform { border-top: 5px solid #8A4FFF; }
-.hub-services { border-top: 5px solid #8A4FFF; }
+
+/* --- MODIFICA COLORI BORDI --- */
+.hub-founders { border-top: 5px solid #333; } /* "Nero" / Grigio Scuro */
+.hub-business { border-top: 5px solid #8A4FFF; } /* Viola */
+.hub-platform { border-top: 5px solid #8A4FFF; } /* Viola */
+.hub-services { border-top: 5px solid #8A4FFF; } /* Viola */
+/* --- FINE MODIFICA --- */
+
+
 /* ===================================================
    STILI PER: platform.html (IP Grid)
    =================================================== */
@@ -165,6 +174,7 @@ header {
     font-size: 1.2em;
     text-align: center;
 }
+
 .ip-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -172,6 +182,7 @@ header {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
 .ip-block {
     padding: 20px 15px;
     font-size: 1.1em;
@@ -182,18 +193,21 @@ header {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 2px solid transparent;
 }
+
 .ip-block:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
+
 .block-yellow {
-    background-color: #F7B731;
+    background-color: #FAE100; /* <<< GIALLO BANNER AGGIORNATO */
     color: #1a1a1a;
 }
 .block-purple {
     background-color: #8A4FFF;
     color: #ffffff;
 }
+
 #info-box-container {
     background-color: #2a2a2a;
     border: 1px solid #444;
@@ -202,10 +216,12 @@ header {
     margin-top: 30px;
     min-height: 300px; 
 }
+
 #info-box { padding: 20px; }
-#info-box h3 { margin-top: 0; color: #F7B731; font-size: 1.6em; }
+#info-box h3 { margin-top: 0; color: #FAE100; font-size: 1.6em; } /* <<< GIALLO BANNER AGGIORNATO */
 #info-box p { font-size: 1.1em; line-height: 1.7; }
 #info-box strong { color: #f0f0f0; }
+
 .platform-cta {
     text-align: center;
     background-color: #25252f;
@@ -214,6 +230,7 @@ header {
     margin-top: 40px;
 }
 .platform-cta .cta-button { margin: 10px; }
+
 /* ===================================================
    STILI PER: about.html (Chi Siamo)
    =================================================== */
@@ -224,6 +241,7 @@ header {
     border-radius: 12px;
     margin-bottom: 25px;
 }
+
 /* ===================================================
    STILI PER MODULO CONTATTI
    =================================================== */
@@ -233,20 +251,24 @@ header {
     padding: 30px;
     border-radius: 12px;
 }
+
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
 .form-group {
     margin-bottom: 20px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
     color: #ccc;
 }
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
@@ -259,10 +281,12 @@ header {
     box-sizing: border-box; 
     font-size: 1em;
 }
+
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
 }
+
 .checklist-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -271,20 +295,24 @@ header {
     padding: 20px;
     border-radius: 6px;
 }
+
 .check-item {
     display: flex;
     align-items: center;
 }
+
 .check-item input[type="checkbox"] {
     margin-right: 10px;
     width: 18px;
     height: 18px;
 }
+
 .check-item label {
     margin-bottom: 0;
     font-weight: normal;
     color: #f0f0f0;
 }
+
 /* ===================================================
    STILI PER: services.html
    =================================================== */
@@ -295,9 +323,11 @@ header {
     max-width: 1000px;
     margin: 40px auto;
 }
+
 .services-grid .content-box:last-child:nth-child(odd) {
     grid-column: 1 / -1;
 }
+
 /* ===================================================
    FOOTER
    =================================================== */
