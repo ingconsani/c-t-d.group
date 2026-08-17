@@ -3,8 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect the DOTS (CtD) - Home</title>
+    <title>Connect the DOTS (CtD) - Beyond CRM | The Deterministic Knowledge Engine</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern Scaffolding Styles for CtD Engine */
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+            --green-secure: #3cd070;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .hero-banner-wrap {
+            max-width: 1080px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge-offline {
+            display: inline-flex;
+            align-items: center;
+            background: #18112c;
+            color: var(--green-secure);
+            border: 1px solid var(--green-secure);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+
+        .hero-title span {
+            color: var(--accent-gold);
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 820px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Simulator Container */
+        .sim-section {
+            background: #0e0e13;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 1100px;
+            margin: 30px auto 50px auto;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .sim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .sim-header h2 {
+            font-size: 1.05rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.15fr;
+            gap: 20px;
+        }
+
+        .sim-col {
+            background: var(--card-bg);
+            border: 1px solid #1f1f28;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sim-col-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-gray);
+            margin: 0 0 16px 0;
+            font-weight: 700;
+        }
+
+        .scenario-item {
+            cursor: pointer;
+            background: #181820;
+            border: 1px solid #282834;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .scenario-item:hover {
+            border-color: var(--accent-purple-light);
+        }
+
+        .scenario-item.active {
+            background: #1c1533;
+            border-color: var(--accent-gold);
+        }
+
+        .scenario-item strong {
+            display: block;
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .scenario-item.active strong {
+            color: var(--accent-gold);
+        }
+
+        .scenario-item span {
+            font-size: 0.78rem;
+            color: var(--text-gray);
+            line-height: 1.3;
+            display: block;
+        }
+
+        .calc-row {
+            font-size: 0.85rem;
+            margin: 8px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #222;
+        }
+
+        .calc-row span.label {
+            font-weight: bold;
+            display: inline-block;
+            width: 110px;
+        }
+
+        .calc-box-formula {
+            background: #0a0a0d;
+            border-left: 3px solid var(--accent-gold);
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .res-metric {
+            background: #18112c;
+            border: 1px solid var(--accent-purple);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .btn-diy {
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-sme {
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
+            padding: 9px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .btn-diy:hover, .btn-sme:hover {
+            opacity: 0.9;
+        }
+
+        /* Pillars & Roles */
+        .framework-section {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .role-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .role-card h3 {
+            margin: 0 0 8px 0;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .role-card p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 860px) {
+            .sim-grid, .framework-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -12,60 +270,234 @@
         <nav class="main-nav">
             <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosistema & GTM</a>
+                <a href="founders.html">Autarchia PMI</a>
                 <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO ORA -->
-                | <a href="en/index.html" style="color: #FAE100; font-weight: bold;">EN</a>
+                | <a href="en/index.html" style="color: var(--accent-gold); font-weight: bold;">EN</a>
             </div>
         </nav>
-        
-        <div class="hero-text">
-            <h1>dove le esigenze specifiche di una Persona possono essere finalmente soddisfatte dal Business..</h1>
-            <p class="subtitle">...per raggiungere livelli di servizio e di Customer Satisfaction mai raggiunti prima.</p>
-        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <img src="banner-main.png" alt="Schema Relazione Persona-Business" style="width:100%; max-width:900px; margin: 20px auto; display: block;">
-        </section>
+        <!-- HERO SECTION -->
+        <div class="hero-banner-wrap">
+            <div class="badge-offline">
+                🔒 Architettura 100% Offline • Zero Data Leakage • Conforme GDPR
+            </div>
+            <h1 class="hero-title">
+                Da qualsiasi problema al percorso guidato: <span>il Navigatore Deterministico</span>
+            </h1>
+            <p class="hero-desc">
+                Riduci tempi e costi decisionali con la formula <strong>S = C + P + R</strong>. 
+                CtD unifica la profonda conoscenza del tuo stato attuale (As-Is) con 931 nodi di competenza specialistica, individuando il Next Best DOT (NBD) senza dispersioni o allucinazioni AI.
+            </p>
+        </div>
 
-        <section class="hub-grid">
-
-            <div class="hub-card hub-founders">
-                <h2>Programma Founders</h2>
-                <p>Unisciti agli early adopters di una delle applicazioni che stiamo per lanciare sul mercato per trarne da subito il massimo beneficio</p>
-                <a href="founders.html" class="cta-button">Unisciti a noi</a>
+        <!-- INTERACTIVE ENGINE SIMULATOR -->
+        <section class="sim-section">
+            <div class="sim-header">
+                <h2>CtD Interactive Simulator • Dal Problema alla Risoluzione</h2>
+                <span style="color: var(--accent-purple-light); font-size: 0.8rem; font-weight: bold;">Runtime in RAM (Zero Cloud)</span>
             </div>
 
+            <div class="sim-grid">
+                
+                <!-- COL 1: SELEZIONE AS-IS -->
+                <div class="sim-col">
+                    <div>
+                        <div class="sim-col-title">1. Seleziona Scenario As-Is</div>
+                        
+                        <div class="scenario-item active" id="scen-1" onclick="updateSimulator(1)">
+                            <strong>Studio Commercialista</strong>
+                            <span>Evolvere da conformità fiscale a controllo di gestione scalabile per 50 clienti.</span>
+                        </div>
+
+                        <div class="scenario-item" id="scen-2" onclick="updateSimulator(2)">
+                            <strong>PMI & Imprenditore</strong>
+                            <span>Gap di marginalità e audit dei colli di bottiglia senza consulenze esterne costose.</span>
+                        </div>
+
+                        <div class="scenario-item" id="scen-3" onclick="updateSimulator(3)">
+                            <strong>Rete di Imprese / Associazione</strong>
+                            <span>Mappare i fabbisogni degli associati e generare referral qualificati interni.</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #666; margin-top: 10px;">
+                        💡 Triage locale con anonimizzazione automatica delle interrogazioni.
+                    </div>
+                </div>
+
+                <!-- COL 2: MOTORE DETERMINISTICO -->
+                <div class="sim-col">
+                    <div>
+                        <div class="sim-col-title">2. Calcolo Deterministico (S = C + P + R)</div>
+                        
+                        <div class="calc-row">
+                            <span class="label" style="color: var(--accent-gold);">[P] Profilo:</span>
+                            <span id="txt-p" style="color: #ddd;">Profilo Studio (Token Parallelo)</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label" style="color: var(--accent-purple-light);">[C] Competenze:</span>
+                            <span id="txt-c" style="color: #ddd;">400+ DOTs Controllo Direzionale</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label" style="color: var(--green-secure);">[R] Ruolo Attivo:</span>
+                            <span id="txt-r" style="color: #ddd;">Advisor + Trainer</span>
+                        </div>
+
+                        <div class="calc-box-formula">
+                            <strong>Formula Attiva:</strong> S = C + P + R<br>
+                            Calcolata in RAM senza interrogazioni esterne (Algoritmo <em>_healDatabaseRollups</em>).
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; color: #666; margin-top: 10px;">
+                        Zero allucinazioni: recupero vettoriale strutturato senza sintesi generativa.
+                    </div>
+                </div>
+
+                <!-- COL 3: RISOLUZIONE & BIVIO -->
+                <div class="sim-col">
+                    <div>
+                        <div class="sim-col-title">3. Next Best DOT & Risoluzione</div>
+                        
+                        <div class="res-metric">
+                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-purple-light); display: block;">Next Best DOT (NBD) Calcolato</span>
+                            <strong id="txt-nbd" style="color: #fff; font-size: 0.95rem;">► #412: Gap Analysis Margini & Scaduto</strong>
+                            <div id="txt-impact" style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 5px;">
+                                ⏱ Tempo: 3 settimane vs 6 mesi | 💰 Riduzione costi: -75%
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            <span style="font-size: 0.75rem; color: var(--text-gray); display: block; margin-bottom: 6px;">Seleziona la modalità di esecuzione:</span>
+                            <button class="btn-diy" id="btn-diy-label">⚡ Modalità DiY (Guida con Tutor)</button>
+                            <button class="btn-sme" id="btn-sme-label">🤝 Connetti a Partner SME (Nodo L3 Vetrina)</button>
+                        </div>
+                    </div>
+                    <div id="txt-footer-hint" style="font-size: 0.75rem; color: #777;">
+                        Lo Studio genera l'audit direzionale in autonomia per la propria azienda cliente.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- I 4 RUOLI OPERATIVI DI CTD -->
+        <section class="framework-section">
+            <h2 style="text-align: center; color: #fff; font-size: 1.6rem; margin: 0 0 10px 0;">I 4 Ruoli di Guida Aumentata</h2>
+            <p style="text-align: center; color: var(--text-gray); font-size: 0.95rem; margin: 0 0 20px 0;">
+                CtD non si limita a rispondere: adotta dinamicamente il ruolo necessario per guidarti lungo il Journey.
+            </p>
+            <div class="framework-grid">
+                <div class="role-card">
+                    <h3>Advisor</h3>
+                    <p>Esegue la diagnosi strategica, calcola la matrice SWOT in RAM e individua i trade-off decisionali ottimali.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Coach</h3>
+                    <p>Presidia la disciplina esecutiva, allineando i progressi operativi con gli obiettivi di lungo termine definiti nel Profilo.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Tutor</h3>
+                    <p>Sblocca i passaggi operativi complessi fornendo indicazioni passo-passo per completare i nodi in autonomia (DiY).</p>
+                </div>
+                <div class="role-card">
+                    <h3>Trainer</h3>
+                    <p>Trasferisce metodologie e competenze specialistiche in modo incrementale attraverso i 931 nodi del grafo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HUB DI NAVIGAZIONE VERSO I TARGET -->
+        <section class="hub-grid" style="margin-top: 50px;">
+
             <div class="hub-card hub-business">
-                <h2>Soluzioni per il tuo Business</h2>
-                <p>Scopri come la nostra soluzione può rivoluzionare il tuo GTM o quello delle aziende nel tuo portafoglio di investimenti.</p>
-                <a href="business.html" class="cta-button">Inizia da qui</a>
+                <h2>Studi & Advisory (B2B2B)</h2>
+                <p>Trasforma il tuo studio in un centro di controllo direzionale proattivo con oltre 400 DOTs e segregazione Prisma multi-partner.</p>
+                <a href="services.html" class="cta-button">Scopri il Modello B2B</a>
+            </div>
+
+            <div class="hub-card hub-founders">
+                <h2>Autarchia Imprenditoriale</h2>
+                <p>Esoscheletro gestionale offline per PMI e titolari: prendi decisioni strategiche proteggendo il 100% dei dati aziendali.</p>
+                <a href="founders.html" class="cta-button">Accedi al Programma</a>
             </div>
 
             <div class="hub-card hub-platform">
-                <h2>Esplora la Piattaforma</h2>
-                <p>Esamina i 15 "mattoncini" (tutti Intellectual Properties di CtD) che renderanno unica la tua interazione con le Persone.</p>
-                <a href="platform.html" class="cta-button">Vedi l'IP</a>
+                <h2>Piattaforma & Brevetti (IP)</h2>
+                <p>Esamina l'architettura tecnica brevettabile: runtime in RAM, embedding locali, topologia a sinapsi e modello S=C+P+R.</p>
+                <a href="platform.html" class="cta-button">Esplora l'Architettura</a>
             </div>
 
             <div class="hub-card hub-services">
-                <h2>Servizi Specialistici</h2>
-                <p>Guarda la nostra offerta innovativa di servizi per sviluppare il tuo nuovo modo di interagire con le Persone nel tuo Business.</p>
-                <a href="services.html" class="cta-button">Scopri i Servizi</a>
+                <h2>Visione "Beyond CRM"</h2>
+                <p>Scopri il percorso strategico e l'esperienza di oltre 50 anni nelle piattaforme aziendali e nella vendita enterprise.</p>
+                <a href="leadership.html" class="cta-button">Vedi la Leadership</a>
             </div>
 
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). Tutti i diritti riservati.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). Tutti i diritti riservati. Brevetto e Proprietà Intellettuale registrati.</p>
     </footer>
 
+    <!-- SCRIPT SIMULATORE INTERATTIVO -->
+    <script>
+        const scenarios = {
+            1: {
+                p: "Profilo Studio (Token Parallelo Isolato)",
+                c: "400+ DOTs Controllo Direzionale & Fiscale",
+                r: "Advisor + Trainer",
+                nbd: "► #412: Gap Analysis Margini & Capex",
+                impact: "⏱ Tempo: 3 settimane vs 6 mesi | 💰 Riduzione overhead: -75%",
+                diy: "⚡ Modalità DiY: Genera Audit Direzionale",
+                sme: "🤝 Assegna a Temporary CFO di Rete",
+                hint: "Lo Studio monetizza l'audit iniziale trasformandolo in canone di consulenza mensile."
+            },
+            2: {
+                p: "Profilo PMI Locale (Offline Criptato)",
+                c: "Grafo Strategico PMI (931 Nodi)",
+                r: "Coach + Tutor",
+                nbd: "► #208: Mappatura Flusso di Cassa & Scaduto",
+                impact: "⏱ Tempo: 5 giorni vs 8 settimane | 💰 Costo: 0 consulenze esterne",
+                diy: "⚡ Modalità DiY: Esegui Riorganizzazione",
+                sme: "🤝 Connetti a Consulente Finanziario L3",
+                hint: "L'imprenditore risolve i colli di bottiglia in autonomia senza cedere dati aziendali in cloud."
+            },
+            3: {
+                p: "Profilo Rete / Capitolo Associativo",
+                c: "Matrice Competenze Trasversali & Lenti Prisma",
+                r: "Advisor + Next Best Matcher",
+                nbd: "► #730: Match Fabbisogno Digitalizzazione",
+                impact: "⏱ Tempo: Immediato | 💰 Conversione Referral: +80%",
+                diy: "⚡ Modalità DiY: Valuta Autodiagnosi",
+                sme: "🤝 Connetti a Partner Verticale del Circuito",
+                hint: "La rete valorizza le sinergie interne trasformando i gap degli associati in commesse qualificate."
+            }
+        };
+
+        function updateSimulator(id) {
+            // Aggiorna classi bottoni
+            document.getElementById('scen-1').classList.remove('active');
+            document.getElementById('scen-2').classList.remove('active');
+            document.getElementById('scen-3').classList.remove('active');
+            document.getElementById('scen-' + id).classList.add('active');
+
+            // Aggiorna contenuti dinamici
+            const data = scenarios[id];
+            document.getElementById('txt-p').innerText = data.p;
+            document.getElementById('txt-c').innerText = data.c;
+            document.getElementById('txt-r').innerText = data.r;
+            document.getElementById('txt-nbd').innerText = data.nbd;
+            document.getElementById('txt-impact').innerText = data.impact;
+            document.getElementById('btn-diy-label').innerText = data.diy;
+            document.getElementById('btn-sme-label').innerText = data.sme;
+            document.getElementById('txt-footer-hint').innerText = data.hint;
+        }
+    </script>
 </body>
 </html>
