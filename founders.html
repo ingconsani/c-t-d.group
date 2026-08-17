@@ -3,63 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programma Founders - CtD</title>
+    <title>Connect the DOTS (CtD) - Autarchia Gestionale & Founders Program</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+            --green-secure: #3cd070;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .founders-hero-wrap {
+            max-width: 1080px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge-founders {
+            display: inline-flex;
+            align-items: center;
+            background: #18112c;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .founders-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+        }
+
+        .founders-title span {
+            color: var(--accent-gold);
+        }
+
+        .founders-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 840px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Pillars Banner */
+        .diy-moat-banner {
+            max-width: 1060px;
+            margin: 0 auto 40px auto;
+            background: #0e0e14;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .diy-moat-banner h3 {
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-size: 1.25rem;
+        }
+
+        .diy-moat-banner p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .diy-features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.88rem;
+            color: #ddd;
+        }
+
+        .diy-features-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .diy-features-list li span {
+            color: var(--green-secure);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Verticals Grid */
+        .verticals-grid-wrap {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .vertical-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .vertical-card:hover {
+            border-color: var(--accent-purple-light);
+            transform: translateY(-2px);
+        }
+
+        .vertical-card.highlight {
+            border-color: var(--accent-gold);
+            background: #151322;
+        }
+
+        .vertical-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: var(--accent-purple-light);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .vertical-card.highlight .vertical-tag {
+            color: var(--accent-gold);
+        }
+
+        .vertical-card h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .vertical-card p {
+            font-size: 0.92rem;
+            color: var(--text-gray);
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+        }
+
+        .vertical-badge-box {
+            background: #0d0d12;
+            border-left: 3px solid var(--accent-purple);
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .vertical-card.highlight .vertical-badge-box {
+            border-left-color: var(--accent-gold);
+        }
+
+        .vertical-cta {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .vertical-cta:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .vertical-cta.primary {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .vertical-cta.primary:hover {
+            background: #e5b810;
+        }
+
+        @media (max-width: 860px) {
+            .diy-moat-banner, .verticals-grid-wrap {
+                grid-template-columns: 1fr;
+            }
+            .founders-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="main-nav">
             <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosistema & GTM</a>
+                <a href="founders.html" class="active">Autarchia PMI</a>
                 <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="en/founders.html" style="color: #FAE100; font-weight: bold;">EN</a>
+                | <a href="en/founders.html" style="color: var(--accent-gold); font-weight: bold;">EN</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-            <h1>Programma Founders (Early Adopters)</h1>
-        </div>
     </header>
+
     <main>
-        <section class="platform-intro">
-            <p>Siamo pronti a coinvolgerti in uno dei 4 domini applicativi su cui stiamo lavorando. Avrai la possibilità di usare la App a condizioni molto vantaggiose sino ad arrivare a non pagare nulla se ci aiuterai a farla diventare virale. Chiedi informazioni sul "Founders Program" nel verticale che ti interessa di più.</p>
+        <div class="founders-hero-wrap">
+            <div class="badge-founders">
+                Direct-to-SME & Personal Sovereignty • Programma Early Adopters
+            </div>
+            <h1 class="founders-title">
+                Autarchia Gestionale: <span>L'Esoscheletro Decisionale Offline</span>
+            </h1>
+            <p class="founders-subtitle">
+                Prendi decisioni strategiche complesse in totale autonomia. CtD mette la potenza del calcolo deterministico e 931 nodi di competenza nelle mani di imprenditori e professionisti, azzerando i costi di consulenza continua e proteggendo il segreto industriale.
+            </p>
+        </div>
+
+        <section class="diy-moat-banner">
+            <div>
+                <h3>Il Tuo Profilo Aggiornato Rimane Solo Tuo</h3>
+                <p>
+                    A differenza delle AI commerciali che usano i tuoi dati per addestrare modelli in cloud, CtD opera al 100% on-device. Il tuo <strong>Profilo aggiornato</strong> locale apprende costantemente dalle tue scelte senza mai trasmettere parametri sensibili all'esterno.
+                </p>
+            </div>
+            <div>
+                <ul class="diy-features-list">
+                    <li><span>✔</span> Zero dipendenza da costosi advisory report statici</li>
+                    <li><span>✔</span> Calcolo SWOT e ROI decisionale istantaneo in RAM</li>
+                    <li><span>✔</span> Anonimizzazione preventiva delle query sul dispositivo</li>
+                    <li><span>✔</span> Bivio trasparente tra esecuzione autonoma (DiY) e match con esperti</li>
+                </ul>
+            </div>
         </section>
-        
-        <section class="hub-grid">
-            
-            <div class="hub-card hub-founders">
-                <h2>Carriera</h2>
-                <p>Preparati alle sfide che la AI sta portando nel mondo del lavoro e programma i passi per farti trovare pronto a cogliere le opportunità che si presenteranno</p>
-                <a href="founder_c.html" class="cta-button">Candidati</a>
+
+        <!-- I 4 VERTICALI STRATEGICI -->
+        <section class="verticals-grid-wrap">
+
+            <!-- 1. IMPRENDITORIA & PMI -->
+            <div class="vertical-card highlight">
+                <div>
+                    <span class="vertical-tag">PMI & Titolari • Direct-to-SME</span>
+                    <h2>1. Imprenditoria & Controllo Strategico</h2>
+                    <p>
+                        Supera le sfide della supply chain e della marginalità operativa. Utilizza i moduli di autodiagnosi per mappare flussi di cassa, Capex e colli di bottiglia organizzativi con la precisione di un fractional CFO dedicato.
+                    </p>
+                    <div class="vertical-badge-box">
+                        <strong>Ruolo CtD Attivo:</strong> Advisor Strategico + Tutor di Riorganizzazione Operativa.
+                    </div>
+                </div>
+                <a href="founder_a.html" class="vertical-cta primary">Candidati al Dominio PMI →</a>
             </div>
 
-            <div class="hub-card hub-founders">
-                <h2>Benessere</h2>
-                <p>Preparati ad aumentare la qualità e la durata della tua vita con un approccio a 360° alle variabili che la influenzano con ritorni che ti lasceranno basito</p>
-                <a href="founder_h.html" class="cta-button">Candidati</a>
+            <!-- 2. CARRIERA & EXECUTIVE -->
+            <div class="vertical-card">
+                <div>
+                    <span class="vertical-tag">Professionisti & Dirigenti</span>
+                    <h2>2. Carriera & Sviluppo Executive</h2>
+                    <p>
+                        Pianifica i passaggi per capitalizzare la transizione dell'AI nel mondo del lavoro. Mappa le tue competenze reali sul grafo specialistico e identifica il Next Best DOT per massimizzare il tuo posizionamento retributivo e strategico.
+                    </p>
+                    <div class="vertical-badge-box">
+                        <strong>Ruolo CtD Attivo:</strong> Coach Direzionale + Navigatore di Competenze.
+                    </div>
+                </div>
+                <a href="founder_c.html" class="vertical-cta">Candidati al Dominio Carriera →</a>
             </div>
 
-            <div class="hub-card hub-founders">
-                <h2>Imprenditoria</h2>
-                <p>Preparati alle sfide che la AI sta portando alle PMI (SME) aumentando il valore aggiunto che puoi portare nella Supply Chain in cui stai lavorando</p>
-                <a href="founder_a.html" class="cta-button">Candidati</a>
+            <!-- 3. LONGEVITÀ & WELLNESS -->
+            <div class="vertical-card">
+                <div>
+                    <span class="vertical-tag">Qualità della Vita & Performance</span>
+                    <h2>3. Benessere, Longevità & Energia</h2>
+                    <p>
+                        Aumenta la qualità e la lucidità decisionale con un approccio a 360° alle variabili fisiologiche, cognitive e comportamentali. Costruisci il tuo piano di routine e monitoraggio senza cedere dati biometrici sensibili al cloud.
+                    </p>
+                    <div class="vertical-badge-box">
+                        <strong>Ruolo CtD Attivo:</strong> Personal Coach + Monitor Deterministico Offline.
+                    </div>
+                </div>
+                <a href="founder_h.html" class="vertical-cta">Candidati al Dominio Benessere →</a>
             </div>
-            
-            <div class="hub-card hub-founders">
-                <h2>Studio</h2>
-                <p>Arricchisci conoscenze e skill con la AI imparando quanto è indispensabile sapere per usarla proficuamente e non rimanere fuori dai giochi</p>
-                <a href="founder_g.html" class="cta-button">Candidati</a>
+
+            <!-- 4. APPRENDIMENTO & METODO -->
+            <div class="vertical-card">
+                <div>
+                    <span class="vertical-tag">Knowledge Mastery</span>
+                    <h2>4. Studio & Apprendimento Aumentato</h2>
+                    <p>
+                        Acquisisci competenze complesse senza disperderti nella teoria astratta o nelle sintesi generiche. CtD struttura il percorso nozionistico in sequenze atomiche graduate sul tuo reale stato di apprendimento ($S = C + P + R$).
+                    </p>
+                    <div class="vertical-badge-box">
+                        <strong>Ruolo CtD Attivo:</strong> Trainer Metodologico + Tutor No-Hallucination.
+                    </div>
+                </div>
+                <a href="founder_g.html" class="vertical-cta">Candidati al Dominio Studio →</a>
             </div>
 
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). Tutti i diritti riservati.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). Tutti i diritti riservati. Brevetto per Invenzione Industriale n. 102025000001002.</p>
     </footer>
+
 </body>
 </html>
