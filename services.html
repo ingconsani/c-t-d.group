@@ -1,73 +1,315 @@
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servizi Strategici - CtD</title>
+    <title>Connect the DOTS (CtD) - Soluzioni B2B & Advisory Firm</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+            --green-secure: #3cd070;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .services-hero-wrap {
+            max-width: 1080px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge-b2b {
+            display: inline-flex;
+            align-items: center;
+            background: #18112c;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .services-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+        }
+
+        .services-title span {
+            color: var(--accent-gold);
+        }
+
+        .services-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 840px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Engagement Models Grid */
+        .services-grid-wrap {
+            max-width: 1100px;
+            margin: 30px auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .service-box:hover {
+            border-color: var(--accent-purple-light);
+            transform: translateY(-2px);
+        }
+
+        .service-box.featured {
+            border-color: var(--accent-gold);
+            background: #151322;
+        }
+
+        .service-header {
+            margin-bottom: 15px;
+        }
+
+        .service-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: var(--accent-purple-light);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .service-box.featured .service-tag {
+            color: var(--accent-gold);
+        }
+
+        .service-box h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .service-box p {
+            font-size: 0.92rem;
+            color: var(--text-gray);
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+        }
+
+        .service-highlights {
+            background: #0d0d12;
+            border-left: 3px solid var(--accent-purple);
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .service-box.featured .service-highlights {
+            border-left-color: var(--accent-gold);
+        }
+
+        .service-cta {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .service-cta:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .service-cta.primary {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        .service-cta.primary:hover {
+            background: #e5b810;
+        }
+
+        /* Moat Banner */
+        .moat-banner {
+            max-width: 1060px;
+            margin: 0 auto 50px auto;
+            background: #0e0e14;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .moat-banner h3 {
+            margin: 0 0 10px 0;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .moat-banner p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 860px) {
+            .services-grid-wrap {
+                grid-template-columns: 1fr;
+            }
+            .services-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="main-nav">
             <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html" class="active">Advisory & B2B</a>
+                <a href="business.html">Ecosistema & GTM</a>
+                <a href="founders.html">Autarchia PMI</a>
                 <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="en/services.html" style="color: #FAE100; font-weight: bold;">EN</a>
+                | <a href="en/services.html" style="color: var(--accent-gold); font-weight: bold;">EN</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-            <h1>Servizi Specialistici</h1>
-        </div>
     </header>
-    
+
     <main>
-        <section class="platform-intro" style="max-width: 800px;">
-            <p>La nostra metodologia unisce tre pilastri in un'unica offerta: la competenza accumulata in decenni di consulenza strategica sulle piattaforme CRM, la potenza di analisi e di benchmarking dell'IA e gli IP alla base della nostra piattaforma (CtD).</p>
-            <p style="font-size: 1.2em; text-align: center; color: #FAE100; font-weight: 600;">"Pilastri su cui poggiano 5 modelli di engagement per altrettanti obiettivi strategici."</p>
+        <div class="services-hero-wrap">
+            <div class="badge-b2b">
+                B2B2B & Enterprise Solutions • 400+ DOTs Framework
+            </div>
+            <h1 class="services-title">
+                Da Compilatori Passivi a <span>Centri di Controllo Direzionale</span>
+            </h1>
+            <p class="services-subtitle">
+                Supera la crisi di marginalità degli adempimenti fiscali. CtD fornisce a studi professionali, Fractional CFO e reti di consulenza un esoscheletro digitale per scalare la consulenza strategica su decine di PMI in totale conformità.
+            </p>
+        </div>
+
+        <section class="moat-banner">
+            <h3>Architettura Multi-Tenant a Token Paralleli</h3>
+            <p>
+                Ogni studio gestisce fino a 50 clienti con ambienti logici completamente isolati. I dati di bilancio, lo scaduto e il calcolo Capex vengono analizzati in locale attraverso la lente Prisma, proteggendo il segreto professionale con zero data leakage.
+            </p>
         </section>
 
-        <section class="services-grid">
+        <!-- 4 MODELLI DI ADOZIONE B2B -->
+        <section class="services-grid-wrap">
 
-            <div class="content-box">
-                <h2>1. Consulenza Strategica</h2>
-                <p>Analisi di mercato, posizionamento, go-to-market. Applichiamo il rigore delle migliori società di consulenza, integrate con la potenza dell'AI e senza i loro costi di struttura.</p>
-                <a href="business.html" class="cta-button">Definiamo la strategia → </a>
+            <!-- 1. PER STUDI COMMERCIALI -->
+            <div class="service-box featured">
+                <div class="service-header">
+                    <span class="service-tag">Target Primario • Studi & CFO</span>
+                    <h2>1. Piattaforma Controllo di Gestione Chiavi in Mano</h2>
+                    <p>
+                        Consente allo studio di monetizzare immediatamente nuovi servizi ad alto valore aggiunto. Con pochi passaggi genera diagnosi dello scaduto, calcolo del Capex e gap analysis automatica su parametri di bilancio reali.
+                    </p>
+                    <div class="service-highlights">
+                        <strong>Valore Operativo:</strong> Audit iniziale standardizzato per convertire la contabilità passiva in canoni di consulenza continuativa.
+                    </div>
+                </div>
+                <a href="business.html" class="service-cta primary">Attiva per il tuo Studio →</a>
             </div>
 
-            <div class="content-box">
-                <h2>2. Consulenza Operativa</h2>
-                <p>Supporto mirato per chi ha già iniziato: ottimizzazione di processi, fine-tuning di architetture esistenti, integrazione e supporto tattico per sbloccare il potenziale inespresso.</p>
-                <a href="business.html" class="cta-button">Ottimizziamo il tuo progetto →</a>
+            <!-- 2. PER RETI D'IMPRESA -->
+            <div class="service-box">
+                <div class="service-header">
+                    <span class="service-tag">Target Enterprise • Reti & Associazioni</span>
+                    <h2>2. Motore di Referral Qualificato (Nodi L3 Vetrina)</h2>
+                    <p>
+                        Abilita la mappatura scientifica dello stato di salute dell'intero circuito associativo. Quando l'autodiagnosi dell'associato rileva un divario critico, CtD lo instrada deterministicamente allo specialista competente del network.
+                    </p>
+                    <div class="service-highlights">
+                        <strong>Valore Operativo:</strong> Soluzione generation 1:1 e monetizzazione scientifica dei flussi di referral tra partner specialistici.
+                    </div>
+                </div>
+                <a href="business.html" class="service-cta">Configura per il tuo Network →</a>
             </div>
 
-            <div class="content-box">
-                <h2>3. Partnership e Joint Venture</h2>
-                <p>Condividiamo specifici IP in ottica di co-sviluppo, creazione di 'newco' o joint venture per aggredire nuovi mercati con un vantaggio competitivo unico.</p>
-                <a href="bvc.html" class="cta-button">Valutiamo una partnership →</a>
+            <!-- 3. STRATEGIC IP ALLIANCES -->
+            <div class="service-box">
+                <div class="service-header">
+                    <span class="service-tag">Partnership & IP Licensing</span>
+                    <h2>3. Nuove Practice & Licenze Non Esclusive</h2>
+                    <p>
+                        Condivisione di specifiche proprietà intellettuali (IP) e brevetti per creare nuove practice tecnologiche o joint venture in ambito Big 4, System Integration e Advisory internazionale "Beyond CRM".
+                    </p>
+                    <div class="service-highlights">
+                        <strong>Valore Operativo:</strong> Integrazione dell'infrastruttura deterministica 100% offline su portafogli enterprise e newco.
+                    </div>
+                </div>
+                <a href="leadership.html" class="service-cta">Valuta un'Alleanza IP →</a>
             </div>
 
-            <div class="content-box">
-                <h2>4. Prototipazione Rapida</h2>
-                <p>Realizziamo 'Proof of Concept' e prototipi funzionanti per validare la tua idea sul mercato a basso rischio, in tempi rapidi e con metriche chiare.</p>
-                <a href="business.html" class="cta-button">Richiedi un prototipo →</a>
-            </div>
-
-            <div class="content-box">
-                <h2>5. Realizzazione End-to-End</h2>
-                <p>Prendiamo in carico l'intero progetto: dalla progettazione architetturale allo sviluppo, fino al deployment in produzione e alla manutenzione evolutiva. Le risorse complementari alle nostre e a quelle del cliente verranno erogate da una azienda leader di servizi porfessionali con cui abbiamo stipulato un accordo di partnership strategica.</p>
-                <a href="business.html" class="cta-button">Realizza la tua visione →</a>
+            <!-- 4. PROTO & ASSESSMENT S=C+P+R -->
+            <div class="service-box">
+                <div class="service-header">
+                    <span class="service-tag">Audit & Prototipazione</span>
+                    <h2>4. Proof of Concept & Gap Analysis Operativa</h2>
+                    <p>
+                        Sviluppo di PoC verticali e assessment operativi per validare l'impatto della formula S=C+P+R sulle metriche aziendali a basso rischio, in tempi ridotti e con parametri misurabili.
+                    </p>
+                    <div class="service-highlights">
+                        <strong>Valore Operativo:</strong> Calcolo esatto del ROI decisionale e del costo dell'inazione su processi aziendali complessi.
+                    </div>
+                </div>
+                <a href="business.html" class="service-cta">Richiedi un Assessment →</a>
             </div>
 
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). Tutti i diritti riservati.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). Tutti i diritti riservati. Brevetto per Invenzione Industriale n. 102025000001002.</p>
     </footer>
 
 </body>
