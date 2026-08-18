@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect the DOTS (CtD) - Soluzioni B2B & Advisory Firm</title>
+    <title>Connect the DOTS (CtD) - Servizi Advisory & B2B</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -14,7 +14,6 @@
             --accent-purple-light: #b085f5;
             --text-gray: #a0a0aa;
             --border-color: #242038;
-            --green-secure: #3cd070;
         }
 
         body {
@@ -27,13 +26,13 @@
         }
 
         .services-hero-wrap {
-            max-width: 1100px;
+            max-width: 1080px;
             margin: 40px auto 20px auto;
             text-align: center;
             padding: 0 20px;
         }
 
-        .badge-b2b {
+        .badge-serv {
             display: inline-flex;
             align-items: center;
             background: #18112c;
@@ -48,10 +47,10 @@
         }
 
         .services-title {
-            font-size: 2.7rem;
+            font-size: 2.6rem;
             font-weight: 800;
-            line-height: 1.2;
-            margin: 0 0 10px 0;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
             color: #ffffff;
         }
 
@@ -60,46 +59,41 @@
         }
 
         .services-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #dedee8;
-            max-width: 950px;
-            margin: 20px auto 30px auto;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
             line-height: 1.6;
         }
 
-        /* Engagement Models Grid */
-        .services-grid-wrap {
+        .services-grid {
             max-width: 1100px;
-            margin: 30px auto 60px auto;
+            margin: 0 auto 60px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .service-box {
+        .service-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 28px;
+            padding: 32px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.25s ease;
         }
 
-        .service-box:hover {
+        .service-card:hover {
             border-color: var(--accent-purple-light);
             transform: translateY(-2px);
         }
 
-        .service-box.featured {
+        .service-card.featured {
             border-color: var(--accent-gold);
             background: #151322;
-        }
-
-        .service-header {
-            margin-bottom: 15px;
         }
 
         .service-tag {
@@ -108,76 +102,58 @@
             letter-spacing: 1px;
             font-weight: 700;
             color: var(--accent-purple-light);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: block;
         }
 
-        .service-box.featured .service-tag {
+        .service-card.featured .service-tag {
             color: var(--accent-gold);
         }
 
-        .service-box h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 0 0 10px 0;
+        .service-card h2 {
+            font-size: 1.4rem;
+            margin: 0 0 14px 0;
             color: #ffffff;
         }
 
-        .service-box p {
-            font-size: 0.92rem;
+        .service-card p {
+            font-size: 0.95rem;
             color: var(--text-gray);
-            margin: 0 0 15px 0;
-            line-height: 1.5;
+            line-height: 1.55;
+            margin: 0 0 20px 0;
         }
 
-        .service-highlights {
-            background: #0d0d12;
-            border-left: 3px solid var(--accent-purple);
-            padding: 10px 14px;
-            border-radius: 4px;
-            font-size: 0.82rem;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-
-        .service-box.featured .service-highlights {
-            border-left-color: var(--accent-gold);
-        }
-
-        .service-cta {
-            display: inline-block;
-            background: transparent;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 10px 18px;
+        .service-btn {
+            display: block;
+            text-align: center;
+            background: var(--accent-gold);
+            color: #000000;
+            padding: 13px 20px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             text-decoration: none;
-            text-align: center;
-            transition: all 0.2s ease;
+            transition: opacity 0.2s;
         }
 
-        .service-cta:hover {
-            background: var(--accent-gold);
-            color: #000;
+        .service-btn:hover {
+            opacity: 0.9;
         }
 
-        .service-cta.primary {
-            background: var(--accent-gold);
-            color: #000;
+        .service-btn-secondary {
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
         }
 
-        .service-cta.primary:hover {
-            background: #e5b810;
+        .service-btn-secondary:hover {
+            background: rgba(112, 66, 210, 0.2);
+            color: #ffffff;
         }
 
         @media (max-width: 860px) {
-            .services-grid-wrap {
+            .services-grid {
                 grid-template-columns: 1fr;
-            }
-            .services-title {
-                font-size: 2rem;
             }
         }
     </style>
@@ -201,79 +177,42 @@
 
     <main>
         <div class="services-hero-wrap">
-            <div class="badge-b2b">
-                ⚡ Piattaforma Modulare che parte dove si fermano i migliori CRM • Esecuzione On-Device • Zero Allucinazioni • 100% GDPR Compliance
+            <div class="badge-serv">
+                🏛️ Advisory Strutturato & Modelli B2B
             </div>
             <h1 class="services-title">
-                Un Unico Motore Deterministico.<br>
-                <span>Infinite Soluzioni Modellate sulle Tue Esigenze.</span>
+                Abilita il Valore Determinista per i Tuoi Clienti.<br>
+                <span>Dalla Contabilità Passiva al Controllo di Gestione.</span>
             </h1>
             <p class="services-subtitle">
-                CtD permette a qualsiasi organizzazione di erogare soluzioni sartoriali su misura fornendo ai propri clienti, associati, partner o consumatori finali uno strumento per elaborare in piena autonomia (logica pull) e in assoluta riservatezza (senza mai collegarsi al web) dati personali utili per ottenere vantaggi tangibili come soluzioni personalizzate, offerte speciali, servizi innovativi, ...
+                Offriamo a studi professionali, advisory firm e reti d'impresa l'infrastruttura deterministica di Connect the DOTS per erogare servizi ad altissima marginalità con audit e piani d'azione immediati.
             </p>
         </div>
 
-        <!-- 4 MODELLI DI ADOZIONE B2B -->
-        <section class="services-grid-wrap">
+        <section class="services-grid">
 
-            <!-- 1. STUDI COMMERCIALI CON LE AZIENDE -->
-            <div class="service-box featured">
-                <div class="service-header">
-                    <span class="service-tag">Studi Commerciali con le Aziende</span>
-                    <h2>Piattaforma per introdurre il Controllo di Gestione</h2>
+            <!-- BOX 1: STUDI COMMERCIALISTI & FRACTIONAL CFO -->
+            <div class="service-card featured">
+                <div>
+                    <span class="service-tag">Per Commercialisti & Advisor</span>
+                    <h2>Studi Professionali & Controllo di Gestione</h2>
                     <p>
-                        Consente allo studio di monetizzare immediatamente nuovi servizi ad alto valore aggiunto. Con pochi passaggi genera diagnosi dello scaduto, calcolo del Capex e gap analysis automatica su parametri di bilancio reali.
+                        Attiva il modello CtD per le tue PMI clienti: analisi dello scaduto, marginalità operativa, benchmark di settore e stress test di bilancio eseguiti istantaneamente in RAM, garantendo totale riservatezza on-premise.
                     </p>
-                    <div class="service-highlights">
-                        <strong>Valore Operativo:</strong> Audit iniziale standardizzato per convertire la contabilità passiva in canoni di consulenza continuativa e strategica per l'azienda cliente.
-                    </div>
                 </div>
-                <a href="business.html" class="service-cta primary">Attiva per il tuo Studio →</a>
+                <a href="b2c.html" class="service-btn">Attiva CtD per il Tuo Studio →</a>
             </div>
 
-            <!-- 2. RETI & ASSOCIAZIONI CON LE PMI -->
-            <div class="service-box">
-                <div class="service-header">
-                    <span class="service-tag">Reti & Associazioni con le PMI</span>
-                    <h2>Piattaforma per incentivare l'utilizzo dei servizi dell'Associazione</h2>
+            <!-- BOX 2: RETI D'IMPRESA & IP PARTNERSHIP -->
+            <div class="service-card">
+                <div>
+                    <span class="service-tag">Per Associazioni & Network</span>
+                    <h2>Reti d'Impresa & Licensing Proprietario</h2>
                     <p>
-                        Abilita la mappatura scientifica dello stato di salute dell'intero circuito associativo. Quando l'autodiagnosi dell'associato rileva un divario critico, CtD lo instrada deterministicamente ai servizi e agli specialisti competenti del network.
+                        Integra i nodi di competenza deterministici all'interno del tuo ecosistema associativo o costruisci partnership verticali di Go-To-Market su licenza brevettata CtD.
                     </p>
-                    <div class="service-highlights">
-                        <strong>Valore Operativo:</strong> Soluzione generation 1:1 e monetizzazione scientifica dei flussi di referral tra partner specialistici senza dispersioni.
-                    </div>
                 </div>
-                <a href="business.html" class="service-cta">Configura per il tuo Network →</a>
-            </div>
-
-            <!-- 3. INVESTITORI E START-UP ALLA RICERCA DI NUOVI GTM -->
-            <div class="service-box">
-                <div class="service-header">
-                    <span class="service-tag">Investitori e Start-up alla ricerca di nuovi GTM</span>
-                    <h2>Licenza d'uso degli IP per sviluppo soluzioni proprietarie</h2>
-                    <p>
-                        Condivisione di specifiche proprietà intellettuali (IP) e brevetti per creare nuove practice tecnologiche, joint venture o abilitare piattaforme terze ad altissima riservatezza "Beyond CRM".
-                    </p>
-                    <div class="service-highlights">
-                        <strong>Valore Operativo:</strong> Integrazione dell'infrastruttura deterministica 100% offline su portafogli di investimento, startup e newco.
-                    </div>
-                </div>
-                <a href="leadership.html" class="service-cta">Richiedi Partnership IP →</a>
-            </div>
-
-            <!-- 4. ENTERPRISE CHE VANNO OLTRE IL CRM -->
-            <div class="service-box">
-                <div class="service-header">
-                    <span class="service-tag">Enterprise che vanno oltre il CRM</span>
-                    <h2>Profilazione e Personalizzazione dell'offerta in compliance col GDPR</h2>
-                    <p>
-                        Mappatura specialistica della conoscenza aziendale in nodi strutturati e allestimento rapido di canali commerciali pull, eliminando l'attrito dei vecchi modelli di vendita push.
-                    </p>
-                    <div class="service-highlights">
-                        <strong>Valore Operativo:</strong> Dai requisiti di conformità a un canale Go-To-Market funzionante, scalabile e misurabile in tempi ridotti.
-                    </div>
-                </div>
-                <a href="business.html" class="service-cta">Avvia Progetto Pilota →</a>
+                <a href="bvc.html" class="service-btn persona-btn-secondary">Configura per il Tuo Network →</a>
             </div>
 
         </section>
