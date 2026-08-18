@@ -3,257 +3,389 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The CtD Platform - Our IP</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Link a style.css -->
+    <title>Connect the DOTS (CtD) - Deterministic Computing Infrastructure & IP</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+            --green-secure: #3cd070;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .platform-wrap {
+            max-width: 1100px;
+            margin: 40px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .badge-ip {
+            display: inline-block;
+            background: #18112c;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        .platform-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .platform-subtitle {
+            font-size: 1.35rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+
+        .platform-intro {
+            font-size: 1.05rem;
+            color: #dedee8;
+            text-align: center;
+            max-width: 880px;
+            margin: 0 auto 40px auto;
+            line-height: 1.65;
+        }
+
+        /* 4 Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .pillar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--accent-purple-light);
+            transform: translateY(-2px);
+        }
+
+        .pillar-card.active {
+            border-color: var(--accent-gold);
+            background: #161324;
+            box-shadow: 0 0 20px rgba(245, 197, 24, 0.15);
+        }
+
+        .pillar-tag {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            color: var(--accent-purple-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .pillar-card.active .pillar-tag {
+            color: var(--accent-gold);
+        }
+
+        .pillar-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .pillar-desc {
+            font-size: 0.88rem;
+            color: var(--text-gray);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Deep-Dive Interactive Details Container */
+        .pillar-detail-box {
+            background: #0d0d12;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 30px 35px;
+            margin-top: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .detail-h3 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .detail-badge-check {
+            font-size: 0.78rem;
+            color: var(--green-secure);
+            font-weight: 700;
+            background: #112017;
+            border: 1px solid var(--green-secure);
+            padding: 4px 12px;
+            border-radius: 14px;
+        }
+
+        .detail-text {
+            font-size: 0.95rem;
+            color: #dedee8;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .detail-text strong {
+            color: #ffffff;
+        }
+
+        .detail-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .detail-bullet-list li {
+            font-size: 0.92rem;
+            color: #c5c5d2;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .detail-bullet-list li span {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .formula-spec-box {
+            background: #141124;
+            border-left: 3px solid var(--accent-gold);
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #dedee8;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .platform-title {
+                font-size: 2rem;
+            }
+            .detail-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
+                <a href="platform.html" class="active">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosystem & GTM</a>
+                <a href="founders.html">SME Autarchy</a>
                 <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="../platform.html" style="color: #FAE100; font-weight: bold;">IT</a>
+                | <a href="/platform.html" style="color: var(--accent-gold); font-weight: bold;">IT</a>
             </div>
         </nav>
-
-        <div class="hero-text platform-hero">
-            <h1>How we connect demand with supply</h1>
-        </div>
     </header>
 
-    <main>
-        <section class="platform-intro">
-            <p>Click on each of the 15 "Intellectual Properties" of the CtD Platform to discover how we have overcome the challenges that traditional cloud systems cannot solve.</p>
-        </section>
+    <main class="platform-wrap">
+        
+        <div style="text-align: center;">
+            <span class="badge-ip">Patent Pending • Patent Application n. 102025000001002</span>
+        </div>
 
-        <section class="ip-grid">
-            <div class="ip-block block-yellow" onclick="showInfo('ip1')">1. KG Model</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip2')">2. DOT</div>
-            <div class="ip-block block-yellow" onclick="showInfo('ip3')">3. SWOT</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip4')">4. ROI</div>
-            <div class="ip-block block-yellow" onclick="showInfo('ip5')">5. Connect</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip6')">6. Inpuls</div> 
-            <div class="ip-block block-yellow" onclick="showInfo('ip7')">7. Next Best</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip8')">8. Profile</div>
-            <div class="ip-block block-yellow" onclick="showInfo('ip9')">9. Prompting</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip10')">10. Onboarding</div>
-            <div class="ip-block block-yellow" onclick="showInfo('ip11')">11. Synapse</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip12')">12. Confidential</div>
-            <div class="ip-block block-yellow" onclick="showInfo('ip13')">13. Multimodal</div>
-            <div class="ip-block block-purple" onclick="showInfo('ip14')">14. Coach</div>
-            <div class="ip-block block-yellow" onclick="showInfo('ip15')">15. Agentic AI</div>
-        </section>
+        <h1 class="platform-title">Deterministic Computing Infrastructure</h1>
+        <h2 class="platform-subtitle">The 4 Pillars of Our Intellectual Property</h2>
 
-        <section id="info-box-container">
-            <div id="info-box">
-                <p>Click on a block to read its description and strategic value.</p>
+        <p class="platform-intro">
+            We overcome the structural limits of cloud architectures and probabilistic hallucinations. CtD is a patented software architecture unifying in real time, inside a 100% offline model: leading AI models, SME domain expertise, and your local user profile that customizes operations with zero data leakage.
+        </p>
+
+        <!-- 4 PILLARS INTERACTIVE GRID -->
+        <section class="pillars-grid">
+            
+            <div class="pillar-card active" onclick="selectPillar('p1', this)">
+                <span class="pillar-tag">Pillar 01 • Security & Privacy</span>
+                <h3 class="pillar-title">100% Offline & Profilo aggiornato</h3>
+                <p class="pillar-desc">
+                    Zero data leakage. On-device execution and local embeddings (ONNX/LaBSE) with full GDPR compliance and automated anonymization.
+                </p>
             </div>
+
+            <div class="pillar-card" onclick="selectPillar('p2', this)">
+                <span class="pillar-tag">Pillar 02 • Mathematical Rigor</span>
+                <h3 class="pillar-title">Deterministic Engine (S = C + P + R)</h3>
+                <p class="pillar-desc">
+                    Algorithmic calculation in RAM via <em>_healDatabaseRollups</em>. Exact results with zero generative drift or network approximation.
+                </p>
+            </div>
+
+            <div class="pillar-card" onclick="selectPillar('p3', this)">
+                <span class="pillar-tag">Pillar 03 • Dynamic Topology</span>
+                <h3 class="pillar-title">Bidirectional Logical Synapses</h3>
+                <p class="pillar-desc">
+                    Decoupling between the structural database hierarchy and horizontal in-RAM workflow inside <em>UserSynapseState</em>.
+                </p>
+            </div>
+
+            <div class="pillar-card" onclick="selectPillar('p4', this)">
+                <span class="pillar-tag">Pillar 04 • Enterprise Scalability</span>
+                <h3 class="pillar-title">Multi-Partner Prism Segregation</h3>
+                <p class="pillar-desc">
+                    Parallel Token architecture enabling advisory practices to apply specialized analytical lenses without contaminating the master tree.
+                </p>
+            </div>
+
         </section>
 
-        <section class="platform-cta">
-            <h3>This is our architecture.</h3>
-            <p>Now that you've seen the <i>What</i>, discover the <i>How</i>. See how we apply this platform to revolutionize business models or how you can join us to build on it.</p>
-            <a href="business.html" class="cta-button">See Business Solutions</a>
-            <a href="founders.html" class="cta-button">Join the Founders</a>
-        </section>
+        <!-- DEEP-DIVE CONTAINER -->
+        <div class="pillar-detail-box" id="pillar-detail">
+            
+            <div class="detail-header">
+                <h3 class="detail-h3" id="p-title">1. 100% Offline Architecture, "Profilo aggiornato" & Bypassing GDPR</h3>
+                <span class="detail-badge-check" id="p-badge">🔒 Certified Zero Anomalies</span>
+            </div>
+
+            <p class="detail-text" id="p-text">
+                Unlike cloud-based systems that centralize diverse data on remote servers—exposing organizations to privacy breach risks—the CtD platform is engineered to operate <strong>natively without an internet connection</strong>.
+            </p>
+
+            <ul class="detail-bullet-list" id="p-list">
+                <li><span>•</span> <strong>Local Execution:</strong> Semantic search, vector embeddings, and mathematical calculations execute entirely on your machine.</li>
+                <li><span>•</span> <strong>Profilo aggiornato:</strong> Local encrypted cache that accumulates user decisions and preferences without ever transmitting sensitive parameters externally.</li>
+                <li><span>•</span> <strong>Total Regulatory Compliance:</strong> Eliminates third-party GDPR exposure by design, keeping confidential business assets locked on-premise.</li>
+            </ul>
+
+            <div class="formula-spec-box" id="p-formula">
+                <strong>Core Component:</strong> On-device Vector Engine + Encrypted Local Storage with Automated Data Anonymization.
+            </div>
+
+        </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). All rights reserved. Industrial Patent n. 102025000001002.</p>
     </footer>
 
     <script>
-        // Database with all 15 descriptions
-        const ipDescriptions = {
-            'ip1': `
-                <h3>1. Unified Knowledge Model (Vector KG)</h3>
-                <p><strong>The Value:</strong> Merges 3 knowledge domains (Persona Profile, Business SME, AI Logic) into a single strategic "brain".</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    Instead of managing knowledge in silos (CRM, databases, AI models), our IP applies a <strong>single model</strong> to manage 3 fundamental domains: the Person's Profile (P), the Business's Expertise (SME), and the AI's logic (AI).
-                    The real innovation is that the Platform <i>merges</i> these domains into a <strong>single Knowledge Graph (KG)</strong> for that specific Person. <strong>The advantage for the Person is enormous:</strong> they no longer interact with 3 separate systems (their profile, the B2C site, an AI chatbot), but with a <i>single</i> assistant (block 14) that already has all the P+B context.
-                    Technically, we use <strong>vectors</strong> to represent each node of the graph (needs, products, concepts). This enables powerful <strong>similarity searches</strong>, allowing the system to find solutions not just for <i>what the Person asks</i>, but for <i>what the Person means</i>.</p>`,
-            'ip2': `
-                <h3>2. DOT (The Atom of Knowledge)</h3>
-                <p><strong>The Value:</strong> It is the fundamental unit of "meaning" for the platform.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP is the heart of the "Connect the DOTS" philosophy. The DOT is not just <i>data</i>; it is the <strong>"atom"</strong> (the smallest element) with which the system thinks. A DOT can be anything: a Person's <i>topic</i>, a latent <i>need</i>, your SME <i>routine</i>, a Business <i>product</i>, a <i>task</i>.
-                    The platform is designed to allow the Person and the Business to continuously "discover" new DOTs they didn't know existed.
-                    The innovation lies in how we study these atoms to "pursue our goals":
-                    1. <strong>In-Depth (Hierarchy):</strong> We can "drill down" into a DOT to understand its components and analyze its "children" (e.g., a Project is a DOT composed of DOT-Tasks).
-                    2. <strong>In-Width (Logic):</strong> We can see how one DOT is connected to others through <strong>Synapses</strong> (block 11).
-                    It is by studying this atomic network that the system (and the user) "learns and memorizes useful things" and creates the perfect match between P and B.</p>`,
-            'ip3': `
-                <h3>3. SWOT: The AI Strategic Support</h3>
-                <p><strong>The Value:</strong> Transforms strategic analysis from a static report into <i>continuous decision support</i> provided by AI.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    Traditional SWOT is a static tool used by Business. Our IP transforms SWOT into the primary <strong>strategic support that AI provides to the Person</strong> (and, consequently, to the Business).
-                    The innovation lies in the <i>how</i>: the platform's AI <strong>dynamically and personally processes the information already stored in the Person's profile</strong> (their <strong>DOTs</strong>, block 2, of <i>Skills</i>, <i>Needs</i>, <i>Resources</i>).
-                    By cross-referencing this data with the Business's <strong>DOTs</strong> (Opportunities) and the market's (Threats), the AI doesn't generate a report, but a <i>continuous strategic dialogue</i>. The Person gets a private AI consultant that guides their choices (what to learn, what to buy). The Business no longer needs to "sell," but only to respond to an already qualified and conscious need, identified by the Person's own AI.</p>`,
-            'ip4': `
-                <h3>4. Decisional ROI (The Cost of Inaction)</h3>
-                <p><strong>The Value:</strong> Applies a Return on Investment (ROI) calculation to <i>every</i> daily decision, including the alternative of not deciding.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This is a fundamental IP that transforms the P-B relationship.
-                    <strong>For the Person:</strong> People make most decisions "by gut," often prompted by a seller's "push" activity. Our IP reverses this model. The AI (using SWOT, block 3) calculates and <strong>associates a clear decisional ROI with every Node (DOT)</strong>. For the first time, the Person can objectively compare the ROI of a choice (e.g., buying a service) against the powerful alternative of <strong>not deciding</strong>, seeing its cost or missed opportunity. It's a pocket strategic advisor.
-                    <strong>For the Business:</strong> The Business stops "pushing" products and starts to <i>prove</i> its value analytically. The success metric for the Business becomes the <strong>"Return on Involvement"</strong>: it no longer measures how many times it "sells," but how many times the Person <i>relies on</i> this IP (and thus the Business's solutions) to make a better decision.</p>`,
-            'ip5': `
-                <h3>5. Connect (The Ultra-Qualified Matching)</h3>
-                <p><strong>The Value:</strong> Creates the perfect match between an ultra-qualified need from the Person and an ultra-personalized solution from the Business.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP is the strategic "place" where the "Connect the DOTS" promise is fulfilled. It's here that we <strong>bring together</strong> two elements that never communicate in traditional systems:
-                    1. An <strong>ultra-qualified demand</strong>: This isn't a simple "lead," but the <strong>direct expression of the Person's profile</strong> (their <strong>DOTs</strong>, <strong>SWOT</strong> analysis, <strong>ROI</strong> decisional). It is a conscious, validated, and strategically clear need.
-                    2. An <strong>ultra-specialized and personalized value proposition</strong>: The provider of products and services doesn't respond with a standard offer, but with a solution <i>built</i> (or assembled) specifically for that unique demand.
-                    This is not "lead generation." It is <i>Solution Generation</i> 1:1, where the Person's conscious demand meets the Business's perfect execution capability.</p>`,
-            'ip6': `
-                <h3>6. Inpuls (The Stimulus for the New)</h3> 
-                <p><strong>The Value:</strong> Provides the strategic spark to overcome inertia and look at an unknown opportunity.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    You perfectly defined the purpose of this IP: <strong>CtD must be able to provide you with the impulse or stimulus to look at something new you didn't know about until yesterday.</strong>
-                    This block is not a "plan," it's the <strong>trigger</strong>. It analyzes the Person's profile (using <strong>SWOT</strong> and <strong>ROI</strong>) to identify a high-potential <strong>DOT</strong> (an opportunity, an idea, a risk) that the Person is ignoring due to inertia.
-                    Its sole job is to generate initial curiosity and provide the "push" for the first action. As you said, <strong>then the rest of the processes</strong> (like <i>Connect</i>, <i>Next Best</i>, or the Assistant) <strong>can take you by the hand</strong> to do the necessary things to change.
-                    For the Business, this is the strategic "hook" that overcomes the customer's resistance to change. For the Person, it's the spark that ignites a new awareness.</p>`,
-            'ip7': `
-                <h3>7. Next Best (The Proactive Guide)</h3>
-                <p><strong>The Value:</strong> The non-invasive guide that suggests your next best action to keep progressing and never stop.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP is the guarantee that CtD <strong>never lets you "rest on your laurels" or get stuck on problems</strong>. After the "Inpuls" (block 6) gets you moving, the "Next Best" becomes your proactive guide.
-                    The innovation lies in <i>how</i> it does it: <strong>without being invasive</strong>, the AI Assistant suggests the <i>next best activity</i> to:
-                    1. <strong>Achieve a set goal</strong> (e.g., "The next step to complete your project is...").
-                    2. <strong>Complete the study of a subject</strong> (e.g., "To master this topic, you should now analyze this related DOT...").
-                    3. <strong>Expose the Person to a critical insight</strong>: Sometimes, the AI exposes you to <strong>something that only CtD knows you need to understand</strong>, merging your private profile (block 9) with its knowledge (block 1) in a way no other system can.
-                    For the Business, this is the engine that ensures continuous use and long-term value of their solution, guiding the customer to success.</p>`,
-            'ip8': `
-                <h3>8. Profile (The AI Digital Key)</h3>
-                <p><strong>The Value:</strong> Transforms your personal data from a "risk" into a "strategic key" to become a power user of Artificial Intelligence.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    In current systems, your "profile" is a set of data controlled by the Business. Our IP flips this: the CtD <strong>Profile</strong> is your personal <strong>"digital key"</strong> to the AI world.
-                    It is the "digital dynamic copy" of yourself that <i>only you</i> control. The innovation is that, instead of being "used" by AI (which trains on your cloud data), you are the one <strong>using AI as a "power user"</strong> in everything that interests you: <strong>health, profession, work</strong>.
-                    It is the central asset that allows the CtD AI (like <strong>SWOT</strong> or <strong>Next Best</strong>) to work <i>for you</i> with surgical precision. The Business no longer interacts with a "lead," but with a "power user" who is aware and uses their Profile to get exactly what they need.</p>`,
-            'ip9': `
-                <h3>9. Prompting (Context Engineering)</h3>
-                <p><strong>The Value:</strong> Automates the creation of perfect prompts, maximizing AI effectiveness at zero cost and in complete safety.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    The effectiveness of any AI depends on "prompt engineering." Our IP automates this process for the Person and the Business.
-                    <strong>We explain how using the "Profile" (block 8) is necessary to maximize prompt engineering effectiveness</strong>: the AI Assistant (block 14) doesn't ask the AI a generic question. It "takes" your <strong>Profile</strong> and uses it as <i>automatic context</i> to build a rich, detailed, and perfect prompt, getting an infinitely more useful answer.
-                    The advantage is twofold and crucial:
-                    1. <strong>Security:</strong> <strong>We can do this securely on the Person's device</strong>. Your private data (the Profile) enriches the prompt, but <i>never</i> leaves your device.
-                    2. <strong>Cost:</strong> This process is instantaneous and <strong>without the AI costs</strong> that we have already incurred in pre-production. It leverages our on-device "Distilled Router," giving you the power of expensive AI, but for free and in private.</p>`,
-            'ip10': `
-                <h3>10. Onboarding (The Dynamic Profiler)</h3>
-                <p><strong>The Value:</strong> Transforms profiling from a "static questionnaire" into an "interactive and automatic dialogue" that learns from you.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    Traditional onboarding is the main obstacle to profiling: a long, rigid, and "flat" questionnaire that asks you the same things it asked everyone else.
-                    Our IP is a radically different profiling system:
-                    1. <strong>It's Dynamic:</strong> It's not a single block. You can <strong>start the profiling exercise and stop it whenever you want</strong>. You never lose your progress.
-                    2. <strong>It's Automatic:</strong> It doesn't ask you everything. It starts to <strong>automatically memorize your behaviors, tastes, and intentions</strong> (your <strong>DOTs</strong>) as you use the platform.
-                    3. <strong>It's Fully Personalized:</strong> When it asks you a question, it's based on <strong>your previous answers</strong>. It's an adapting dialogue, not a static form.
-                    For the Person, it's a rewarding experience. For the Business, it's an engine that gathers data of unreachable depth and quality, because it's based on real interaction, not forced answers.</p>`,
-            'ip11': `
-                <h3>11. Synapse (The Logical Network)</h3>
-                <p><strong>The Value:</strong> It is the "connective tissue" of the platform, the IP that allows creating logical connections between any element.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    Traditional systems force the user into rigid hierarchies (folders, files). Our IP is the <strong>Synapse</strong>, the strategic element that allows you to <strong>connect DOTs of any type</strong>, creating a logical network that maps your way of thinking.
-                    This IP allows you to:
-                    - <strong>Take notes</strong> contextually (creating a Synapse between your thought and a DOT-Project).
-                    - <strong>Associate ideas with content</strong> (linking your <strong>DOT</strong>-Idea to a <strong>DOT</strong>-Article).
-                    - <strong>Connect events</strong> and track your path.
-                    This last point is crucial: you can use Synapses to <strong>connect the individual steps you take on your journey</strong> (like those from the "Motivation Engine," block 6). It is the act of <i>creating</i> (Person) or <i>discovering</i> (AI) these connections that generates the true value and intelligence of the platform.</p>`,
-            'ip12': `
-                <h3>12. Confidential (The Permission Token)</h3>
-                <p><strong>The Value:</strong> Puts the Person at the center, transforming privacy from a "static setting" to an "active process of granular authorization".</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP is the operational engine of trust and the key to the platform. As you defined, in CtD <strong>the Person is at the center of all processes</strong>. Their data (the <strong>Profile</strong>, block 8) is confidential by default.
-                    The innovation lies in <i>how</i> the Business interacts: <strong>we give the Business the ability to <i>request</i> a piece of information, but only with the Person's specific authorization to share <i>that single piece of information</i></strong>.
-                    It's <strong>just like a blockchain token</strong>: the Person "mints" a unique, traceable, and revocable permission for a single <strong>DOT</strong> and a single purpose. The Business doesn't "access" the Person's database; it receives this "token" of permission. This flips the B2C model: privacy is not a wall, but a secure bridge, controlled 1:1 by the Person.</p>`,
-            'ip13': `
-                <h3>13. Multimodal (Adaptive Interaction)</h3>
-                <p><strong>The Value:</strong> Allows the Person to interact with the platform in the most natural way (text, voice, images) and receive multimedia-level personalized content.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP defines "how" the Person and Business dialogue. <strong>Thanks to AI, we natively use text, voice, and images</strong> to make interaction (like <strong>Onboarding</strong>, block 10) fluid and natural.
-                    But the real <strong>added value</strong> (which we will enable in "Pro" or "Ultra" versions) is a step beyond: we don't just <i>understand</i> multimedia, we <i>create</i> it.
-                    The platform will have the ability to <strong>personalize individual multimedia content</strong> (an audio, a video, an infographic) <strong>using the Person's "Profile"</strong> (block 8). The Business will no longer send "one video for all," but will send a "logic" (block 6) that the on-device AI will use to assemble multimedia content created <i>just for that Person</i>, ensuring an unattainable level of 1:1 personalization and impact.</p>`,
-            'ip14': `
-                <h3>14. Coach (The Private AI Consultant)</h3>
-                <p><strong>The Value:</strong> Synthesizes all the platform's IPs to act as a true strategic personal Coach, on-device and trusted.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP is the "face" of the platform and the final result of all our work. As you rightly defined, <strong>the personalized combination of <i>all</i> of CtD's IPs leads the platform to act as a true Coach.</strong>
-                    It is not a "chatbot" (which answers questions) and not an "assistant" (which executes commands). It is a <strong>Coach</strong> that works only for the Person:
-                    - It uses <strong>Inpuls</strong> (block 6) to stimulate you and overcome inertia.
-                    - It uses <strong>Next Best</strong> (block 7) to guide you on your path.
-                    - It uses <strong>SWOT</strong> (block 3) and <strong>ROI</strong> (block 4) to give you strategic advice on your decisions.
-                    - It uses <strong>Prompting</strong> (block 9) to get the most out of AI, in private.
-                    For the Person, it's a trusted advisor. For the Business, the interaction changes radically: it no longer talks to a confused "customer," but dialogues with the Person's "Coach," an entity that has already qualified the needs and validated the offer's value.</p>`,
-            'ip15': `
-                <h3>15. Agentic AI (Augmented Intelligence)</h3>
-                <p><strong>The Value:</strong> Augments the power of CtD's algorithms with confidential AI analysis, comparing the Person's profile with the outside world.</p>
-                <p><strong>The Innovation (for the P<->B relationship):</strong>
-                    This IP is the evolution of our "Distilled Router." We don't just use pre-written algorithms. As you defined, <strong>where useful, the algorithms already developed in CtD will see their behaviors further "augmented"</strong> by superior intelligence.
-                    The innovation lies in the <strong>real-time analysis that only AI can perform</strong> in two ways:
-                    1. <strong>Confidential:</strong> The AI analyzes the <strong>Person's "Profile"</strong> (block 8) <strong>in absolute confidentiality</strong> on their device.
-                    2. <strong>Benchmark:</strong> It compares this private data with <strong>the rest of the world</strong> (market data, trends, anonymized averages), performing constant strategic benchmarking.
-                    This creates a hybrid system: local AI agents handle sensitive data, while they can interact with cloud agents to get external context. This gives the Person a vision (and a <strong>Coach</strong>, block 14) that is not only personal but also world-aware.</p>`
+        const pillarsData = {
+            'p1': {
+                title: "1. 100% Offline Architecture, \"Profilo aggiornato\" & Bypassing GDPR",
+                badge: "🔒 Certified Zero Anomalies",
+                text: "Unlike cloud-based systems that centralize diverse data on remote servers—exposing organizations to privacy breach risks—the CtD platform is engineered to operate <strong>natively without an internet connection</strong>.",
+                bullets: [
+                    "<strong>Local Execution:</strong> Semantic search, vector embeddings, and mathematical calculations execute entirely on your machine.",
+                    "<strong>Profilo aggiornato:</strong> Local encrypted cache that accumulates user decisions and preferences without ever transmitting sensitive parameters externally.",
+                    "<strong>Total Regulatory Compliance:</strong> Eliminates third-party GDPR exposure by design, keeping confidential business assets locked on-premise."
+                ],
+                formula: "<strong>Core Component:</strong> On-device Vector Engine + Encrypted Local Storage with Automated Data Anonymization."
+            },
+            'p2': {
+                title: "2. Deterministic Engine (S = C + P + R) & Rollups in RAM",
+                badge: "⚡ Exact Mathematical Computing",
+                text: "CtD eliminates generative AI hallucinations by relying on a <strong>purely deterministic mathematical engine</strong> where every recommendation is derived from validated logical rules.",
+                bullets: [
+                    "<strong>Formula S = C + P + R:</strong> Soluzione (S) is calculated dynamically from Competenze (C), Profilo aggiornato (P), and Vincoli Operativi (R).",
+                    "<strong>RAM Self-Healing Rollups:</strong> The <em>_healDatabaseRollups</em> algorithm calculates aggregations and SWOT trees directly in RAM to ensure zero arithmetic error.",
+                    "<strong>Deterministic SWOT:</strong> Unexplored nodes are mathematically evaluated as structural threats (10) and weaknesses (10) until explicitly reviewed."
+                ],
+                formula: "<strong>Mathematical Formula:</strong> S = C + P + R • Dynamic RAM Rollup Calculation via exact node scoring."
+            },
+            'p3': {
+                title: "3. Bidirectional Logical Synapses & Decoupled Graph",
+                badge: "🔄 Dynamic Synaptic Topology",
+                text: "Traditional database hierarchies are rigid and unsuited for complex workflows. CtD decouples the <strong>vertical structural hierarchy</strong> from the <strong>horizontal operational workflow</strong>.",
+                bullets: [
+                    "<strong>Vertical Grouping:</strong> Structural relationship (Parent <-> Child) organizes domains and competencies without constraining execution.",
+                    "<strong>Horizontal Synapses:</strong> Bidirectional synapses (<em>UserSynapseState</em>) connect peers, tasks, and routines across identical graph depths.",
+                    "<strong>Persistent Navigation:</strong> Vector search states and multi-directional node traversals remain locked in local memory during deep graph drill-down."
+                ],
+                formula: "<strong>Graph Architecture:</strong> 931 Master Nodes + Multi-Relational Synaptic Flow (<em>evolvedFrom</em>, <em>peerFlow</em>)."
+            },
+            'p4': {
+                title: "4. Multi-Partner Prism Segregation & Parallel Tokens",
+                badge: "🏢 Enterprise Multi-Client Isolation",
+                text: "Designed for advisory firms, fractional executives, and corporate networks, CtD enables <strong>managing multi-client instances simultaneously</strong> without cross-contamination.",
+                bullets: [
+                    "<strong>Parallel Tokens:</strong> Accounting and advisory firms can execute discrete, client-specific audits with isolated local caches.",
+                    "<strong>L3 SME Domain Nodes:</strong> Certified external experts plug into specialized nodes without exposing the enterprise master tree.",
+                    "<strong>Zero Overhead:</strong> Instantaneous instantiation of client profiles computed locally with zero cloud subscription overhead."
+                ],
+                formula: "<strong>Scalability Framework:</strong> Client Token Parallelism + Dynamic L3 SME Node Encapsulation."
+            }
         };
 
-        // Funzione per mostrare le informazioni nel box
-        function showInfo(ipId) {
-            const infoBox = document.getElementById('info-box');
-            if (ipDescriptions[ipId]) {
-                infoBox.innerHTML = ipDescriptions[ipId];
-            } else {
-                infoBox.innerHTML = '<p>Description not found. Click on another block.</p>';
-            }
-            
-            // Aggiorna i nomi visualizzati nella griglia
-            const blocks = {
-                'ip1': '1. KG Model', 'ip2': '2. DOT', 'ip3': '3. SWOT', 'ip4': '4. ROI', 'ip5': '5. Connect',
-                'ip6': '6. Inpuls', 'ip7': '7. Next Best', 'ip8': '8. Profile', 'ip9': '9. Prompting', 'ip10': '10. Onboarding',
-                'ip11': '11. Synapse', 'ip12': '12. Confidential', 'ip13': '13. Multimodal', 'ip14': '14. Coach', 'ip15': '15. Agentic AI'
-            };
-            const gridBlocks = document.querySelectorAll('.ip-block');
-            let i = 1;
-            gridBlocks.forEach(block => {
-                block.textContent = blocks['ip'+i];
-                // Assegna la classe di colore corretta
-                if (i % 2 !== 0) { // Dispari -> Giallo
-                    block.classList.remove('block-purple');
-                    block.classList.add('block-yellow');
-                } else { // Pari -> Viola
-                    block.classList.remove('block-yellow');
-                    block.classList.add('block-purple');
-                }
-                i++;
-            });
-        }
-        
-        // Al caricamento, aggiorno i nomi sulla griglia
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const blocks = {
-                'ip1': '1. KG Model', 'ip2': '2. DOT', 'ip3': '3. SWOT', 'ip4': '4. ROI', 'ip5': '5. Connect',
-                'ip6': '6. Inpuls', 'ip7': '7. Next Best', 'ip8': '8. Profile', 'ip9': '9. Prompting', 'ip10': '10. Onboarding',
-                'ip11': '11. Synapse', 'ip12': '12. Confidential', 'ip13': '13. Multimodal', 'ip14': '14. Coach', 'ip15': '15. Agentic AI'
-            };
-            const gridBlocks = document.querySelectorAll('.ip-block');
-            let i = 1;
-            gridBlocks.forEach(block => {
-                block.textContent = blocks['ip'+i];
-                // Assegna la classe di colore corretta all'inizializzazione
-                if (i % 2 !== 0) { // Dispari -> Giallo
-                    block.classList.add('block-yellow');
-                } else { // Pari -> Viola
-                    block.classList.add('block-purple');
-                }
-                i++;
-            });
-        });
-    </script>
+        function selectPillar(id, cardElement) {
+            document.querySelectorAll('.pillar-card').forEach(c => c.classList.remove('active'));
+            cardElement.classList.add('active');
 
+            const data = pillarsData[id];
+            if (!data) return;
+
+            document.getElementById('p-title').innerText = data.title;
+            document.getElementById('p-badge').innerText = data.badge;
+            document.getElementById('p-text').innerHTML = data.text;
+            
+            const listElement = document.getElementById('p-list');
+            listElement.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>•</span> ${b}`;
+                listElement.appendChild(li);
+            });
+
+            document.getElementById('p-formula').innerHTML = data.formula;
+        }
+    </script>
 </body>
 </html>
