@@ -3,50 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership - CtD</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Link a style.css -->
+    <title>Connect the DOTS (CtD) - Executive Leadership & Vision</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .leadership-wrap {
+            max-width: 960px;
+            margin: 40px auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .badge-lead {
+            display: inline-block;
+            background: #18112c;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        .lead-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .lead-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 35px 0;
+            line-height: 1.4;
+        }
+
+        .quote-box {
+            background: #121020;
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #dedee8;
+        }
+
+        .quote-box p {
+            margin: 0 0 16px 0;
+        }
+
+        .quote-box p:last-child {
+            margin: 0;
+        }
+
+        /* 3 Metrics Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* 2-Column Detail Section */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .detail-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .detail-card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin: 0 0 14px 0;
+            font-weight: 700;
+        }
+
+        .detail-card p {
+            font-size: 0.92rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0 0 14px 0;
+        }
+
+        .detail-card p:last-child {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid, .detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .lead-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
-                <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="../leadership.html" style="color: #FAE100; font-weight: bold;">IT</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosystem & GTM</a>
+                <a href="founders.html">SME Autarchy</a>
+                <a href="leadership.html" class="active">Leadership</a>
+                | <a href="/leadership.html" style="color: var(--accent-gold); font-weight: bold;">IT</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-             <h1>Alberto Consani</h1>
-            <p>"At 74, I use AI daily to augment, accelerate, and substantiate the value I have always brought to Business, thanks to the experience accumulated working internationally for nearly 50 years for blue-chip companies, leaders in the ICT, FMCG, SW, Professional Services, and Consulting industries."</p>
-        </div>
     </header>
-    <main>
-        <section class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div class="content-box">
-                <h2>The journey I make available to you</h2>
-                <p>I spent the last 18 months studying and programming in every free minute from my work as a Senior Executive Advisor for Bip, the largest Italian professional services company, to create a working prototype of Connect the DOTS. I felt the need to experiment, firsthand, with what you read and hear about AI. I started using Gemini 2.5 from its debut, and now I use the Ultra version in parallel on 2 machines and simultaneously on 4 windows to produce and test SW and content. I must say, I still find it hard to believe what I have already managed to do, exponentially increasing not only my productivity but also the things I learned to do that previously required the collaboration of dozens of people.</p>
+
+    <main class="leadership-wrap">
+        
+        <div style="text-align: center;">
+            <span class="badge-lead">Executive Leadership & Vision</span>
+        </div>
+
+        <h1 class="lead-title">Alberto Consani - Beyond CRM</h1>
+        <h2 class="lead-subtitle">Configuring Solutions to the Customer's Profile in Strict GDPR Compliance</h2>
+
+        <div class="quote-box">
+            <p>
+                At 75, I use Artificial Intelligence directly—including for software engineering—to multiply, accelerate, and substantiate the value I have delivered to clients for over half a century. I have lived through and anticipated every technological revolution: from the earliest mainframes to personal computing, from mobile telephony to AI, steering organizations to adopt them profitably ahead of the curve.
+            </p>
+            <p>
+                Today, through an advanced and focused use of AI, I made the leap from advisory to the direct engineering of a proprietary platform: a solution synthesizing 50 years of international executive leadership with blue-chip companies (ICT, FMCG, Software, and Management Consulting) to unlock service models and customer loyalty that traditional CRM platforms cannot deliver.
+            </p>
+        </div>
+
+        <!-- 3 STATS CARDS -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-num">50+ Years</div>
+                <div class="stat-label">Enterprise Leadership, Sales & Software Delivery</div>
             </div>
-            
-            <div class="content-box">
-                <h2>The experience I am ready to share</h2>
-                <p>I started as a programmer and then learned to sell in what was the IBM sales university, where I also invented and launched third-party collaboration programs internationally and helped develop the first applications for SMEs in Italy. I have served some of the largest manufacturing clients in the world, as well as all the most important telcos and the largest European financial institutions. I have been responsible for large software delivery and system integration projects. I was an entrepreneur, together with a colleague and friend, of a small but prestigious consulting firm where I certified in most of the major sales methodologies. I have coached CEOs and executives all over the world and have always leveraged my creativity to develop the business of the blue-chip companies I worked for, managing to launch 7 successful startups in my career. In recent years, I have specialized in the world of consulting on CRM platforms, and lately, I have become an expert in AI and everything AI can do to help people live better and longer lives—experiences that led me to set out on my own again to launch Connect the DOTS.</p>
+            <div class="stat-card">
+                <div class="stat-num">7 Startups</div>
+                <div class="stat-label">Successfully Launched & Scaled on the Market</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">Connect the DOTS</div>
+                <div class="stat-label">Darwinian CRM Evolution: Shifting GTM from Push to Pull</div>
             </div>
         </section>
 
-        <section class="platform-cta">
-            <h2>Ready to start?</h2>
-            <p>Let's talk about how to apply these concepts to your reality.</p>
-            <a href="../business.html" class="cta-button">Contact me now</a> <!-- Link corretto a business IT -->
+        <!-- 2 DETAIL CARDS -->
+        <section class="detail-grid">
+            <div class="detail-card">
+                <h3>50 Years of Enterprise Innovation</h3>
+                <p>
+                    I began my career as a software programmer, subsequently training at IBM's sales school where I designed and launched third-party partner programs internationally and pioneered the earliest SME business applications.
+                </p>
+                <p>
+                    Across five decades, I have directed major software delivery and system integration initiatives for global telcos, top European financial institutions, and leading manufacturing enterprises.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h3>The Leap to Deterministic Models</h3>
+                <p>
+                    Traditional CRM tools passively record past records, while modern cloud AI wrappers suffer from hallucinations, high latency, and severe data privacy risks.
+                </p>
+                <p>
+                    Connect the DOTS eliminates these vulnerabilities through a 100% offline, deterministic mathematical engine that computes solutions locally in RAM, ensuring zero data leakage and total GDPR compliance.
+                </p>
+            </div>
         </section>
+
     </main>
+
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). All rights reserved. Industrial Patent n. 102025000001002.</p>
     </footer>
+
 </body>
 </html>
