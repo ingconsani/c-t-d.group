@@ -51,11 +51,8 @@
             font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.2;
-            margin: 0 0 16px 0;
-        }
-
-        .platform-title span {
-            color: var(--accent-gold);
+            margin: 0 0 6px 0;
+            color: #ffffff;
         }
 
         .platform-subtitle {
@@ -68,7 +65,7 @@
         /* Pillars Matrix */
         .pillars-section {
             max-width: 1100px;
-            margin: 30px auto 50px auto;
+            margin: 30px auto 30px auto;
             padding: 0 20px;
         }
 
@@ -178,32 +175,95 @@
             color: var(--text-gray);
         }
 
-        /* Bottom Architecture Banner */
-        .arch-metrics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 40px;
-            padding: 20px 0;
+        /* ROLLING TICKER BAR PER KPI & UNIQUENESS */
+        .ticker-section {
+            width: 100%;
+            overflow: hidden;
+            background: #0d0d12;
             border-top: 1px solid var(--border-color);
-            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 0;
+            margin: 45px 0 20px 0;
+            position: relative;
         }
 
-        .metric-item strong {
-            display: block;
-            font-size: 1.6rem;
+        .ticker-section::before,
+        .ticker-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .ticker-section::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-dark), transparent);
+        }
+
+        .ticker-section::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-dark), transparent);
+        }
+
+        .ticker-track {
+            display: flex;
+            width: max-content;
+            animation: rollingTicker 38s linear infinite;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes rollingTicker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 35px;
+            border-right: 1px solid #1f1f28;
+            white-space: nowrap;
+        }
+
+        .ticker-val {
+            font-size: 1.55rem;
+            font-weight: 800;
             color: var(--accent-gold);
-            margin-bottom: 4px;
+            line-height: 1;
         }
 
-        .metric-item span {
-            font-size: 0.8rem;
+        .ticker-label {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .ticker-label strong {
+            font-size: 0.88rem;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .ticker-label span {
+            font-size: 0.72rem;
             color: var(--text-gray);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         @media (max-width: 860px) {
-            .pillars-grid, .arch-metrics {
+            .pillars-grid {
                 grid-template-columns: 1fr;
             }
             .platform-title {
@@ -234,7 +294,7 @@
             <div class="badge-ip">
                 Patent Pending • Domanda Brevetto n. 102025000001002
             </div>
-            <h1 class="platform-title" style="margin-bottom: 6px;">
+            <h1 class="platform-title">
                 L'Infrastruttura di Calcolo Deterministico
             </h1>
             <h2 style="font-size: 1.8rem; font-weight: 700; color: var(--accent-gold); margin: 0 0 18px 0; letter-spacing: 0.5px;">
@@ -307,26 +367,143 @@
                 </div>
             </div>
 
-            <!-- METRICHE ARCHITETTURALI -->
-            <div class="arch-metrics">
-                <div class="metric-item">
-                    <strong>931</strong>
-                    <span>Nodi Certificati a Zero Anomalie</span>
-                </div>
-                <div class="metric-item">
-                    <strong>0 KB</strong>
-                    <span>Dati Sensibili Trasmessi in Cloud</span>
-                </div>
-                <div class="metric-item">
-                    <strong>400+</strong>
-                    <span>DOTs di Controllo Direzionale</span>
-                </div>
-                <div class="metric-item">
-                    <strong>100%</strong>
-                    <span>Esecuzione Deterministica in RAM</span>
-                </div>
-            </div>
+        </section>
 
+        <!-- ROLLING TICKER SECTION: KPI & UNIQUENESS -->
+        <section class="ticker-section" aria-label="Indicatori e Vantaggi Architetturali CtD">
+            <div class="ticker-track">
+                
+                <!-- SET 1 -->
+                <div class="ticker-item">
+                    <div class="ticker-val">931</div>
+                    <div class="ticker-label">
+                        <strong>Nodi Certificati</strong>
+                        <span>Zero Anomalie Master</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">100%</div>
+                    <div class="ticker-label">
+                        <strong>Offline & On-Device</strong>
+                        <span>Zero Cloud Data Leakage</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">MAC • PC • Mobile</div>
+                    <div class="ticker-label">
+                        <strong>Multi-Piattaforma</strong>
+                        <span>Flutter Native Engine</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">1.2M+</div>
+                    <div class="ticker-label">
+                        <strong>Vettori Semantici</strong>
+                        <span>Spazio Topologico Locale</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">400+</div>
+                    <div class="ticker-label">
+                        <strong>Lenti Direzionali</strong>
+                        <span>DOTs di Controllo di Gestione</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">S = C &times; P &times; R</div>
+                    <div class="ticker-label">
+                        <strong>Algoritmo in RAM</strong>
+                        <span>Esecuzione Deterministica</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">Modello Pull</div>
+                    <div class="ticker-label">
+                        <strong>Sovranità del Dato</strong>
+                        <span>Attivazione da Utente</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">0 ms</div>
+                    <div class="ticker-label">
+                        <strong>Latenza di Rete</strong>
+                        <span>Calcolo Diretto Locale</span>
+                    </div>
+                </div>
+
+                <!-- SET 2 (DUPLICATO PER LOOP CONTINUO) -->
+                <div class="ticker-item">
+                    <div class="ticker-val">931</div>
+                    <div class="ticker-label">
+                        <strong>Nodi Certificati</strong>
+                        <span>Zero Anomalie Master</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">100%</div>
+                    <div class="ticker-label">
+                        <strong>Offline & On-Device</strong>
+                        <span>Zero Cloud Data Leakage</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">MAC • PC • Mobile</div>
+                    <div class="ticker-label">
+                        <strong>Multi-Piattaforma</strong>
+                        <span>Flutter Native Engine</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">1.2M+</div>
+                    <div class="ticker-label">
+                        <strong>Vettori Semantici</strong>
+                        <span>Spazio Topologico Locale</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">400+</div>
+                    <div class="ticker-label">
+                        <strong>Lenti Direzionali</strong>
+                        <span>DOTs di Controllo di Gestione</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">S = C &times; P &times; R</div>
+                    <div class="ticker-label">
+                        <strong>Algoritmo in RAM</strong>
+                        <span>Esecuzione Deterministica</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">Modello Pull</div>
+                    <div class="ticker-label">
+                        <strong>Sovranità del Dato</strong>
+                        <span>Attivazione da Utente</span>
+                    </div>
+                </div>
+
+                <div class="ticker-item">
+                    <div class="ticker-val">0 ms</div>
+                    <div class="ticker-label">
+                        <strong>Latenza di Rete</strong>
+                        <span>Calcolo Diretto Locale</span>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- CTA SECTION -->
@@ -335,7 +512,7 @@
             <p style="color: var(--text-gray); margin-bottom: 25px;">
                 Scopri come abilitare il controllo di gestione per studi professionali o come integrare la tua competenza specialistica nel nostro ecosistema.
             </p>
-            <div style="display: flex; justify-content: center; gap: 15px;">
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                 <a href="services.html" class="cta-button" style="background: var(--accent-gold); color: #000; padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none;">Soluzioni Advisory & B2B</a>
                 <a href="founders.html" class="cta-button" style="background: transparent; color: var(--accent-purple-light); border: 1px solid var(--accent-purple); padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none;">Programma Autarchia PMI</a>
             </div>
