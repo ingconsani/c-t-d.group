@@ -3,129 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2C Solution - CtD</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Percorso corretto -->
+    <title>Connect the DOTS (CtD) - CPA & Advisory Firm Setup</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+        }
+        body { background-color: var(--bg-dark); color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        .form-wrap { max-width: 780px; margin: 40px auto 60px auto; padding: 0 20px; }
+        .badge { display: inline-block; background: #18112c; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; margin-bottom: 16px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .form-group { margin-bottom: 18px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 0.88rem; font-weight: 600; color: #dedee8; }
+        .form-group input, .form-group textarea { width: 100%; background: #0d0d12; border: 1px solid var(--border-color); border-radius: 6px; padding: 12px 14px; color: #ffffff; font-size: 0.92rem; box-sizing: border-box; font-family: inherit; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-gold); }
+        .btn-submit { display: block; width: 100%; background: var(--accent-gold); color: #000; padding: 14px; border-radius: 6px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; transition: opacity 0.2s; margin-top: 10px; }
+        .btn-submit:hover { opacity: 0.9; }
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a> <!-- Percorso corretto -->
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
-                <a href="index.html">Home</a> <!-- Percorso corretto -->
-                <a href="platform.html">Platform</a> <!-- Percorso corretto -->
-                <a href="services.html">Services</a> <!-- Percorso corretto -->
-                <a href="business.html">Business</a> <!-- Percorso corretto -->
-                <a href="founders.html">Founders</a> <!-- Percorso corretto -->
-                <a href="leadership.html">Leadership</a> <!-- Percorso corretto -->
-                <!-- COLORE BOTTONE CORRETTO -->
-                | <a href="../b2c.html" style="color: #FAE100; font-weight: bold;">IT</a>
+                <a href="index.html">Home</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html" class="active">Ecosystem & GTM</a>
+                <a href="founders.html">SME Autarchy</a>
+                <a href="leadership.html">Leadership</a>
+                | <a href="services.html" style="color: var(--accent-gold); font-weight: bold;">← Back to Services</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-            <h1>B2C Business Solution</h1>
-            <p>The "thread of reasoning" on why traditional CRMs are no longer enough.</p>
-        </div>
     </header>
-    
-    <main>
-        
-        <section class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div class="content-box">
-                <h2>From Data Collection to 1:1 Engagement</h2>
-                <p>The goal of engaging the Person in a value exchange (consensual profiling for personalization) is unattainable with traditional methods.</p>
-                <p><strong>If it were possible, your CRMs and your cloud AI platforms would already be doing it.</strong></p>
-                <p>The problem is that those tools were designed to *take pictures*, not to *motivate the Person to get to know you better in exchange for better service*. They cannot, as designed, put the Person at the center of your company.</p>
-                <p>To meet the 1:1 needs of the individual, you must flip the model: stop "collecting" and start "engaging." This requires a radically new Platform.</p>
-                <p><strong>CtD is necessary: the only platform designed and developed to do this.</strong></p>
-                <p>Instead of collecting and managing your customers' sensitive data on your servers, CtD's intelligence operates *on the Person's device and with their full awareness*, creating the conditions for:</p>
-                <ul>
-                    <li><strong>A Transparent Dialogue:</strong> The Person is incentivized to describe their needs in detail, because they have a technical guarantee that this data *remains theirs*.</li>
-                    <li><strong>Dynamic Personalization of Products and Services:</strong> Your business can send "logics" and "offers" processed locally by CtD, generating a tailor-made solution *in real time*.</li>
-                    <li><strong>An Architecture Built on Trust:</strong> Loyalty is no longer a slogan, but a demonstrable technical feature of the service.</li>
-                </ul>
-            </div>
-        </section>
 
-        <section class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div class="content-box">
-                <h2>How We Operate (B2C)</h2>
-                <ol style="padding-left: 20px;">
-                    <li style="margin-bottom: 10px;"><strong>Strategic Assessment:</strong> We analyze your current GTM and identify the breaking points in your customer relationships.</li>
-                    <li style="margin-bottom: 10px;"><strong>Rapid Prototyping (POC):</strong> We integrate CtD with your systems (see <a href="../services.html">Specialized Services</a>) and launch a pilot project on a customer segment to measure the ROI of trust.</li>
-                    <li style="margin-bottom: 10px;"><strong>Rollout and Optimization:</strong> Once the model is validated, we define the rollout strategy for the entire customer base and optimize data flows.</li>
-                </ol>
-            </div>
-        </section>
+    <main class="form-wrap">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="badge">📊 B2B Solution • CPA Firms & Fractional CFOs</span>
+            <h1 style="font-size: 2.2rem; margin: 0 0 8px 0; color: #fff;">Activate CtD for Your Practice</h1>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Turn passive compliance into high-margin management control advisory for your SME clients.</p>
+        </div>
 
-        <section id="contact" class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            
-            <h2 style="text-align: center; font-size: 2em; margin-bottom: 20px;">Request a B2C Strategic Call</h2>
-            
-            <form id="contact-form" action="https://formspree.io/f/xwpwyvlv" method="POST">
-                
-                <!-- RIGA AGGIUNTA PER OGGETTO EMAIL CON TAG LINGUA -->
-                <input type="hidden" name="_subject" value="[EN] New B2C Request">
+        <div class="card">
+            <form action="https://formspree.io/f/xwpwyvlv" method="POST">
+                <input type="hidden" name="_subject" value="[CtD - Business EN] CPA & Advisory Firms">
 
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="nome">Your Name</label>
-                        <input type="text" id="nome" name="nome" required>
+                        <label for="nome">Full Name *</label>
+                        <input type="text" id="nome" name="nome" placeholder="John Doe, CPA" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Professional Email *</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@advisoryfirm.com" required>
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="azienda_ruolo">Company / Role (B2C)</label>
-                    <input type="text" id="azienda_ruolo" name="azienda_ruolo">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="studio">Firm / Company Name *</label>
+                        <input type="text" id="studio" name="nome_studio" placeholder="e.g. Doe & Partners Advisory" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clienti">Active SME Clients (Estimated)</label>
+                        <input type="text" id="clienti" name="numero_clienti" placeholder="e.g. 20-50 SMEs">
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="linkedin">LinkedIn Profile</label>
-                    <input type="text" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+                    <label for="messaggio">Specific Advisory Needs or Implementation Goals</label>
+                    <textarea id="messaggio" name="esigenze_studio" rows="3" placeholder="e.g. Overdue debt diagnostic, Capex tracking, standardized SME onboarding audits..."></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label>Which IPs would you like to know more about? (Updated names)</label>
-                    <div class="checklist-grid">
-                        <div class="check-item"><input type="checkbox" id="ip-check-1" name="ip-check[]" value="Modello KG"><label for="ip-check-1">1. Modello KG</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-2" name="ip-check[]" value="DOT"><label for="ip-check-2">2. DOT</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-3" name="ip-check[]" value="SWOT"><label for="ip-check-3">3. SWOT</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-4" name="ip-check[]" value="ROI"><label for="ip-check-4">4. ROI</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-5" name="ip-check[]" value="Connect"><label for="ip-check-5">5. Connect</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-6" name="ip-check[]" value="Inpuls"><label for="ip-check-6">6. Inpuls</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-7" name="ip-check[]" value="Next Best"><label for="ip-check-7">7. Next Best</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-8" name="ip-check[]" value="Profile"><label for="ip-check-8">8. Profile</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-9" name="ip-check[]" value="Prompting"><label for="ip-check-9">9. Prompting</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-10" name="ip-check[]" value="Onboarding"><label for="ip-check-10">10. Onboarding</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-11" name="ip-check[]" value="Sinapsi"><label for="ip-check-11">11. Sinapsi</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-12" name="ip-check[]" value="Confidential"><label for="ip-check-12">12. Confidential</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-13" name="ip-check[]" value="Multimodal"><label for="ip-check-13">13. Multimodal</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-14" name="ip-check[]" value="Coach"><label for="ip-check-14">14. Coach</label></div>
-                        <div class="check-item"><input type="checkbox" id="ip-check-15" name="ip-check[]" value="Agentic AI"><label for="ip-check-15">15. Agentic AI</label></div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="commenti">Your Comments</label>
-                    <textarea id="commenti" name="commenti" rows="4" placeholder="How can we help you? What are your thoughts?"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="approfondire">How would you like to follow up?</label>
-                    <textarea id="approfondire" name="approfondire" rows="3" placeholder="e.g., I would like a demo, I want to discuss a specific use case..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <button type="submit" class="cta-button">Send B2C Request</button>
-                </div>
+                <button type="submit" class="btn-submit">Request Practice Activation →</button>
             </form>
-        </section>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
-    </footer>
 </body>
 </html>
