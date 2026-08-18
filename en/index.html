@@ -14,6 +14,7 @@
             --accent-purple-light: #b085f5;
             --text-gray: #a0a0aa;
             --border-color: #242038;
+            --green-secure: #3cd070;
         }
 
         body {
@@ -35,9 +36,9 @@
         .badge-hero {
             display: inline-flex;
             align-items: center;
-            background: #18112c;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
+            background: #111a14;
+            color: var(--green-secure);
+            border: 1px solid var(--green-secure);
             padding: 6px 18px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -59,120 +60,248 @@
         }
 
         .hero-subtitle {
-            font-size: 1.18rem;
-            color: #dedee8;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
             max-width: 900px;
+            margin: 0 auto 16px auto;
+            line-height: 1.4;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #dedee8;
+            max-width: 920px;
             margin: 0 auto 35px auto;
             line-height: 1.6;
         }
 
-        .hero-banner-img {
-            max-width: 1000px;
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 45px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* 4-Box Grid */
-        .cards-grid {
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
+        /* 3 DOT Progression Stepper */
+        .stepper-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            position: relative;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
         }
 
-        .nav-card {
-            background: var(--card-bg);
+        .stepper-wrap::before {
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 80px;
+            right: 80px;
+            height: 2px;
+            background: #2a2640;
+            z-index: 1;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: #000;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .step-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .step-sub {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        /* Interactive Simulator Cockpit */
+        .simulator-cockpit {
+            max-width: 1160px;
+            margin: 0 auto 60px auto;
+            background: #0d0d12;
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr 1fr;
+            gap: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+
+        .cockpit-col {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.25s ease;
         }
 
-        .nav-card:hover {
-            border-color: var(--accent-purple-light);
-            transform: translateY(-2px);
-        }
-
-        .nav-card.featured {
-            border-color: var(--accent-gold);
-            background: #151322;
-        }
-
-        .card-tag {
-            font-size: 0.72rem;
+        .col-header {
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            font-weight: 700;
+            margin-bottom: 12px;
             color: var(--accent-purple-light);
-            margin-bottom: 8px;
-            display: block;
         }
 
-        .nav-card.featured .card-tag {
-            color: var(--accent-gold);
+        .persona-selector-btn {
+            background: #0e0d16;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
         }
 
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 0 0 10px 0;
+        .persona-selector-btn:hover, .persona-selector-btn.active {
+            border-color: var(--accent-purple);
+            background: #171329;
+        }
+
+        .persona-selector-btn h4 {
+            margin: 0 0 4px 0;
+            font-size: 0.92rem;
             color: #ffffff;
+        }
+
+        .persona-selector-btn p {
+            margin: 0;
+            font-size: 0.78rem;
+            color: var(--text-gray);
             line-height: 1.3;
         }
 
-        .card-desc {
-            font-size: 0.88rem;
-            color: var(--text-gray);
-            line-height: 1.5;
-            margin: 0 0 20px 0;
+        .state-box {
+            background: #0e0e14;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--accent-gold);
         }
 
-        .card-btn {
+        .state-box-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .state-box-content {
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .state-box-desc {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            margin-top: 2px;
+        }
+
+        .formula-box {
+            background: #09090c;
+            border: 1px dashed var(--border-color);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-top: 6px;
+        }
+
+        .nbd-card {
+            background: #121020;
+            border: 1px solid var(--accent-purple);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 14px;
+        }
+
+        .nbd-badge {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-purple-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .nbd-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin: 0 0 8px 0;
+        }
+
+        .nbd-metric {
+            font-size: 0.8rem;
+            color: var(--green-secure);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .nbd-desc {
+            font-size: 0.82rem;
+            color: #dedee8;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .btn-action-diy {
             display: block;
             text-align: center;
             background: var(--accent-gold);
-            color: #000000;
-            padding: 11px 14px;
-            border-radius: 6px;
+            color: #000;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
+            padding: 10px;
+            border-radius: 6px;
             text-decoration: none;
-            transition: opacity 0.2s;
+            margin-bottom: 8px;
         }
 
-        .card-btn:hover {
-            opacity: 0.9;
-        }
-
-        .card-btn-secondary {
+        .btn-action-partner {
+            display: block;
+            text-align: center;
             background: transparent;
             color: var(--accent-purple-light);
             border: 1px solid var(--accent-purple);
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 9px;
+            border-radius: 6px;
+            text-decoration: none;
         }
 
-        .card-btn-secondary:hover {
-            background: rgba(112, 66, 210, 0.2);
-            color: #ffffff;
-        }
-
-        @media (max-width: 1024px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .cards-grid {
+        @media (max-width: 900px) {
+            .simulator-cockpit {
                 grid-template-columns: 1fr;
             }
             .hero-title {
@@ -201,66 +330,112 @@
     <main>
         <div class="hero-wrap">
             <div class="badge-hero">
-                ⚡ Deterministic On-Device Knowledge Architecture • Patent Registered
+                🔒 100% Offline Architecture • Zero Data Leakage • GDPR Compliant
             </div>
             <h1 class="hero-title">
-                Where Individual Needs Connect with Business Precision.<br>
-                <span>100% Offline. Zero Data Footprint. Pure Determinism.</span>
+                From Any Challenge<br>
+                <span>To Your Specific Solution.</span>
             </h1>
             <p class="hero-subtitle">
-                Connect the DOTS (CtD) bridges business capabilities with exact persona requirements through a proprietary mathematical graph of 931 nodes, operating entirely on your desktop without external cloud dependencies.
+                Connect the DOTS with a Personal Navigator that learns from you as you use it, working solely for you.
             </p>
-            <img src="../banner-main.png" alt="Connect the DOTS Architecture Diagram" class="hero-banner-img">
+            <p class="hero-desc">
+                Harness artificial intelligence without an internet connection, keeping sensitive parameters locked in local encrypted memory to prevent loss of control while delivering fully tailored, hallucination-free decisions.
+            </p>
         </div>
 
-        <section class="cards-grid">
+        <!-- 3 DOT STEPPER -->
+        <div class="stepper-wrap">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-title">DOT 1: Problem Framing</div>
+                <div class="step-sub">(AS-IS State)</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-title">DOT 2: Solution Graphing</div>
+                <div class="step-sub">(TO-BE State)</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-title">DOT 3: Intervention Customization</div>
+                <div class="step-sub">(DIY / SME Execution)</div>
+            </div>
+        </div>
 
-            <!-- BOX 1: EARLY ADOPTER PROGRAM -->
-            <div class="nav-card featured">
+        <!-- SIMULATOR COCKPIT -->
+        <section class="simulator-cockpit">
+            
+            <!-- COL 1: SCOPE SELECTOR -->
+            <div class="cockpit-col">
                 <div>
-                    <span class="card-tag">Free Desktop Access</span>
-                    <h2 class="card-title">Early Adopter Program</h2>
-                    <p class="card-desc">
-                        Get free access to the offline engine for macOS & Windows. Experience deterministic management control on your computer.
-                    </p>
+                    <div class="col-header">▲ Select Operating Domain</div>
+                    
+                    <div class="persona-selector-btn active">
+                        <h4>CPA & Advisory Firm</h4>
+                        <p>Scaling tax compliance into strategic management control across 50 clients.</p>
+                    </div>
+
+                    <div class="persona-selector-btn">
+                        <h4>Manufacturing SME</h4>
+                        <p>Order contribution margin gap analysis and bottleneck auditing without external advisors.</p>
+                    </div>
+
+                    <div class="persona-selector-btn">
+                        <h4>B2B Network & Associations</h4>
+                        <p>Automated member requirement mapping and qualified cross-sector referrals.</p>
+                    </div>
                 </div>
-                <a href="founders.html" class="card-btn">Join as Founder →</a>
+                <div style="font-size: 0.72rem; color: var(--text-gray); text-align: center; margin-top: 10px;">
+                    Deterministic Graph: 931 Active Nodes
+                </div>
             </div>
 
-            <!-- BOX 2: ECOSYSTEM & GTM -->
-            <div class="nav-card">
+            <!-- COL 2: PROFILO AGGIORNATO & FORMULA -->
+            <div class="cockpit-col">
                 <div>
-                    <span class="card-tag">Business & GTM</span>
-                    <h2 class="card-title">Ecosystem Solutions</h2>
-                    <p class="card-desc">
-                        Discover how CtD scales client engagement and revenue streams across enterprise portfolios and strategic partners.
-                    </p>
+                    <div class="col-header">Local State & Engine Weights</div>
+
+                    <div class="state-box">
+                        <div class="state-box-title">[P] Profilo aggiornato (AS-IS State)</div>
+                        <div class="state-box-content">CPA Firm Profile (Parallel Token)</div>
+                    </div>
+
+                    <div class="state-box" style="border-left-color: var(--accent-purple-light);">
+                        <div class="state-box-title" style="color: var(--accent-purple-light);">[C] Activated Skill Nodes</div>
+                        <div class="state-box-content">400+ DOTs Directional & Margin Control</div>
+                    </div>
+
+                    <div class="state-box" style="border-left-color: var(--green-secure);">
+                        <div class="state-box-title" style="color: var(--green-secure);">[R] Operational Constraints</div>
+                        <div class="state-box-content">Tax Advisor / Fractional CFO</div>
+                    </div>
                 </div>
-                <a href="business.html" class="card-btn card-btn-secondary">Explore Ecosystem →</a>
+
+                <div class="formula-box">
+                    Deterministic Engine: S = C × P × R
+                </div>
             </div>
 
-            <!-- BOX 3: PLATFORM & IP -->
-            <div class="nav-card">
+            <!-- COL 3: COMPUTED NBD & ACTIONS -->
+            <div class="cockpit-col">
                 <div>
-                    <span class="card-tag">Proprietary Technology</span>
-                    <h2 class="card-title">Platform & 15 IP Blocks</h2>
-                    <p class="card-desc">
-                        Examine the deterministic graph architecture, patented offline mechanics, and our proprietary Next Best DOT algorithms.
-                    </p>
-                </div>
-                <a href="platform.html" class="card-btn card-btn-secondary">View Platform IP →</a>
-            </div>
+                    <div class="col-header">Deterministic Outcome</div>
 
-            <!-- BOX 4: ADVISORY & B2B -->
-            <div class="nav-card">
-                <div>
-                    <span class="card-tag">Advisory & CPA</span>
-                    <h2 class="card-title">Structured Services</h2>
-                    <p class="card-desc">
-                        Turn passive compliance into high-margin management control advisory for SME clients and professional accounting networks.
-                    </p>
+                    <div class="nbd-card">
+                        <span class="nbd-badge">Computed Next Best DOT (NBD)</span>
+                        <div class="nbd-title">▶ #412: Margin & Overdue Gap Analysis</div>
+                        <div class="nbd-metric">⚡ Timeframe: 3 weeks vs 6 months | 💰 Cost: -75%</div>
+                        <p class="nbd-desc">
+                            The CPA firm executes the complete management audit autonomously for their client company on-device.
+                        </p>
+                    </div>
                 </div>
-                <a href="services.html" class="card-btn card-btn-secondary">Discover Services →</a>
+
+                <div>
+                    <a href="founders.html" class="btn-action-diy">⚡ DIY Execution (Tutor Guided)</a>
+                    <a href="services.html" class="btn-action-partner">👥 Connect SME Partner (L3 Node)</a>
+                </div>
             </div>
 
         </section>
