@@ -69,7 +69,7 @@
 
         /* Banner Accordo Early Adopter */
         .agreement-box {
-            max-width: 1040px;
+            max-width: 1160px;
             margin: 30px auto 50px auto;
             background: #0e0e14;
             border: 1px solid var(--border-color);
@@ -114,21 +114,21 @@
             font-weight: bold;
         }
 
-        /* Grid Personas */
+        /* Grid a 3 Colonne per le Personas */
         .personas-grid {
-            max-width: 1080px;
+            max-width: 1200px;
             margin: 0 auto 50px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .persona-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 30px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -146,9 +146,9 @@
         }
 
         .persona-tag {
-            font-size: 0.75rem;
+            font-size: 0.73rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             font-weight: 700;
             color: var(--accent-purple-light);
             margin-bottom: 8px;
@@ -160,27 +160,29 @@
         }
 
         .persona-title {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin: 0 0 12px 0;
             color: #ffffff;
+            line-height: 1.3;
         }
 
         .persona-desc {
-            font-size: 0.93rem;
+            font-size: 0.9rem;
             color: var(--text-gray);
-            line-height: 1.55;
+            line-height: 1.5;
             margin: 0 0 18px 0;
         }
 
         .persona-role-box {
             background: #0d0d12;
             border-left: 3px solid var(--accent-purple);
-            padding: 12px 16px;
+            padding: 12px 14px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #dedee8;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
+            line-height: 1.4;
         }
 
         .persona-card.featured .persona-role-box {
@@ -192,10 +194,10 @@
             text-align: center;
             background: var(--accent-gold);
             color: #000000;
-            padding: 13px 20px;
+            padding: 12px 16px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             text-decoration: none;
             transition: opacity 0.2s;
         }
@@ -215,8 +217,11 @@
             color: #ffffff;
         }
 
-        @media (max-width: 860px) {
-            .agreement-box, .personas-grid {
+        @media (max-width: 980px) {
+            .personas-grid {
+                grid-template-columns: 1fr;
+            }
+            .agreement-box {
                 grid-template-columns: 1fr;
             }
             .founders-title {
@@ -252,7 +257,7 @@
                 <span>Usalo Gratis Ora. Guida l'Evoluzione del Tuo Settore.</span>
             </h1>
             <p class="founders-subtitle">
-                Offriamo a imprenditori, professionisti e manager l'accesso gratuito alla versione base di CtD: sperimenta per primo la potenza del nostro motore deterministico 100% offline sul tuo dispositivo. In cambio chiediamo solo i tuoi feedback qualificati per perfezionare la piattaforma e metterti in pole position per accedere in anteprima assoluta ai prodotti, servizi e vantaggi esclusivi che rilasceremo nei prossimi mesi.
+                Offriamo a imprenditori, professionisti e individui l'accesso gratuito alla versione base di CtD: sperimenta per primo la potenza del nostro motore deterministico 100% offline sul tuo dispositivo. In cambio chiediamo solo i tuoi feedback qualificati per perfezionare la piattaforma e metterti in pole position per accedere in anteprima assoluta ai prodotti, servizi e vantaggi esclusivi che rilasceremo nei prossimi mesi.
             </p>
         </div>
 
@@ -272,7 +277,7 @@
             </ul>
         </div>
 
-        <!-- LE DUE PERSONAS TARGET -->
+        <!-- LE 3 PERSONAS TARGET AFFIANCATE -->
         <section class="personas-grid">
 
             <!-- PERSONA 1: PMI & IMPRENDITORI -->
@@ -281,7 +286,7 @@
                     <span class="persona-tag">PMI, Titolari & Imprenditori</span>
                     <h2 class="persona-title">Imprenditoria & Controllo Strategico</h2>
                     <p class="persona-desc">
-                        Supera le sfide quotidiane di marginalità operativa e supply chain. Utilizza i moduli di autodiagnosi per mappare flussi di cassa, Capex e colli di bottiglia organizzativi con il rigore di un Fractional CFO sempre a disposizione sul tuo Mac/PC.
+                        Supera le sfide di marginalità operativa e supply chain. Utilizza l'autodiagnosi per mappare flussi di cassa, Capex e colli di bottiglia con la precisione di un Fractional CFO dedicato sul tuo dispositivo.
                     </p>
                     <div class="persona-role-box">
                         <strong>Ruolo CtD Attivo:</strong> Advisor Strategico + Tutor di Riorganizzazione Operativa.
@@ -296,13 +301,28 @@
                     <span class="persona-tag">Professionisti, Manager & Executive</span>
                     <h2 class="persona-title">Carriera & Sviluppo Competenze</h2>
                     <p class="persona-desc">
-                        Pianifica la tua crescita per capitalizzare l'impatto dell'AI nel tuo ambito lavorativo. Mappa le tue reali competenze sul grafo di 931 nodi e individua il Next Best DOT per massimizzare posizionamento strategico e valore professionale.
+                        Pianifica la crescita per capitalizzare l'impatto dell'AI nel tuo ambito. Mappa le tue reali competenze sul grafo di 931 nodi e identifica il Next Best DOT per massimizzare posizionamento e valore di mercato.
                     </p>
                     <div class="persona-role-box">
                         <strong>Ruolo CtD Attivo:</strong> Coach Direzionale + Navigatore di Competenze.
                     </div>
                 </div>
                 <a href="mailto:info@c-t-d.group?subject=Candidatura%20Early%20Adopter%20-%20Carriera%20Executive" class="persona-btn persona-btn-secondary">Candidati per il Dominio Carriera →</a>
+            </div>
+
+            <!-- PERSONA 3: WELLNESS & LONGEVITÀ -->
+            <div class="persona-card">
+                <div>
+                    <span class="persona-tag">Individui, Biohacker & Wellness</span>
+                    <h2 class="persona-title">Longevità, Salute & Performance</h2>
+                    <p class="persona-desc">
+                        Governa il tuo benessere psicofisico integrando abitudini, protocolli di longevità, nutrizione e monitoraggio degli stili di vita in totale riservatezza offline, senza mai condividere dati biometrici o sensibili sul cloud.
+                    </p>
+                    <div class="persona-role-box">
+                        <strong>Ruolo CtD Attivo:</strong> Tutor Personale di Longevità + Custode Riservato dei Dati.
+                    </div>
+                </div>
+                <a href="mailto:info@c-t-d.group?subject=Candidatura%20Early%20Adopter%20-%20Wellness%20e%20Longevita" class="persona-btn persona-btn-secondary">Candidati per il Dominio Wellness →</a>
             </div>
 
         </section>
