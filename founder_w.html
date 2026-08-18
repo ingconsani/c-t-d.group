@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect the DOTS (CtD) - Candidatura Early Adopter Wellness</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+        }
+        body { background-color: var(--bg-dark); color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        .form-wrap { max-width: 780px; margin: 40px auto 60px auto; padding: 0 20px; }
+        .badge { display: inline-block; background: #18112c; color: var(--accent-purple-light); border: 1px solid var(--accent-purple); padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; margin-bottom: 16px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .form-group { margin-bottom: 18px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 0.88rem; font-weight: 600; color: #dedee8; }
+        .form-group input, .form-group textarea { width: 100%; background: #0d0d12; border: 1px solid var(--border-color); border-radius: 6px; padding: 12px 14px; color: #ffffff; font-size: 0.92rem; box-sizing: border-box; font-family: inherit; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-gold); }
+        .btn-submit { display: block; width: 100%; background: var(--accent-gold); color: #000; padding: 14px; border-radius: 6px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; transition: opacity 0.2s; margin-top: 10px; }
+        .btn-submit:hover { opacity: 0.9; }
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosistema & GTM</a>
+                <a href="founders.html" class="active">Autarchia PMI</a>
+                <a href="leadership.html">Leadership</a>
+                | <a href="founders.html" style="color: var(--accent-gold); font-weight: bold;">← Torna a Founders</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="form-wrap">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="badge">🌿 Early Adopter • Dominio Wellness (macOS & Windows PC)</span>
+            <h1 style="font-size: 2.2rem; margin: 0 0 8px 0; color: #fff;">Longevità, Salute & Performance</h1>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Gestisci abitudini, protocolli di longevità e stili di vita in 100% isolamento offline.</p>
+        </div>
+
+        <div class="card">
+            <form action="https://formspree.io/f/xwpwyvlv" method="POST">
+                <input type="hidden" name="_subject" value="[CtD - Early Adopter] Wellness & Longevità">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome">Nome e Cognome *</label>
+                        <input type="text" id="nome" name="nome" placeholder="Mario Rossi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="mario.rossi@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="so">Sistema Operativo Desktop *</label>
+                        <input type="text" id="so" name="sistema_operativo" placeholder="es. Mac (macOS) o PC (Windows)" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="aree">Aree di Principale Interesse</label>
+                        <input type="text" id="aree" name="aree_interesse" placeholder="es. Ottimizzazione cognitiva, sonno, longevità...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="note">Cosa ti aspetti da un tutor decisionale di wellness operante al 100% offline?</label>
+                    <textarea id="note" name="aspettative_wellness" rows="3" placeholder="Descrivi brevemente i tuoi obiettivi personali..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Invia Candidatura Wellness →</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
