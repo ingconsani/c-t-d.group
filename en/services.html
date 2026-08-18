@@ -3,72 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Specialized Services - CtD</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Link a style.css -->
+    <title>Connect the DOTS (CtD) - Advisory & B2B Services</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .services-hero-wrap {
+            max-width: 1080px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge-serv {
+            display: inline-flex;
+            align-items: center;
+            background: #18112c;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .services-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+
+        .services-title span {
+            color: var(--accent-gold);
+        }
+
+        .services-subtitle {
+            font-size: 1.15rem;
+            color: #dedee8;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-purple-light);
+            transform: translateY(-2px);
+        }
+
+        .service-card.featured {
+            border-color: var(--accent-gold);
+            background: #151322;
+        }
+
+        .service-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: var(--accent-purple-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .service-card.featured .service-tag {
+            color: var(--accent-gold);
+        }
+
+        .service-card h2 {
+            font-size: 1.4rem;
+            margin: 0 0 14px 0;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.55;
+            margin: 0 0 20px 0;
+        }
+
+        .service-btn {
+            display: block;
+            text-align: center;
+            background: var(--accent-gold);
+            color: #000000;
+            padding: 13px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .service-btn:hover {
+            opacity: 0.9;
+        }
+
+        .service-btn-secondary {
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
+        }
+
+        .service-btn-secondary:hover {
+            background: rgba(112, 66, 210, 0.2);
+            color: #ffffff;
+        }
+
+        @media (max-width: 860px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html" class="active">Advisory & B2B</a>
+                <a href="business.html">Ecosystem & GTM</a>
+                <a href="founders.html">SME Autarchy</a>
                 <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="../services.html" style="color: #FAE100; font-weight: bold;">IT</a>
+                | <a href="../services.html" style="color: var(--accent-gold); font-weight: bold;">IT</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-            <h1>Specialized Services</h1>
-        </div>
     </header>
-    
+
     <main>
-        <section class="platform-intro" style="max-width: 800px;">
-            <p>Our methodology combines three pillars into a single offer: the expertise accumulated over decades of strategic consulting on CRM platforms, the analytical and benchmarking power of AI, and the IPs underlying our platform (CtD).</p>
-            <p style="font-size: 1.2em; text-align: center; color: #FAE100; font-weight: 600;">"Pillars that support 5 engagement models for 5 strategic objectives."</p>
-        </section>
+        <div class="services-hero-wrap">
+            <div class="badge-serv">
+                🏛️ Structured Advisory & B2B Frameworks
+            </div>
+            <h1 class="services-title">
+                Unlock Deterministic Value for Your Clients.<br>
+                <span>From Passive Compliance to Active Management Control.</span>
+            </h1>
+            <p class="services-subtitle">
+                Equip accounting practices, consulting firms, and enterprise networks with Connect the DOTS deterministic engine to deliver high-margin advisory with instant audits and action plans.
+            </p>
+        </div>
 
         <section class="services-grid">
 
-            <div class="content-box">
-                <h2>1. Strategic Consulting</h2>
-                <p>Market analysis, positioning, go-to-market. We apply the rigor of top consulting firms, integrated with the power of AI and without their overhead costs.</p>
-                <a href="business.html" class="cta-button">Let's define the strategy → </a>
+            <!-- BOX 1: CPA FIRMS & FRACTIONAL CFO -->
+            <div class="service-card featured">
+                <div>
+                    <span class="service-tag">For CPAs & Advisors</span>
+                    <h2>CPA Firms & Management Control</h2>
+                    <p>
+                        Deploy the CtD model across your SME clients: overdue debt analysis, operational margins, industry benchmarking, and financial stress testing performed instantly in RAM, ensuring 100% on-premise confidentiality.
+                    </p>
+                </div>
+                <a href="b2c.html" class="service-btn">Activate CtD for Your Firm →</a>
             </div>
 
-            <div class="content-box">
-                <h2>2. Operational Consulting</h2>
-                <p>Targeted support for those who have already started: process optimization, fine-tuning existing architectures, integration, and tactical support to unlock untapped potential.</p>
-                <a href="business.html" class="cta-button">Let's optimize your project →</a>
-            </div>
-
-            <div class="content-box">
-                <h2>3. Partnerships and Joint Ventures</h2>
-                <p>We share specific IPs for co-development, creating 'newcos,' or joint ventures to attack new markets with a unique competitive advantage.</p>
-                <a href="bvc.html" class="cta-button">Let's evaluate a partnership →</a>
-            </div>
-
-            <div class="content-box">
-                <h2>4. Rapid Prototyping</h2>
-                <p>We build 'Proofs of Concept' and working prototypes to validate your idea on the market at low risk, quickly, and with clear metrics.</p>
-                <a href="business.html" class="cta-button">Request a prototype →</a>
-            </div>
-
-            <div class="content-box">
-                <h2>5. End-to-End Delivery</h2>
-                <p>We take charge of the entire project: from architectural design to development, deployment, and evolutionary maintenance. Resources complementary to ours and the client's will be provided by a leading professional services firm with whom we have a strategic partnership agreement.</p>
-                <a href="business.html" class="cta-button">Realize your vision →</a>
+            <!-- BOX 2: BUSINESS NETWORKS & IP LICENSING -->
+            <div class="service-card">
+                <div>
+                    <span class="service-tag">For Associations & Networks</span>
+                    <h2>Business Networks & IP Licensing</h2>
+                    <p>
+                        Embed deterministic skill nodes across your member ecosystem or establish dedicated Go-To-Market partnerships powered by CtD patented technology.
+                    </p>
+                </div>
+                <a href="bvc.html" class="service-btn persona-btn-secondary">Configure for Your Network →</a>
             </div>
 
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). All rights reserved. Industrial Patent n. 102025000001002.</p>
     </footer>
 
 </body>
