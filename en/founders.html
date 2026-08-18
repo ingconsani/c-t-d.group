@@ -3,63 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founders Program - CtD</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Link a style.css -->
+    <title>Connect the DOTS (CtD) - Early Adopter Program</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+            --green-secure: #3cd070;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .founders-hero-wrap {
+            max-width: 1080px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge-ea {
+            display: inline-flex;
+            align-items: center;
+            background: #18112c;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .founders-title {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+
+        .founders-title span {
+            color: var(--accent-gold);
+        }
+
+        .founders-subtitle {
+            font-size: 1.18rem;
+            color: #dedee8;
+            max-width: 950px;
+            margin: 20px auto 30px auto;
+            line-height: 1.65;
+        }
+
+        /* Agreement Value Box */
+        .agreement-box {
+            max-width: 1160px;
+            margin: 30px auto 50px auto;
+            background: #0e0e14;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 28px 32px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .agreement-left h3 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            font-size: 1.3rem;
+        }
+
+        .agreement-left p {
+            margin: 0;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .agreement-perks {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .agreement-perks li {
+            font-size: 0.9rem;
+            color: #dedee8;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .agreement-perks li span {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Grid a 3 Colonne per le Personas */
+        .personas-grid {
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .persona-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .persona-card:hover {
+            border-color: var(--accent-purple-light);
+            transform: translateY(-2px);
+        }
+
+        .persona-card.featured {
+            border-color: var(--accent-gold);
+            background: #151322;
+        }
+
+        .persona-tag {
+            font-size: 0.73rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 700;
+            color: var(--accent-purple-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .persona-card.featured .persona-tag {
+            color: var(--accent-gold);
+        }
+
+        .persona-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .persona-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin: 0 0 18px 0;
+        }
+
+        .persona-role-box {
+            background: #0d0d12;
+            border-left: 3px solid var(--accent-purple);
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            color: #dedee8;
+            margin-bottom: 22px;
+            line-height: 1.4;
+        }
+
+        .persona-card.featured .persona-role-box {
+            border-left-color: var(--accent-gold);
+        }
+
+        .persona-btn {
+            display: block;
+            text-align: center;
+            background: var(--accent-gold);
+            color: #000000;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .persona-btn:hover {
+            opacity: 0.9;
+        }
+
+        .persona-btn-secondary {
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
+        }
+
+        .persona-btn-secondary:hover {
+            background: rgba(112, 66, 210, 0.2);
+            color: #ffffff;
+        }
+
+        @media (max-width: 980px) {
+            .personas-grid {
+                grid-template-columns: 1fr;
+            }
+            .agreement-box {
+                grid-template-columns: 1fr;
+            }
+            .founders-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
+                <a href="platform.html">Platform &amp; IP</a>
+                <a href="services.html">Advisory &amp; B2B</a>
+                <a href="business.html">Ecosystem &amp; GTM</a>
+                <a href="founders.html" class="active">Early Adopters</a>
                 <a href="leadership.html">Leadership</a>
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="../founders.html" style="color: #FAE100; font-weight: bold;">IT</a>
+                | <a href="../founders.html" style="color: var(--accent-gold); font-weight: bold;">IT</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-            <h1>Founders Program (Early Adopters)</h1>
-        </div>
     </header>
+
     <main>
-        <section class="platform-intro">
-            <p>We are ready to involve you in one of the 4 application domains we are working on. You will have the chance to use the App under very advantageous conditions, even paying nothing if you help us make it go viral. Ask for information about the "Founders Program" in the vertical that interests you most.</p>
-        </section>
-        
-        <section class="hub-grid">
-            
-            <div class="hub-card hub-founders">
-                <h2>Career</h2>
-                <p>Prepare for the challenges AI is bringing to the world of work and plan the steps to be ready to seize the opportunities that arise.</p>
-                <a href="founder_c.html" class="cta-button">Apply</a>
+        <div class="founders-hero-wrap">
+            <div class="badge-ea">
+                🚀 Early Adopter Program • Free Desktop Access (macOS &amp; Windows PC) • Limited Slots
+            </div>
+            <h1 class="founders-title">
+                Become a Connect the DOTS Early Adopter.<br>
+                <span>Use It Free Today. Lead Your Industry's Evolution.</span>
+            </h1>
+            <p class="founders-subtitle">
+                We offer business owners, professionals, and individuals free access to the core version of CtD (available exclusively for Mac and PC): be the first to experience the power of our 100% offline, deterministic engine on your computer. In exchange, we only ask for your qualified feedback to fine-tune the platform and place you in pole position for exclusive upcoming products, services, and commercial advantages.
+            </p>
+        </div>
+
+        <!-- VALUE AGREEMENT -->
+        <div class="agreement-box">
+            <div class="agreement-left">
+                <h3>Your Updated Profile Remains Exclusively Yours</h3>
+                <p>
+                    Unlike commercial cloud AI tools that train remote models on your sensitive corporate data, CtD runs 100% on-device. Your local <strong>Updated Profile</strong> continuously adapts to your strategic decisions without ever transmitting parameters over the web.
+                </p>
+            </div>
+            <ul class="agreement-perks">
+                <li><span>💻</span> <strong>Requirements:</strong> Exclusive release for <strong>macOS and Windows PC</strong>.</li>
+                <li><span>✓</span> <strong>Zero Cost:</strong> Full Early Adopter core license at no charge.</li>
+                <li><span>✓</span> <strong>Pole Position:</strong> Priority access to upcoming tools &amp; perks.</li>
+                <li><span>✓</span> <strong>Direct Feedback:</strong> Direct channel with the development team.</li>
+                <li><span>🔒</span> <strong>100% Private:</strong> Fully offline and GDPR compliant.</li>
+            </ul>
+        </div>
+
+        <!-- 3 TARGET PERSONAS -->
+        <section class="personas-grid">
+
+            <!-- PERSONA 1: SMES & ENTREPRENEURS -->
+            <div class="persona-card featured">
+                <div>
+                    <span class="persona-tag">SMEs, Owners &amp; Founders</span>
+                    <h2 class="persona-title">Entrepreneurship &amp; Strategic Control</h2>
+                    <p class="persona-desc">
+                        Overcome operational margin and supply chain bottlenecks. Leverage self-diagnosis modules to map cash flows, Capex, and operational hurdles with the rigor of a dedicated Fractional CFO right on your computer.
+                    </p>
+                    <div class="persona-role-box">
+                        <strong>Active CtD Role:</strong> Strategic Advisor + Operational Reorganization Tutor.
+                    </div>
+                </div>
+                <a href="mailto:info@c-t-d.group?subject=Early%20Adopter%20Application%20(Mac/PC)%20-%20SME%20Domain" class="persona-btn">Apply for SME Domain (Mac/PC) →</a>
             </div>
 
-            <div class="hub-card hub-founders">
-                <h2>Wellness</h2>
-                <p>Prepare to increase the quality and duration of your life with a 360° approach to the variables that influence it, with returns that will astound you.</p>
-                <a href="founder_h.html" class="cta-button">Apply</a>
+            <!-- PERSONA 2: PROFESSIONALS & EXECUTIVES -->
+            <div class="persona-card">
+                <div>
+                    <span class="persona-tag">Professionals, Managers &amp; Executives</span>
+                    <h2 class="persona-title">Career &amp; Skills Development</h2>
+                    <p class="persona-desc">
+                        Strategically navigate career milestones to capitalize on the AI revolution. Map your true capabilities across 931 nodes and identify the Next Best DOT to maximize your compensation and strategic positioning.
+                    </p>
+                    <div class="persona-role-box">
+                        <strong>Active CtD Role:</strong> Executive Coach + Skills Navigator.
+                    </div>
+                </div>
+                <a href="mailto:info@c-t-d.group?subject=Early%20Adopter%20Application%20(Mac/PC)%20-%20Career%20Domain" class="persona-btn persona-btn-secondary">Apply for Career Domain (Mac/PC) →</a>
             </div>
 
-            <div class="hub-card hub-founders">
-                <h2>Entrepreneurship</h2>
-                <p>Prepare for the challenges AI is bringing to SMEs by increasing the added value you can bring to the Supply Chain you work in.</p>
-                <a href="founder_a.html" class="cta-button">Apply</a>
-            </div>
-            
-            <div class="hub-card hub-founders">
-                <h2>Learning</h2>
-                <p>Enrich your knowledge and skills with AI, learning what is essential to know to use it profitably and not be left out of the game.</p>
-                <a href="founder_g.html" class="cta-button">Apply</a>
+            <!-- PERSONA 3: WELLNESS & LONGEVITY -->
+            <div class="persona-card">
+                <div>
+                    <span class="persona-tag">Individuals, Biohackers &amp; Wellness</span>
+                    <h2 class="persona-title">Longevity, Health &amp; Performance</h2>
+                    <p class="persona-desc">
+                        Master your physical and cognitive wellbeing by integrating habits, longevity protocols, nutrition, and lifestyle tracking in total offline privacy, without ever sending biometric data to remote clouds.
+                    </p>
+                    <div class="persona-role-box">
+                        <strong>Active CtD Role:</strong> Personal Longevity Tutor + Private Data Custodian.
+                    </div>
+                </div>
+                <a href="mailto:info@c-t-d.group?subject=Early%20Adopter%20Application%20(Mac/PC)%20-%20Wellness%20Domain" class="persona-btn persona-btn-secondary">Apply for Wellness Domain (Mac/PC) →</a>
             </div>
 
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). All rights reserved. Industrial Invention Patent Application No. 102025000001002.</p>
     </footer>
+
 </body>
 </html>
