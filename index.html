@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect the DOTS (CtD) - Beyond CRM | The Deterministic Knowledge Engine</title>
+    <title>Connect the DOTS (CtD) – Beyond CRM | The Deterministic Knowledge Engine</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Modern Scaffolding Styles for CtD Engine */
         :root {
             --bg-dark: #0a0a0d;
             --card-bg: #141419;
@@ -16,6 +15,16 @@
             --text-gray: #a0a0aa;
             --border-color: #242038;
             --green-secure: #3cd070;
+
+            /* Palette Carosello Use Case */
+            --uc-business-bg: #1a102f;
+            --uc-business-border: #4d2d8c;
+            --uc-persona-bg: #111114;
+            --uc-persona-border: #2c2c35;
+            --uc-training-bg: #291d0a;
+            --uc-training-border: #6d4e17;
+            --uc-wellness-bg: #221428;
+            --uc-wellness-border: #5c2f70;
         }
 
         body {
@@ -28,19 +37,19 @@
         }
 
         .hero-banner-wrap {
-            max-width: 1080px;
+            max-width: 1100px;
             margin: 40px auto 20px auto;
             text-align: center;
             padding: 0 20px;
         }
 
-        .badge-offline {
+        .badge-secure {
             display: inline-flex;
             align-items: center;
-            background: #18112c;
+            background: #0f2316;
             color: var(--green-secure);
             border: 1px solid var(--green-secure);
-            padding: 6px 16px;
+            padding: 5px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -49,214 +58,367 @@
         }
 
         .hero-title {
-            font-size: 2.6rem;
+            font-size: 2.7rem;
             font-weight: 800;
             line-height: 1.2;
             margin: 0 0 16px 0;
-            color: #ffffff;
         }
 
         .hero-title span {
             color: var(--accent-gold);
         }
 
-        .hero-desc {
+        .hero-subtitle {
             font-size: 1.15rem;
             color: var(--text-gray);
-            max-width: 820px;
+            max-width: 860px;
             margin: 0 auto 30px auto;
         }
 
-        /* Simulator Container */
-        .sim-section {
-            background: #0e0e13;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            max-width: 1100px;
-            margin: 30px auto 50px auto;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-
-        .sim-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 16px;
-            margin-bottom: 24px;
-        }
-
-        .sim-header h2 {
-            font-size: 1.05rem;
-            color: var(--accent-gold);
-            letter-spacing: 1px;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        .sim-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1.15fr;
-            gap: 20px;
-        }
-
-        .sim-col {
-            background: var(--card-bg);
-            border: 1px solid #1f1f28;
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .sim-col-title {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--text-gray);
-            margin: 0 0 16px 0;
-            font-weight: 700;
-        }
-
-        .scenario-item {
-            cursor: pointer;
-            background: #181820;
-            border: 1px solid #282834;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .scenario-item:hover {
-            border-color: var(--accent-purple-light);
-        }
-
-        .scenario-item.active {
-            background: #1c1533;
-            border-color: var(--accent-gold);
-        }
-
-        .scenario-item strong {
-            display: block;
-            font-size: 0.9rem;
-            color: #fff;
-            margin-bottom: 4px;
-        }
-
-        .scenario-item.active strong {
-            color: var(--accent-gold);
-        }
-
-        .scenario-item span {
-            font-size: 0.78rem;
-            color: var(--text-gray);
-            line-height: 1.3;
-            display: block;
-        }
-
-        .calc-row {
-            font-size: 0.85rem;
-            margin: 8px 0;
-            padding-bottom: 6px;
-            border-bottom: 1px dashed #222;
-        }
-
-        .calc-row span.label {
-            font-weight: bold;
-            display: inline-block;
-            width: 110px;
-        }
-
-        .calc-box-formula {
-            background: #0a0a0d;
-            border-left: 3px solid var(--accent-gold);
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 15px;
-            font-size: 0.8rem;
-            color: var(--text-gray);
-        }
-
-        .res-metric {
-            background: #18112c;
-            border: 1px solid var(--accent-purple);
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .btn-diy {
-            background: var(--accent-gold);
-            color: #000;
-            border: none;
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 8px;
-            transition: opacity 0.2s;
-        }
-
-        .btn-sme {
-            background: transparent;
-            color: var(--accent-purple-light);
-            border: 1px solid var(--accent-purple);
-            padding: 9px 14px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.2s;
-        }
-
-        .btn-diy:hover, .btn-sme:hover {
-            opacity: 0.9;
-        }
-
-        /* Pillars & Roles */
-        .framework-section {
-            max-width: 1100px;
-            margin: 50px auto;
+        /* 3-DOTS TOP CONNECTOR PIPELINE */
+        .dots-pipeline-container {
+            max-width: 1180px;
+            margin: 30px auto 0 auto;
             padding: 0 20px;
         }
 
-        .framework-grid {
+        .dots-pipeline-track {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 25px;
+            grid-template-columns: 1fr 1fr 1fr;
+            position: relative;
+            align-items: flex-start;
         }
 
-        .role-card {
+        .dots-pipeline-track::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 16%;
+            right: 16%;
+            height: 3px;
+            background: var(--accent-gold);
+            z-index: 1;
+        }
+
+        .dot-pipeline-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .dot-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: #000;
+            font-weight: 800;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(245, 197, 24, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .dot-title-label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .dot-sub-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* SIMULATOR CONTAINER */
+        .simulator-section {
+            max-width: 1180px;
+            margin: 20px auto 60px auto;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: left;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
 
-        .role-card h3 {
-            margin: 0 0 8px 0;
+        .simulator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .sim-col {
+            background: #0d0d12;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* CAROSELLO VERTICALE COLONNA 1 */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow: hidden;
+            min-height: 480px;
+            max-height: 480px;
+        }
+
+        .carousel-scroll-zone {
+            height: 24px;
+            background: rgba(20, 20, 25, 0.85);
             color: var(--accent-gold);
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            z-index: 10;
+            user-select: none;
+            transition: background 0.2s;
         }
 
-        .role-card p {
-            color: var(--text-gray);
-            font-size: 0.85rem;
+        .carousel-scroll-zone:hover {
+            background: var(--accent-purple);
+            color: #fff;
+        }
+
+        .carousel-body {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            margin: 6px 0;
+        }
+
+        .carousel-scrollbar-track {
+            width: 5px;
+            background: #191922;
+            border-radius: 3px;
+            margin-right: 8px;
+            position: relative;
+        }
+
+        .carousel-scrollbar-thumb {
+            width: 100%;
+            height: 35px;
+            background: var(--accent-gold);
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            transition: top 0.1s ease;
+        }
+
+        .carousel-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-right: 4px;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-list::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .uc-category-header {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        .uc-card {
+            border-radius: 8px;
+            padding: 12px 14px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .uc-card:hover {
+            transform: translateX(3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .uc-card.active {
+            border-color: var(--accent-gold) !important;
+            box-shadow: 0 0 15px rgba(245, 197, 24, 0.3) !important;
+        }
+
+        /* Temi UC */
+        .uc-business {
+            background: var(--uc-business-bg);
+            border-color: var(--uc-business-border);
+        }
+        .uc-persona {
+            background: var(--uc-persona-bg);
+            border-color: var(--uc-persona-border);
+        }
+        .uc-training {
+            background: var(--uc-training-bg);
+            border-color: var(--uc-training-border);
+        }
+        .uc-wellness {
+            background: var(--uc-wellness-bg);
+            border-color: var(--uc-wellness-border);
+        }
+
+        .uc-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: #fff;
+        }
+
+        .uc-desc {
+            font-size: 0.78rem;
+            color: #c4c4d0;
             margin: 0;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
-        @media (max-width: 860px) {
-            .sim-grid, .framework-grid {
+        /* COLONNA 2 & 3 STILI */
+        .calc-box {
+            background: #14141d;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        .calc-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .calc-val {
+            font-size: 0.88rem;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .formula-callout {
+            background: #18112c;
+            border-left: 3px solid var(--accent-gold);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #dedee8;
+            margin-top: auto;
+        }
+
+        .nbd-card {
+            background: #18112c;
+            border: 1px solid var(--accent-purple);
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+
+        .nbd-title {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+        }
+
+        .nbd-metric {
+            font-size: 0.78rem;
+            color: #3cd070;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .action-button-diy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: var(--accent-gold);
+            color: #000000;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            transition: opacity 0.2s;
+        }
+
+        .action-button-diy:hover {
+            opacity: 0.9;
+        }
+
+        .action-button-sme {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-sizing: border-box;
+            transition: all 0.2s;
+        }
+
+        .action-button-sme:hover {
+            background: rgba(112, 66, 210, 0.2);
+            color: #fff;
+        }
+
+        .res-summary-box {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 900px) {
+            .simulator-grid, .dots-pipeline-track {
                 grid-template-columns: 1fr;
+            }
+            .dots-pipeline-track::before {
+                display: none;
+            }
+            .carousel-wrapper {
+                max-height: 400px;
             }
             .hero-title {
                 font-size: 2rem;
@@ -282,221 +444,398 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+        
         <div class="hero-banner-wrap">
-            <div class="badge-offline">
+            <div class="badge-secure">
                 🔒 Architettura 100% Offline • Zero Data Leakage • Conforme GDPR
             </div>
             <h1 class="hero-title">
-                Da qualsiasi problema al percorso guidato: <span>il Navigatore Deterministico</span>
+                Da qualsiasi problema al percorso guidato: il <span>Navigatore Deterministico</span>
             </h1>
-            <p class="hero-desc">
-                Riduci tempi e costi decisionali con la formula <strong>S = C + P + R</strong>. 
-                CtD unifica la profonda conoscenza del tuo stato attuale (As-Is) con 931 nodi di competenza specialistica, individuando il Next Best DOT (NBD) senza dispersioni o allucinazioni AI.
+            <p class="hero-subtitle">
+                Riduci tempi e costi decisionali con la formula <strong>S = C &times; P &times; R</strong>. CtD unifica la profonda conoscenza del tuo stato attuale con 931 nodi di competenza specialistica, individuando il Next Best DOT (NBD) senza dispersioni o allucinazioni statistiche.
             </p>
         </div>
 
-        <!-- INTERACTIVE ENGINE SIMULATOR -->
-        <section class="sim-section">
-            <div class="sim-header">
-                <h2>CtD Interactive Simulator • Dal Problema alla Risoluzione</h2>
-                <span style="color: var(--accent-purple-light); font-size: 0.8rem; font-weight: bold;">Runtime in RAM (Zero Cloud)</span>
-            </div>
-
-            <div class="sim-grid">
+        <!-- 3-DOTS TOP CONNECTOR PIPELINE -->
+        <div class="dots-pipeline-container">
+            <div class="dots-pipeline-track">
                 
-                <!-- COL 1: SELEZIONE AS-IS -->
-                <div class="sim-col">
-                    <div>
-                        <div class="sim-col-title">1. Seleziona Scenario As-Is</div>
-                        
-                        <div class="scenario-item active" id="scen-1" onclick="updateSimulator(1)">
-                            <strong>Studio Commercialista</strong>
-                            <span>Evolvere da conformità fiscale a controllo di gestione scalabile per 50 clienti.</span>
-                        </div>
-
-                        <div class="scenario-item" id="scen-2" onclick="updateSimulator(2)">
-                            <strong>PMI & Imprenditore</strong>
-                            <span>Gap di marginalità e audit dei colli di bottiglia senza consulenze esterne costose.</span>
-                        </div>
-
-                        <div class="scenario-item" id="scen-3" onclick="updateSimulator(3)">
-                            <strong>Rete di Imprese / Associazione</strong>
-                            <span>Mappare i fabbisogni degli associati e generare referral qualificati interni.</span>
-                        </div>
-                    </div>
-                    <div style="font-size: 0.75rem; color: #666; margin-top: 10px;">
-                        💡 Triage locale con anonimizzazione automatica delle interrogazioni.
-                    </div>
+                <div class="dot-pipeline-node">
+                    <div class="dot-circle">1</div>
+                    <div class="dot-title-label">DOT 1: Qualificazione Problema</div>
+                    <div class="dot-sub-label">(as-is)</div>
                 </div>
 
-                <!-- COL 2: MOTORE DETERMINISTICO -->
-                <div class="sim-col">
-                    <div>
-                        <div class="sim-col-title">2. Calcolo Deterministico (S = C + P + R)</div>
-                        
-                        <div class="calc-row">
-                            <span class="label" style="color: var(--accent-gold);">[P] Profilo:</span>
-                            <span id="txt-p" style="color: #ddd;">Profilo Studio (Token Parallelo)</span>
-                        </div>
-                        <div class="calc-row">
-                            <span class="label" style="color: var(--accent-purple-light);">[C] Competenze:</span>
-                            <span id="txt-c" style="color: #ddd;">400+ DOTs Controllo Direzionale</span>
-                        </div>
-                        <div class="calc-row">
-                            <span class="label" style="color: var(--green-secure);">[R] Ruolo Attivo:</span>
-                            <span id="txt-r" style="color: #ddd;">Advisor + Trainer</span>
-                        </div>
-
-                        <div class="calc-box-formula">
-                            <strong>Formula Attiva:</strong> S = C + P + R<br>
-                            Calcolata in RAM senza interrogazioni esterne (Algoritmo <em>_healDatabaseRollups</em>).
-                        </div>
-                    </div>
-                    <div style="font-size: 0.75rem; color: #666; margin-top: 10px;">
-                        Zero allucinazioni: recupero vettoriale strutturato senza sintesi generativa.
-                    </div>
+                <div class="dot-pipeline-node">
+                    <div class="dot-circle">2</div>
+                    <div class="dot-title-label">DOT 2: Determinazione Soluzione</div>
+                    <div class="dot-sub-label">(to-be)</div>
                 </div>
 
-                <!-- COL 3: RISOLUZIONE & BIVIO -->
+                <div class="dot-pipeline-node">
+                    <div class="dot-circle">3</div>
+                    <div class="dot-title-label">DOT 3: Personalizzazione Intervento</div>
+                    <div class="dot-sub-label">(DIY / SME)</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SIMULATOR INTERACTIVE SECTION -->
+        <section class="simulator-section">
+            <div class="simulator-grid">
+                
+                <!-- COLONNA 1: CAROSELLO 12 USE CASES -->
                 <div class="sim-col">
-                    <div>
-                        <div class="sim-col-title">3. Next Best DOT & Risoluzione</div>
+                    <div class="carousel-wrapper">
                         
-                        <div class="res-metric">
-                            <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-purple-light); display: block;">Next Best DOT (NBD) Calcolato</span>
-                            <strong id="txt-nbd" style="color: #fff; font-size: 0.95rem;">► #412: Gap Analysis Margini & Scaduto</strong>
-                            <div id="txt-impact" style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 5px;">
-                                ⏱ Tempo: 3 settimane vs 6 mesi | 💰 Riduzione costi: -75%
+                        <div class="carousel-scroll-zone" id="btn-scroll-up" onmouseenter="startAutoScroll(-3)" onmouseleave="stopAutoScroll()" onclick="manualScroll(-100)">
+                            ▲ Scorri verso l'alto
+                        </div>
+
+                        <div class="carousel-body">
+                            <div class="carousel-scrollbar-track">
+                                <div class="carousel-scrollbar-thumb" id="carousel-thumb"></div>
+                            </div>
+
+                            <div class="carousel-list" id="carousel-list" onscroll="updateScrollThumb()">
+                                
+                                <!-- BUSINESS (Viola Scuro) -->
+                                <div class="uc-category-header" style="background: rgba(112, 66, 210, 0.3); color: #d8b4fe;">Ambito Business</div>
+                                
+                                <div class="uc-card uc-business active" onclick="selectUseCase('b1', this)">
+                                    <h4 class="uc-title">Studio Commercialista</h4>
+                                    <p class="uc-desc">Evoluzione da conformità fiscale a controllo di gestione scalabile per 50 clienti con Token Paralleli.</p>
+                                </div>
+
+                                <div class="uc-card uc-business" onclick="selectUseCase('b2', this)">
+                                    <h4 class="uc-title">PMI Manifatturiera</h4>
+                                    <p class="uc-desc">Gap analysis margini di commessa e audit dei colli di bottiglia operativi senza costosi advisor esterni.</p>
+                                </div>
+
+                                <div class="uc-card uc-business" onclick="selectUseCase('b3', this)">
+                                    <h4 class="uc-title">Rete B2B & Associazioni</h4>
+                                    <p class="uc-desc">Mappatura automatica dei fabbisogni dei membri e generazione di referral qualificati cross-settore.</p>
+                                </div>
+
+                                <!-- PERSONA (Nero Profondo) -->
+                                <div class="uc-category-header" style="background: #222228; color: #a1a1aa;">Ambito Persona</div>
+
+                                <div class="uc-card uc-persona" onclick="selectUseCase('p1', this)">
+                                    <h4 class="uc-title">Executive & Time Allocation</h4>
+                                    <p class="uc-desc">Allineamento tra priorità strategiche, energia individuale e riorganizzazione del workflow personale.</p>
+                                </div>
+
+                                <div class="uc-card uc-persona" onclick="selectUseCase('p2', this)">
+                                    <h4 class="uc-title">Pianificazione Patrimonio & Famiglia</h4>
+                                    <p class="uc-desc">Governance delle decisioni patrimoniali e passaggio generazionale con totale privacy on-device.</p>
+                                </div>
+
+                                <div class="uc-card uc-persona" onclick="selectUseCase('p3', this)">
+                                    <h4 class="uc-title">Decision Making Sotto Stress</h4>
+                                    <p class="uc-desc">Strutturazione deterministica delle alternative per ridurre il carico cognitivo e l'indecisione.</p>
+                                </div>
+
+                                <!-- FORMAZIONE (Ocra Scuro) -->
+                                <div class="uc-category-header" style="background: rgba(245, 197, 24, 0.2); color: #fde047;">Ambito Formazione</div>
+
+                                <div class="uc-card uc-training" onclick="selectUseCase('f1', this)">
+                                    <h4 class="uc-title">AI Augmented Sales (Beyond CRM)</h4>
+                                    <p class="uc-desc">Trasformazione della forza vendita con metodologie di vendita consulenziale aumentate da AI offline.</p>
+                                </div>
+
+                                <div class="uc-card uc-training" onclick="selectUseCase('f2', this)">
+                                    <h4 class="uc-title">Upskilling Manageriale Deterministico</h4>
+                                    <p class="uc-desc">Percorsi di apprendimento guidati su 931 nodi senza sintesi approssimative dei contenuti core.</p>
+                                </div>
+
+                                <div class="uc-card uc-training" onclick="selectUseCase('f3', this)">
+                                    <h4 class="uc-title">Certificazione Competenze Advisor</h4>
+                                    <p class="uc-desc">Addestramento operativo per l'applicazione delle 400 lenti direzionali sui bilanci aziendali.</p>
+                                </div>
+
+                                <!-- WELLNESS (Lilla Scuro) -->
+                                <div class="uc-category-header" style="background: rgba(147, 51, 234, 0.25); color: #e9d5ff;">Ambito Wellness</div>
+
+                                <div class="uc-card uc-wellness" onclick="selectUseCase('w1', this)">
+                                    <h4 class="uc-title">Protocolli di Longevità & Focus</h4>
+                                    <p class="uc-desc">Integrazione di routine nutrizionali, recupero e supplementazione (C8 MCT) con metriche oggettive.</p>
+                                </div>
+
+                                <div class="uc-card uc-wellness" onclick="selectUseCase('w2', this)">
+                                    <h4 class="uc-title">Prevenzione Burnout & Carico Psicofisico</h4>
+                                    <p class="uc-desc">Monitoraggio deterministico dei segnali precoci di sovraccarico lavorativo ed equilibrio biologico.</p>
+                                </div>
+
+                                <div class="uc-card uc-wellness" onclick="selectUseCase('w3', this)">
+                                    <h4 class="uc-title">Corporate Wellness per PMI</h4>
+                                    <p class="uc-desc">Programmi su misura per team operativi volti ad aumentare lucidità mentale, salute e retention.</p>
+                                </div>
+
                             </div>
                         </div>
 
-                        <div style="margin-bottom: 10px;">
-                            <span style="font-size: 0.75rem; color: var(--text-gray); display: block; margin-bottom: 6px;">Seleziona la modalità di esecuzione:</span>
-                            <button class="btn-diy" id="btn-diy-label">⚡ Modalità DiY (Guida con Tutor)</button>
-                            <button class="btn-sme" id="btn-sme-label">🤝 Connetti a Partner SME (Nodo L3 Vetrina)</button>
+                        <div class="carousel-scroll-zone" id="btn-scroll-down" onmouseenter="startAutoScroll(3)" onmouseleave="stopAutoScroll()" onclick="manualScroll(100)">
+                            ▼ Scorri verso il basso
                         </div>
+
                     </div>
-                    <div id="txt-footer-hint" style="font-size: 0.75rem; color: #777;">
-                        Lo Studio genera l'audit direzionale in autonomia per la propria azienda cliente.
+                </div>
+
+                <!-- COLONNA 2: DETERMINAZIONE SOLUZIONE TO-BE -->
+                <div class="sim-col">
+                    
+                    <div class="calc-box">
+                        <span class="calc-tag">[P] Profilo Aggiornato (Stato As-Is)</span>
+                        <p class="calc-val" id="out-p">Profilo Studio Commercialista (Token Parallelo)</p>
                     </div>
+
+                    <div class="calc-box">
+                        <span class="calc-tag">[C] Competenze Strutturate Attivate</span>
+                        <p class="calc-val" id="out-c">400+ DOTs Controllo Direzionale & Margini</p>
+                    </div>
+
+                    <div class="calc-box">
+                        <span class="calc-tag">[R] Ruolo & Vincoli Operativi</span>
+                        <p class="calc-val" id="out-r">Advisor Fiscale / Fractional CFO</p>
+                    </div>
+
+                    <div class="formula-callout">
+                        <strong style="color: var(--accent-gold);">Formula Attiva: S = C &times; P &times; R</strong><br>
+                        Calcolo deterministico in RAM tramite <em>_healDatabaseRollups</em>. Nessuna allucinazione o dispersione generativa cloud.
+                    </div>
+
+                </div>
+
+                <!-- COLONNA 3: PERSONALIZZAZIONE INTERVENTO (DIY / SME) -->
+                <div class="sim-col">
+                    
+                    <div class="nbd-card">
+                        <span style="font-size: 0.72rem; color: #b085f5; font-weight: bold; text-transform: uppercase;">Next Best DOT (NBD) Calcolato</span>
+                        <h4 class="nbd-title" id="out-nbd-title">► #412: Gap Analysis Margini & Scaduto</h4>
+                        <div class="nbd-metric" id="out-nbd-metric">⚡ Tempo: 3 settimane vs 6 mesi | 💰 Costi: -75%</div>
+                        <p style="font-size: 0.8rem; color: #dedee8; margin: 0;" id="out-nbd-desc">
+                            Lo Studio genera l'audit direzionale completo in autonomia per la propria azienda cliente.
+                        </p>
+                    </div>
+
+                    <button class="action-button-diy" id="btn-diy" onclick="alert('Avvio Guida Determinista DIY sul nodo calcolato.')">
+                        <span>⚡</span> <span id="txt-diy">Modalità DIY (Guida con Tutor)</span>
+                    </button>
+
+                    <button class="action-button-sme" id="btn-sme" onclick="alert('Connessione al partner SME certificato per questo nodo.')">
+                        <span>👥</span> <span id="txt-sme">Connetti a Partner SME (Nodo L3)</span>
+                    </button>
+
+                    <div class="res-summary-box" id="out-res-summary">
+                        Percorso certificato a Zero Anomalie. I dati rimangono isolati nel Profilo locale criptato on-device.
+                    </div>
+
                 </div>
 
             </div>
         </section>
 
-        <!-- I 4 RUOLI OPERATIVI DI CTD -->
-        <section class="framework-section">
-            <h2 style="text-align: center; color: #fff; font-size: 1.6rem; margin: 0 0 10px 0;">I 4 Ruoli di Guida Aumentata</h2>
-            <p style="text-align: center; color: var(--text-gray); font-size: 0.95rem; margin: 0 0 20px 0;">
-                CtD non si limita a rispondere: adotta dinamicamente il ruolo necessario per guidarti lungo il Journey.
+        <!-- VALORE ARCHITETTURALE DIRETTO -->
+        <section style="max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center;">
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 12px;">Architettura Adattiva per Ogni Dominio di Conoscenza</h3>
+            <p style="color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+                Sia applicato ad un grande studio professionale, ad una linea di vendita complessa, alla routine individuale o al benessere biologico, CtD mantiene intatta la sua promessa brevettata: <strong>zero internet footprint, calcolo esatto in RAM e totale sovranità del dato</strong>.
             </p>
-            <div class="framework-grid">
-                <div class="role-card">
-                    <h3>Advisor</h3>
-                    <p>Esegue la diagnosi strategica, calcola la matrice SWOT in RAM e individua i trade-off decisionali ottimali.</p>
-                </div>
-                <div class="role-card">
-                    <h3>Coach</h3>
-                    <p>Presidia la disciplina esecutiva, allineando i progressi operativi con gli obiettivi di lungo termine definiti nel Profilo.</p>
-                </div>
-                <div class="role-card">
-                    <h3>Tutor</h3>
-                    <p>Sblocca i passaggi operativi complessi fornendo indicazioni passo-passo per completare i nodi in autonomia (DiY).</p>
-                </div>
-                <div class="role-card">
-                    <h3>Trainer</h3>
-                    <p>Trasferisce metodologie e competenze specialistiche in modo incrementale attraverso i 931 nodi del grafo.</p>
-                </div>
-            </div>
         </section>
 
-        <!-- HUB DI NAVIGAZIONE VERSO I TARGET -->
-        <section class="hub-grid" style="margin-top: 50px;">
-
-            <div class="hub-card hub-business">
-                <h2>Studi & Advisory (B2B2B)</h2>
-                <p>Trasforma il tuo studio in un centro di controllo direzionale proattivo con oltre 400 DOTs e segregazione Prisma multi-partner.</p>
-                <a href="services.html" class="cta-button">Scopri il Modello B2B</a>
-            </div>
-
-            <div class="hub-card hub-founders">
-                <h2>Autarchia Imprenditoriale</h2>
-                <p>Esoscheletro gestionale offline per PMI e titolari: prendi decisioni strategiche proteggendo il 100% dei dati aziendali.</p>
-                <a href="founders.html" class="cta-button">Accedi al Programma</a>
-            </div>
-
-            <div class="hub-card hub-platform">
-                <h2>Piattaforma & Brevetti (IP)</h2>
-                <p>Esamina l'architettura tecnica brevettabile: runtime in RAM, embedding locali, topologia a sinapsi e modello S=C+P+R.</p>
-                <a href="platform.html" class="cta-button">Esplora l'Architettura</a>
-            </div>
-
-            <div class="hub-card hub-services">
-                <h2>Visione "Beyond CRM"</h2>
-                <p>Scopri il percorso strategico e l'esperienza di oltre 50 anni nelle piattaforme aziendali e nella vendita enterprise.</p>
-                <a href="leadership.html" class="cta-button">Vedi la Leadership</a>
-            </div>
-
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Connect the DOTS (CtD). Tutti i diritti riservati. Brevetto e Proprietà Intellettuale registrati.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). Tutti i diritti riservati. Brevetto per Invenzione Industriale n. 102025000001002.</p>
     </footer>
 
-    <!-- SCRIPT SIMULATORE INTERATTIVO -->
     <script>
-        const scenarios = {
-            1: {
-                p: "Profilo Studio (Token Parallelo Isolato)",
-                c: "400+ DOTs Controllo Direzionale & Fiscale",
-                r: "Advisor + Trainer",
-                nbd: "► #412: Gap Analysis Margini & Capex",
-                impact: "⏱ Tempo: 3 settimane vs 6 mesi | 💰 Riduzione overhead: -75%",
-                diy: "⚡ Modalità DiY: Genera Audit Direzionale",
-                sme: "🤝 Assegna a Temporary CFO di Rete",
-                hint: "Lo Studio monetizza l'audit iniziale trasformandolo in canone di consulenza mensile."
+        const useCasesData = {
+            'b1': {
+                p: "Profilo Studio Commercialista (Token Parallelo)",
+                c: "400+ DOTs Controllo Direzionale & Margini",
+                r: "Advisor Fiscale / Fractional CFO",
+                nbdTitle: "► #412: Gap Analysis Margini & Scaduto",
+                nbdMetric: "⚡ Tempo: 3 settimane vs 6 mesi | 💰 Costi: -75%",
+                nbdDesc: "Lo Studio genera l'audit direzionale completo in autonomia per la propria azienda cliente.",
+                diy: "Modalità DIY (Guida Autonoma Studio)",
+                sme: "Supporto Fractional CFO Partner",
+                summary: "Bypass dei limiti di compliance: lo Studio trasforma la contabilità ordinaria in advisory ad alto margine."
             },
-            2: {
-                p: "Profilo PMI Locale (Offline Criptato)",
-                c: "Grafo Strategico PMI (931 Nodi)",
-                r: "Coach + Tutor",
-                nbd: "► #208: Mappatura Flusso di Cassa & Scaduto",
-                impact: "⏱ Tempo: 5 giorni vs 8 settimane | 💰 Costo: 0 consulenze esterne",
-                diy: "⚡ Modalità DiY: Esegui Riorganizzazione",
-                sme: "🤝 Connetti a Consulente Finanziario L3",
-                hint: "L'imprenditore risolve i colli di bottiglia in autonomia senza cedere dati aziendali in cloud."
+            'b2': {
+                p: "Profilo PMI Manifatturiera (Dati di Produzione)",
+                c: "DOTs Efficienza Linea & Calcolo Costo Orario",
+                r: "Titolare / Direttore di Produzione",
+                nbdTitle: "► #184: Mappatura Centri di Costo Improduttivi",
+                nbdMetric: "⚡ Esecuzione: 48 ore | 💰 Risparmio stimato: €45k/anno",
+                nbdDesc: "Identificazione immediata dei colli di bottiglia operativi senza esporre dati di bilancio all'esterno.",
+                diy: "Audit DIY Guidato da CtD Engine",
+                sme: "Ingegnere Gestionale Certificato",
+                summary: "Calcolo deterministico esatto: i margini per commessa vengono ricalcolati in RAM a errore zero."
             },
-            3: {
-                p: "Profilo Rete / Capitolo Associativo",
-                c: "Matrice Competenze Trasversali & Lenti Prisma",
-                r: "Advisor + Next Best Matcher",
-                nbd: "► #730: Match Fabbisogno Digitalizzazione",
-                impact: "⏱ Tempo: Immediato | 💰 Conversione Referral: +80%",
-                diy: "⚡ Modalità DiY: Valuta Autodiagnosi",
-                sme: "🤝 Connetti a Partner Verticale del Circuito",
-                hint: "La rete valorizza le sinergie interne trasformando i gap degli associati in commesse qualificate."
+            'b3': {
+                p: "Profilo Rete d'Imprese / Capitolo Professionale",
+                c: "Matrice Sinapsi B2B & Skill Mapping",
+                r: "Presidente di Rete / Community Manager",
+                nbdTitle: "► #730: Generazione Referral Intelligente",
+                nbdMetric: "⚡ Conversion rate: +60% | 💰 Zero dispersione commerciale",
+                nbdDesc: "Matching scientifico tra bisogni espressi dai soci e competenze verticali degli aderenti.",
+                diy: "Navigazione Matrice in Autonomia",
+                sme: "Facilitatore di Rete Abilitato",
+                summary: "Le sinapsi bidirezionali creano relazioni di business stabili senza esporre l'albero master."
+            },
+            'p1': {
+                p: "Profilo Esecutivo (Carico Cognitivo & Priorità)",
+                c: "DOTs Energy Management & Time Matrix",
+                r: "Top Executive / Imprenditore",
+                nbdTitle: "► #089: Riorganizzazione Blocchi Decisionali",
+                nbdMetric: "⚡ Tempo recuperato: 8h/settimana | 🧠 Stress: -40%",
+                nbdDesc: "Allineamento rigoroso tra ore a massimo focus cognitivo e attività ad alto impatto economico.",
+                diy: "Auto-Ricalibrazione Settimanale DIY",
+                sme: "Executive Performance Coach",
+                summary: "Protezione totale: i diari di lavoro e le priorità personali restano criptati solo on-device."
+            },
+            'p2': {
+                p: "Profilo Famiglia & Patrimonio (Asset Riservati)",
+                c: "DOTs Wealth Allocation & Governance Familiare",
+                r: "Capofamiglia / Fiduciario",
+                nbdTitle: "► #512: Matrice Rischio & Passaggio Ereditario",
+                nbdMetric: "⚡ Chiarezza strategica: 100% | 🔒 Zero rischio fuga dati",
+                nbdDesc: "Simulazione degli scenari successori e patrimoniali in totale assenza di connessione cloud.",
+                diy: "Simulazione Privata Guidata",
+                sme: "Family Officer / Legale Specialistico",
+                summary: "Bypassing GDPR e segretezza assoluta per proteggere le scelte patrimoniali più riservate."
+            },
+            'p3': {
+                p: "Profilo Decisionale (Dilemmi Strategici As-Is)",
+                c: "Albero SWOT Deterministico & Valutazione Rischi",
+                r: "Decision Maker Individuale",
+                nbdTitle: "► #203: De-Biasing & Stress Test Opzioni",
+                nbdMetric: "⚡ Velocità di decisione: 4x | 🎯 Accuratezza: 95%",
+                nbdDesc: "Scomposizione analitica del dilemma in rami logici deterministici senza allucinazioni da chatbot.",
+                diy: "Esercizio di De-Biasing DIY",
+                sme: "Mentor Strategico Certificato",
+                summary: "I nodi non esplorati vengono quantificati automaticamente come minacce e debolezze oggettive."
+            },
+            'f1': {
+                p: "Profilo Forza Vendita (Pipeline & Obiezioni)",
+                c: "DOTs Beyond CRM & Metodologia AI-Augmented",
+                r: "Direttore Commerciale / Sales Advisor",
+                nbdTitle: "► #340: Closing Strutturato & Gestione Resistenza",
+                nbdMetric: "⚡ Chiusura deal: +35% | ⏱️ Taglio ciclo vendita: -20gg",
+                nbdDesc: "Addestramento sui pattern di negoziazione complessa con scenari deterministici reali.",
+                diy: "Simulatore di Vendita Interattivo",
+                sme: "Master Trainer Beyond CRM",
+                summary: "La formazione non usa riassunti generici ma la documentazione integrale arricchita del metodo."
+            },
+            'f2': {
+                p: "Profilo Skill Gap Dipendenti (Competenze As-Is)",
+                c: "931 Nodi Master di Conoscenza Applicata",
+                r: "HR Manager / Academy Director",
+                nbdTitle: "► #615: Micro-Learning Deterministico su Misura",
+                nbdMetric: "⚡ Retention nozioni: +80% | 💰 Costi corsi esterni: -60%",
+                nbdDesc: "Percorso personalizzato che attiva solo i nodi di reale lacuna senza moduli ridondanti.",
+                diy: "Apprendimento Modulare Autonomo",
+                sme: "Docente Specialistico Certificato",
+                summary: "Ogni nodo appreso incrementa lo stato del Profilo aggiornato aziendale senza dispersioni."
+            },
+            'f3': {
+                p: "Profilo Giovane Advisor / Junior Analyst",
+                c: "Framework DOTs Bilancio & Reporting Finanziario",
+                r: "Praticante / Controller Junior",
+                nbdTitle: "► #405: Validazione Indici di Allerta Crisi",
+                nbdMetric: "⚡ Autonomia operativa: 15 giorni | 🎯 Errore: 0%",
+                nbdDesc: "Guida passo-passo nell'interpretazione degli indicatori secondo la normativa vigente.",
+                diy: "Esercitazione Guidata su Dati Reali",
+                sme: "Senior Partner / Dottore Commercialista",
+                summary: "L'algoritmo calcola in RAM i roll-up perfetti evitando qualsiasi approssimazione interpretativa."
+            },
+            'w1': {
+                p: "Profilo Biometrico & Routine (Dati Nutrizione/Sonno)",
+                c: "DOTs Protocolli Longevità & Focus Mitocondriale",
+                r: "Professionista / Biohacker",
+                nbdTitle: "► #880: Protocollo Energia Mattutina (C8 MCT + Digiuno)",
+                nbdMetric: "⚡ Lucidità cognitiva: +50% | ⏳ Stabilità energetica: 6h",
+                nbdDesc: "Ottimizzazione scientifica dei nutrienti per massimizzare la concentrazione mentale senza cali glicemici.",
+                diy: "Monitoraggio Scheda Personale DIY",
+                sme: "Medico / Nutrizionista Funzionale",
+                summary: "Zero tracciamento cloud: i tuoi dati biologici non vengono ceduti a piattaforme terze."
+            },
+            'w2': {
+                p: "Profilo Sovraccarico Lavorativo (Sintomi As-Is)",
+                c: "DOTs Varianza Cardiaca & Igiene del Sonno",
+                r: "Team Leader / Collaboratore",
+                nbdTitle: "► #812: Ricalibrazione Cicli di Riposo & Recupero",
+                nbdMetric: "⚡ Riduzione insonnia: -70% | 🔋 Ricarica energetica: +45%",
+                nbdDesc: "Interventi mirati sull'ambiente serale e sui ritmi circadiani per bloccare il burnout prima che si cronicizzi.",
+                diy: "Piano di Recupero Graduale DIY",
+                sme: "Specialista Medicina del Sonno",
+                summary: "Mappatura preventiva delle minacce psicofisiche con feedback deterministici immediati."
+            },
+            'w3': {
+                p: "Profilo Benessere Aziendale (Clima & Assenteismo)",
+                c: "DOTs Ergonomia, Idratazione & Salute Collettiva",
+                r: "Responsabile Sicurezza / RSPP",
+                nbdTitle: "► #850: Micro-Pause Attive & Ergonomia Posturale",
+                nbdMetric: "⚡ Assenze per dolori: -30% | 😊 Soddisfazione team: 9.2/10",
+                nbdDesc: "Integrazione di brevi protocolli motori e posturali durante i turni di lavoro sedentario.",
+                diy: "Attivazione Routine Guidata di Gruppo",
+                sme: "Fisioterapista / Posturologo Aziendale",
+                summary: "Applicazione specialistica scalabile che migliora la produttività senza stravolgere i ritmi operativi."
             }
         };
 
-        function updateSimulator(id) {
-            // Aggiorna classi bottoni
-            document.getElementById('scen-1').classList.remove('active');
-            document.getElementById('scen-2').classList.remove('active');
-            document.getElementById('scen-3').classList.remove('active');
-            document.getElementById('scen-' + id).classList.add('active');
+        function selectUseCase(id, cardElement) {
+            document.querySelectorAll('.uc-card').forEach(c => c.classList.remove('active'));
+            cardElement.classList.add('active');
 
-            // Aggiorna contenuti dinamici
-            const data = scenarios[id];
-            document.getElementById('txt-p').innerText = data.p;
-            document.getElementById('txt-c').innerText = data.c;
-            document.getElementById('txt-r').innerText = data.r;
-            document.getElementById('txt-nbd').innerText = data.nbd;
-            document.getElementById('txt-impact').innerText = data.impact;
-            document.getElementById('btn-diy-label').innerText = data.diy;
-            document.getElementById('btn-sme-label').innerText = data.sme;
-            document.getElementById('txt-footer-hint').innerText = data.hint;
+            const data = useCasesData[id];
+            if (!data) return;
+
+            document.getElementById('out-p').innerText = data.p;
+            document.getElementById('out-c').innerText = data.c;
+            document.getElementById('out-r').innerText = data.r;
+            document.getElementById('out-nbd-title').innerText = data.nbdTitle;
+            document.getElementById('out-nbd-metric').innerText = data.nbdMetric;
+            document.getElementById('out-nbd-desc').innerText = data.nbdDesc;
+            document.getElementById('txt-diy').innerText = data.diy;
+            document.getElementById('txt-sme').innerText = data.sme;
+            document.getElementById('out-res-summary').innerText = data.summary;
+        }
+
+        // CAROSELLO SCROLL LOGIC
+        let scrollInterval = null;
+        const carouselList = document.getElementById('carousel-list');
+        const scrollThumb = document.getElementById('carousel-thumb');
+
+        function startAutoScroll(step) {
+            if (scrollInterval) clearInterval(scrollInterval);
+            scrollInterval = setInterval(() => {
+                carouselList.scrollTop += step;
+                updateScrollThumb();
+            }, 20);
+        }
+
+        function stopAutoScroll() {
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+                scrollInterval = null;
+            }
+        }
+
+        function manualScroll(amount) {
+            carouselList.scrollBy({ top: amount, behavior: 'smooth' });
+            setTimeout(updateScrollThumb, 250);
+        }
+
+        function updateScrollThumb() {
+            const maxScroll = carouselList.scrollHeight - carouselList.clientHeight;
+            if (maxScroll <= 0) return;
+            const scrollRatio = carouselList.scrollTop / maxScroll;
+            const trackHeight = carouselList.clientHeight - 35; // 35px is thumb height
+            scrollThumb.style.top = (scrollRatio * trackHeight) + 'px';
         }
     </script>
 </body>
