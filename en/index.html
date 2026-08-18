@@ -3,69 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect the DOTS (CtD) - Home</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Percorso corretto -->
+    <title>Connect the DOTS (CtD) - Deterministic Offline AI Platform</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .hero-wrap {
+            max-width: 1080px;
+            margin: 40px auto 25px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            background: #18112c;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 0 0 16px 0;
+            color: #ffffff;
+        }
+
+        .hero-title span {
+            color: var(--accent-gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.18rem;
+            color: #dedee8;
+            max-width: 900px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+        }
+
+        .hero-banner-img {
+            max-width: 1000px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 45px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 4-Box Grid */
+        .cards-grid {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .nav-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .nav-card:hover {
+            border-color: var(--accent-purple-light);
+            transform: translateY(-2px);
+        }
+
+        .nav-card.featured {
+            border-color: var(--accent-gold);
+            background: #151322;
+        }
+
+        .card-tag {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 700;
+            color: var(--accent-purple-light);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .nav-card.featured .card-tag {
+            color: var(--accent-gold);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+        }
+
+        .card-btn {
+            display: block;
+            text-align: center;
+            background: var(--accent-gold);
+            color: #000000;
+            padding: 11px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .card-btn:hover {
+            opacity: 0.9;
+        }
+
+        .card-btn-secondary {
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
+        }
+
+        .card-btn-secondary:hover {
+            background: rgba(112, 66, 210, 0.2);
+            color: #ffffff;
+        }
+
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a> <!-- Percorso corretto -->
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
-                <a href="index.html">Home</a> <!-- Percorso corretto -->
-                <a href="platform.html">Platform</a> <!-- Percorso corretto -->
-                <a href="services.html">Services</a> <!-- Percorso corretto -->
-                <a href="business.html">Business</a> <!-- Percorso corretto -->
-                <a href="founders.html">Founders</a> <!-- Percorso corretto -->
-                <a href="leadership.html">Leadership</a> <!-- Percorso corretto -->
-                <!-- BOTTONE LINGUA -->
-                | <a href="../index.html" style="color: #FAE100; font-weight: bold;">IT</a> <!-- Percorso corretto -->
+                <a href="index.html" class="active">Home</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosystem & GTM</a>
+                <a href="founders.html">SME Autarchy</a>
+                <a href="leadership.html">Leadership</a>
+                | <a href="../index.html" style="color: var(--accent-gold); font-weight: bold;">IT</a>
             </div>
         </nav>
-        
-        <div class="hero-text">
-            <h1>where a Person's specific needs can finally be met by the Business...</h1>
-            <p class="subtitle">...to achieve levels of service and Customer Satisfaction never reached before.</p>
-        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <!-- Percorso corretto per l'immagine -->
-            <img src="../banner-main.png" alt="Person-Business Relationship Diagram" style="width:100%; max-width:900px; margin: 20px auto; display: block;">
-        </section>
+        <div class="hero-wrap">
+            <div class="badge-hero">
+                ⚡ Deterministic On-Device Knowledge Architecture • Patent Registered
+            </div>
+            <h1 class="hero-title">
+                Where Individual Needs Connect with Business Precision.<br>
+                <span>100% Offline. Zero Data Footprint. Pure Determinism.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Connect the DOTS (CtD) bridges business capabilities with exact persona requirements through a proprietary mathematical graph of 931 nodes, operating entirely on your desktop without external cloud dependencies.
+            </p>
+            <img src="../banner-main.png" alt="Connect the DOTS Architecture Diagram" class="hero-banner-img">
+        </div>
 
-        <section class="hub-grid">
+        <section class="cards-grid">
 
-            <div class="hub-card hub-founders">
-                <h2>Founders Program</h2>
-                <p>Join the early adopters of one of the applications we are about to launch to get the maximum benefit right away.</p>
-                <a href="founders.html" class="cta-button">Join Us</a> <!-- Link a en/founders.html -->
+            <!-- BOX 1: EARLY ADOPTER PROGRAM -->
+            <div class="nav-card featured">
+                <div>
+                    <span class="card-tag">Free Desktop Access</span>
+                    <h2 class="card-title">Early Adopter Program</h2>
+                    <p class="card-desc">
+                        Get free access to the offline engine for macOS & Windows. Experience deterministic management control on your computer.
+                    </p>
+                </div>
+                <a href="founders.html" class="card-btn">Join as Founder →</a>
             </div>
 
-            <div class="hub-card hub-business">
-                <h2>Solutions for your Business</h2>
-                <p>Discover how our solution can revolutionize your GTM or that of the companies in your investment portfolio.</p>
-                <a href="business.html" class="cta-button">Start Here</a> <!-- Link a en/business.html -->
+            <!-- BOX 2: ECOSYSTEM & GTM -->
+            <div class="nav-card">
+                <div>
+                    <span class="card-tag">Business & GTM</span>
+                    <h2 class="card-title">Ecosystem Solutions</h2>
+                    <p class="card-desc">
+                        Discover how CtD scales client engagement and revenue streams across enterprise portfolios and strategic partners.
+                    </p>
+                </div>
+                <a href="business.html" class="card-btn card-btn-secondary">Explore Ecosystem →</a>
             </div>
 
-            <div class="hub-card hub-platform">
-                <h2>Explore the Platform</h2>
-                <p>Examine the 15 "building blocks" (all CtD Intellectual Properties) that will make your interaction with People unique.</p>
-                <a href="platform.html" class="cta-button">See the IP</a> <!-- Link a en/platform.html -->
+            <!-- BOX 3: PLATFORM & IP -->
+            <div class="nav-card">
+                <div>
+                    <span class="card-tag">Proprietary Technology</span>
+                    <h2 class="card-title">Platform & 15 IP Blocks</h2>
+                    <p class="card-desc">
+                        Examine the deterministic graph architecture, patented offline mechanics, and our proprietary Next Best DOT algorithms.
+                    </p>
+                </div>
+                <a href="platform.html" class="card-btn card-btn-secondary">View Platform IP →</a>
             </div>
 
-            <div class="hub-card hub-services">
-                <h2>Specialized Services</h2>
-                <p>See our innovative service offer to develop your new way of interacting with People in your Business.</p>
-                <a href="services.html" class="cta-button">Discover Services</a> <!-- Link a en/services.html -->
+            <!-- BOX 4: ADVISORY & B2B -->
+            <div class="nav-card">
+                <div>
+                    <span class="card-tag">Advisory & CPA</span>
+                    <h2 class="card-title">Structured Services</h2>
+                    <p class="card-desc">
+                        Turn passive compliance into high-margin management control advisory for SME clients and professional accounting networks.
+                    </p>
+                </div>
+                <a href="services.html" class="card-btn card-btn-secondary">Discover Services →</a>
             </div>
 
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
+        <p>&copy; 2026 Connect the DOTS (CtD). All rights reserved. Industrial Patent n. 102025000001002.</p>
     </footer>
 
 </body>
