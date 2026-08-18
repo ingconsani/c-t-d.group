@@ -3,106 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Founders Career - CtD</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Link a style.css -->
+    <title>Connect the DOTS (CtD) - Early Adopter Application (Career)</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+        }
+        body { background-color: var(--bg-dark); color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        .form-wrap { max-width: 780px; margin: 40px auto 60px auto; padding: 0 20px; }
+        .badge { display: inline-block; background: #18112c; color: var(--accent-purple-light); border: 1px solid var(--accent-purple); padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; margin-bottom: 16px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .form-group { margin-bottom: 18px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 0.88rem; font-weight: 600; color: #dedee8; }
+        .form-group input, .form-group textarea { width: 100%; background: #0d0d12; border: 1px solid var(--border-color); border-radius: 6px; padding: 12px 14px; color: #ffffff; font-size: 0.92rem; box-sizing: border-box; font-family: inherit; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-gold); }
+        .btn-submit { display: block; width: 100%; background: var(--accent-gold); color: #000; padding: 14px; border-radius: 6px; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; transition: opacity 0.2s; margin-top: 10px; }
+        .btn-submit:hover { opacity: 0.9; }
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <header>
         <nav class="main-nav">
-            <a href="../index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="platform.html">Platform</a>
-                <a href="services.html">Services</a>
-                <a href="business.html">Business</a>
-                <a href="founders.html">Founders</a>
-                <a href="leadership.html">Leadership</a> 
-                <!-- BOTTONE LINGUA AGGIUNTO -->
-                | <a href="../founder_c.html" style="color: #FAE100; font-weight: bold;">IT</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosystem & GTM</a>
+                <a href="founders.html" class="active">SME Autarchy</a>
+                <a href="leadership.html">Leadership</a>
+                | <a href="founders.html" style="color: var(--accent-gold); font-weight: bold;">← Back to Founders</a>
             </div>
         </nav>
-        <div class="hero-text platform-hero">
-            <h1>Founder Track: Career</h1>
-        </div>
     </header>
-    
-    <main>
 
-        <section class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div class="content-box">
-                <h2>The "Founders" Program (What You Get)</h2>
-                <p>This program is not for everyone. It's for early adopters who want a competitive edge.</p>
-                <p>You will have the chance to use this application under unique conditions, even paying nothing if you help us make it go viral.</p>
-            </div>
-        </section>
+    <main class="form-wrap">
+        <div style="text-align: center; margin-bottom: 25px;">
+            <span class="badge">🎯 Early Adopter • Career Domain (macOS & Windows PC)</span>
+            <h1 style="font-size: 2.2rem; margin: 0 0 8px 0; color: #fff;">Career & Skill Evolution</h1>
+            <p style="color: var(--text-gray); font-size: 0.95rem; margin: 0;">Map your skills and identify your Next Best DOT across the deterministic knowledge graph.</p>
+        </div>
 
-        <section class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div class="content-box">
-                <h2>What We're Looking For (What We Expect from You)</h2>
-                <p>We are not looking for simple "customers," but strategic partners who believe in this approach. In exchange for privileged access, we expect:</p>
-                <ul style="padding-left: 20px; margin-top: 15px;">
-                    <li style="margin-bottom: 10px;"><strong>Timely Feedback:</strong> Use the app and tell us what doesn't work well or is hard to use.</li>
-                    <li style="margin-bottom: 10px;"><strong>Value Propositions:</strong> Help us define the next features based on your needs.</li>
-                    <li style="margin-bottom: 10px;"><strong>Active Word-of-Mouth:</strong> If the app is giving you real value, help us spread the word.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact" class="content-section" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-            
-            <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 20px;">Your Application (Career)</h2>
-            
-            <form id="contact-form" action="https://formspree.io/f/xwpwyvlv" method="POST">
-                
-                <!-- RIGA AGGIUNTA PER OGGETTO EMAIL CON TAG LINGUA -->
-                <input type="hidden" name="_subject" value="[EN] New Founder C Application - Career">
+        <div class="card">
+            <form action="https://formspree.io/f/xwpwyvlv" method="POST">
+                <input type="hidden" name="_subject" value="[CtD - Early Adopter EN] Career & Executive">
 
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="nome">Your Name</label>
-                        <input type="text" id="nome" name="nome" required>
+                        <label for="nome">Full Name *</label>
+                        <input type="text" id="nome" name="nome" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@email.com" required>
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="azienda_ruolo">Current Role / Aspiration (Career)</label>
-                    <input type="text" id="azienda_ruolo" name="azienda_ruolo">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="ruolo">Current Role / Function *</label>
+                        <input type="text" id="ruolo" name="ruolo_attuale" placeholder="e.g. C-Level, Fractional Executive, Specialist" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="so">Desktop OS *</label>
+                        <input type="text" id="so" name="sistema_operativo" placeholder="e.g. Mac (macOS) or PC (Windows)" required>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="linkedin">LinkedIn Profile</label>
-                    <input type="text" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+                    <label for="linkedin">LinkedIn Profile URL</label>
+                    <input type="text" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
                 </div>
 
                 <div class="form-group">
-                    <label for="sfida">What is your #1 career challenge today?</label>
-                    <textarea id="sfida" name="sfida" rows="3" placeholder="e.g., Change jobs, get a promotion, acquire new AI skills..."></textarea>
+                    <label for="obiettivi">What professional goal or upskilling milestone do you want to accelerate with CtD?</label>
+                    <textarea id="obiettivi" name="obiettivi_carriera" rows="3" placeholder="e.g. Transitioning into advisory roles, operational AI mastery..."></textarea>
                 </div>
 
-                <!-- ***** CORREZIONE ID DUPLICATO ***** -->
-                <div class="form-group">
-                    <label for="sfida_ai">Do you see AI as more of a danger or an opportunity?</label> <!-- 'for' corretto -->
-                    <textarea id="sfida_ai" name="sfida_ai" rows="3" placeholder="e.g., A threat to my role, an opportunity to grow..."></textarea> <!-- 'id' e 'name' corretti -->
-                </div>
-                <!-- ***** FINE CORREZIONE ***** -->
-
-                <div class="form-group">
-                    <label for="commenti">Why are you interested in this program?</label>
-                    <textarea id="commenti" name="commenti" rows="4" placeholder="What do you expect from this application?"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <button type="submit" class="cta-button">Submit Application (Career)</button>
-                </div>
+                <button type="submit" class="btn-submit">Submit Career Application →</button>
             </form>
-        </section>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Connect the DOTS (CtD). All rights reserved.</p>
-    </footer>
 </body>
 </html>
