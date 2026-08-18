@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect the DOTS (CtD) - Autarchia Gestionale & Founders Program</title>
+    <title>Connect the DOTS (CtD) - Programma Early Adopter</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -33,7 +33,7 @@
             padding: 0 20px;
         }
 
-        .badge-founders {
+        .badge-ea {
             display: inline-flex;
             align-items: center;
             background: #18112c;
@@ -48,10 +48,11 @@
         }
 
         .founders-title {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 800;
-            line-height: 1.2;
+            line-height: 1.25;
             margin: 0 0 16px 0;
+            color: #ffffff;
         }
 
         .founders-title span {
@@ -59,162 +60,163 @@
         }
 
         .founders-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-gray);
-            max-width: 840px;
-            margin: 0 auto 30px auto;
+            font-size: 1.18rem;
+            color: #dedee8;
+            max-width: 950px;
+            margin: 20px auto 30px auto;
+            line-height: 1.65;
         }
 
-        /* Pillars Banner */
-        .diy-moat-banner {
-            max-width: 1060px;
-            margin: 0 auto 40px auto;
+        /* Banner Accordo Early Adopter */
+        .agreement-box {
+            max-width: 1040px;
+            margin: 30px auto 50px auto;
             background: #0e0e14;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px 30px;
+            border-radius: 14px;
+            padding: 28px 32px;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 25px;
             align-items: center;
         }
 
-        .diy-moat-banner h3 {
+        .agreement-left h3 {
             margin: 0 0 10px 0;
-            color: #fff;
-            font-size: 1.25rem;
+            color: #ffffff;
+            font-size: 1.3rem;
         }
 
-        .diy-moat-banner p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
+        .agreement-left p {
             margin: 0;
-            line-height: 1.5;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.55;
         }
 
-        .diy-features-list {
+        .agreement-perks {
             list-style: none;
             padding: 0;
             margin: 0;
-            font-size: 0.88rem;
-            color: #ddd;
         }
 
-        .diy-features-list li {
-            margin-bottom: 8px;
+        .agreement-perks li {
+            font-size: 0.9rem;
+            color: #dedee8;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
-        .diy-features-list li span {
-            color: var(--green-secure);
-            margin-right: 8px;
+        .agreement-perks li span {
+            color: var(--accent-gold);
             font-weight: bold;
         }
 
-        /* Verticals Grid */
-        .verticals-grid-wrap {
-            max-width: 1100px;
-            margin: 0 auto 60px auto;
+        /* Grid Personas */
+        .personas-grid {
+            max-width: 1080px;
+            margin: 0 auto 50px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
 
-        .vertical-card {
+        .persona-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 14px;
-            padding: 28px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.25s ease;
         }
 
-        .vertical-card:hover {
+        .persona-card:hover {
             border-color: var(--accent-purple-light);
             transform: translateY(-2px);
         }
 
-        .vertical-card.highlight {
+        .persona-card.featured {
             border-color: var(--accent-gold);
             background: #151322;
         }
 
-        .vertical-tag {
+        .persona-tag {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
             color: var(--accent-purple-light);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: block;
         }
 
-        .vertical-card.highlight .vertical-tag {
+        .persona-card.featured .persona-tag {
             color: var(--accent-gold);
         }
 
-        .vertical-card h2 {
-            font-size: 1.3rem;
+        .persona-title {
+            font-size: 1.35rem;
             font-weight: 700;
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
             color: #ffffff;
         }
 
-        .vertical-card p {
-            font-size: 0.92rem;
+        .persona-desc {
+            font-size: 0.93rem;
             color: var(--text-gray);
-            margin: 0 0 15px 0;
-            line-height: 1.5;
+            line-height: 1.55;
+            margin: 0 0 18px 0;
         }
 
-        .vertical-badge-box {
+        .persona-role-box {
             background: #0d0d12;
             border-left: 3px solid var(--accent-purple);
-            padding: 10px 14px;
-            border-radius: 4px;
-            font-size: 0.82rem;
-            color: #ddd;
-            margin-bottom: 20px;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #dedee8;
+            margin-bottom: 24px;
         }
 
-        .vertical-card.highlight .vertical-badge-box {
+        .persona-card.featured .persona-role-box {
             border-left-color: var(--accent-gold);
         }
 
-        .vertical-cta {
-            display: inline-block;
-            background: transparent;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 10px 18px;
+        .persona-btn {
+            display: block;
+            text-align: center;
+            background: var(--accent-gold);
+            color: #000000;
+            padding: 13px 20px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.92rem;
             text-decoration: none;
-            text-align: center;
-            transition: all 0.2s ease;
+            transition: opacity 0.2s;
         }
 
-        .vertical-cta:hover {
-            background: var(--accent-gold);
-            color: #000;
+        .persona-btn:hover {
+            opacity: 0.9;
         }
 
-        .vertical-cta.primary {
-            background: var(--accent-gold);
-            color: #000;
+        .persona-btn-secondary {
+            background: transparent;
+            color: var(--accent-purple-light);
+            border: 1px solid var(--accent-purple);
         }
 
-        .vertical-cta.primary:hover {
-            background: #e5b810;
+        .persona-btn-secondary:hover {
+            background: rgba(112, 66, 210, 0.2);
+            color: #ffffff;
         }
 
         @media (max-width: 860px) {
-            .diy-moat-banner, .verticals-grid-wrap {
+            .agreement-box, .personas-grid {
                 grid-template-columns: 1fr;
             }
             .founders-title {
@@ -242,95 +244,65 @@
 
     <main>
         <div class="founders-hero-wrap">
-            <div class="badge-founders">
-                Direct-to-SME & Personal Sovereignty • Programma Early Adopters
+            <div class="badge-ea">
+                🚀 Programma Early Adopter • Accesso Base Gratuito • Posti Limitati
             </div>
             <h1 class="founders-title">
-                Autarchia Gestionale: <span>L'Esoscheletro Decisionale Offline</span>
+                Diventa Early Adopter di Connect the DOTS.<br>
+                <span>Usalo Gratis Ora. Guida l'Evoluzione del Tuo Settore.</span>
             </h1>
             <p class="founders-subtitle">
-                Prendi decisioni strategiche complesse in totale autonomia. CtD mette la potenza del calcolo deterministico e 931 nodi di competenza nelle mani di imprenditori e professionisti, azzerando i costi di consulenza continua e proteggendo il segreto industriale.
+                Offriamo a imprenditori, professionisti e manager l'accesso gratuito alla versione base di CtD: sperimenta per primo la potenza del nostro motore deterministico 100% offline sul tuo dispositivo. In cambio chiediamo solo i tuoi feedback qualificati per perfezionare la piattaforma e metterti in pole position per accedere in anteprima assoluta ai prodotti, servizi e vantaggi esclusivi che rilasceremo nei prossimi mesi.
             </p>
         </div>
 
-        <section class="diy-moat-banner">
-            <div>
+        <!-- ACCORDO DI VALORE EARLY ADOPTER -->
+        <div class="agreement-box">
+            <div class="agreement-left">
                 <h3>Il Tuo Profilo Aggiornato Rimane Solo Tuo</h3>
                 <p>
-                    A differenza delle AI commerciali che usano i tuoi dati per addestrare modelli in cloud, CtD opera al 100% on-device. Il tuo <strong>Profilo aggiornato</strong> locale apprende costantemente dalle tue scelte senza mai trasmettere parametri sensibili all'esterno.
+                    A differenza delle AI cloud commerciali che usano i tuoi dati per addestrare modelli remoti, CtD opera al 100% on-device. Il tuo <strong>Profilo aggiornato</strong> locale impara costantemente dalle tue scelte senza mai trasmettere parametri sensibili all'esterno.
                 </p>
             </div>
-            <div>
-                <ul class="diy-features-list">
-                    <li><span>✔</span> Zero dipendenza da costosi advisory report statici</li>
-                    <li><span>✔</span> Calcolo SWOT e ROI decisionale istantaneo in RAM</li>
-                    <li><span>✔</span> Anonimizzazione preventiva delle query sul dispositivo</li>
-                    <li><span>✔</span> Bivio trasparente tra esecuzione autonoma (DiY) e match con esperti</li>
-                </ul>
-            </div>
-        </section>
+            <ul class="agreement-perks">
+                <li><span>✓</span> <strong>Zero Costi:</strong> Licenza Early Adopter completa a costo zero.</li>
+                <li><span>✓</span> <strong>Pole Position:</strong> Accesso prioritario a servizi e offerte speciali future.</li>
+                <li><span>✓</span> <strong>Feedback Diretto:</strong> Dialogo diretto con il team di sviluppo.</li>
+                <li><span>✓</span> <strong>100% Riservato:</strong> Funzionamento offline conforme al GDPR.</li>
+            </ul>
+        </div>
 
-        <!-- I 4 VERTICALI STRATEGICI -->
-        <section class="verticals-grid-wrap">
+        <!-- LE DUE PERSONAS TARGET -->
+        <section class="personas-grid">
 
-            <!-- 1. IMPRENDITORIA & PMI -->
-            <div class="vertical-card highlight">
+            <!-- PERSONA 1: PMI & IMPRENDITORI -->
+            <div class="persona-card featured">
                 <div>
-                    <span class="vertical-tag">PMI & Titolari • Direct-to-SME</span>
-                    <h2>1. Imprenditoria & Controllo Strategico</h2>
-                    <p>
-                        Supera le sfide della supply chain e della marginalità operativa. Utilizza i moduli di autodiagnosi per mappare flussi di cassa, Capex e colli di bottiglia organizzativi con la precisione di un fractional CFO dedicato.
+                    <span class="persona-tag">PMI, Titolari & Imprenditori</span>
+                    <h2 class="persona-title">Imprenditoria & Controllo Strategico</h2>
+                    <p class="persona-desc">
+                        Supera le sfide quotidiane di marginalità operativa e supply chain. Utilizza i moduli di autodiagnosi per mappare flussi di cassa, Capex e colli di bottiglia organizzativi con il rigore di un Fractional CFO sempre a disposizione sul tuo Mac/PC.
                     </p>
-                    <div class="vertical-badge-box">
+                    <div class="persona-role-box">
                         <strong>Ruolo CtD Attivo:</strong> Advisor Strategico + Tutor di Riorganizzazione Operativa.
                     </div>
                 </div>
-                <a href="founder_a.html" class="vertical-cta primary">Candidati al Dominio PMI →</a>
+                <a href="mailto:info@c-t-d.group?subject=Candidatura%20Early%20Adopter%20-%20Imprenditoria%20PMI" class="persona-btn">Candidati per il Dominio PMI →</a>
             </div>
 
-            <!-- 2. CARRIERA & EXECUTIVE -->
-            <div class="vertical-card">
+            <!-- PERSONA 2: PROFESSIONISTI & EXECUTIVE -->
+            <div class="persona-card">
                 <div>
-                    <span class="vertical-tag">Professionisti & Dirigenti</span>
-                    <h2>2. Carriera & Sviluppo Executive</h2>
-                    <p>
-                        Pianifica i passaggi per capitalizzare la transizione dell'AI nel mondo del lavoro. Mappa le tue competenze reali sul grafo specialistico e identifica il Next Best DOT per massimizzare il tuo posizionamento retributivo e strategico.
+                    <span class="persona-tag">Professionisti, Manager & Executive</span>
+                    <h2 class="persona-title">Carriera & Sviluppo Competenze</h2>
+                    <p class="persona-desc">
+                        Pianifica la tua crescita per capitalizzare l'impatto dell'AI nel tuo ambito lavorativo. Mappa le tue reali competenze sul grafo di 931 nodi e individua il Next Best DOT per massimizzare posizionamento strategico e valore professionale.
                     </p>
-                    <div class="vertical-badge-box">
+                    <div class="persona-role-box">
                         <strong>Ruolo CtD Attivo:</strong> Coach Direzionale + Navigatore di Competenze.
                     </div>
                 </div>
-                <a href="founder_c.html" class="vertical-cta">Candidati al Dominio Carriera →</a>
-            </div>
-
-            <!-- 3. LONGEVITÀ & WELLNESS -->
-            <div class="vertical-card">
-                <div>
-                    <span class="vertical-tag">Qualità della Vita & Performance</span>
-                    <h2>3. Benessere, Longevità & Energia</h2>
-                    <p>
-                        Aumenta la qualità e la lucidità decisionale con un approccio a 360° alle variabili fisiologiche, cognitive e comportamentali. Costruisci il tuo piano di routine e monitoraggio senza cedere dati biometrici sensibili al cloud.
-                    </p>
-                    <div class="vertical-badge-box">
-                        <strong>Ruolo CtD Attivo:</strong> Personal Coach + Monitor Deterministico Offline.
-                    </div>
-                </div>
-                <a href="founder_h.html" class="vertical-cta">Candidati al Dominio Benessere →</a>
-            </div>
-
-            <!-- 4. APPRENDIMENTO & METODO -->
-            <div class="vertical-card">
-                <div>
-                    <span class="vertical-tag">Knowledge Mastery</span>
-                    <h2>4. Studio & Apprendimento Aumentato</h2>
-                    <p>
-                        Acquisisci competenze complesse senza disperderti nella teoria astratta o nelle sintesi generiche. CtD struttura il percorso nozionistico in sequenze atomiche graduate sul tuo reale stato di apprendimento ($S = C + P + R$).
-                    </p>
-                    <div class="vertical-badge-box">
-                        <strong>Ruolo CtD Attivo:</strong> Trainer Metodologico + Tutor No-Hallucination.
-                    </div>
-                </div>
-                <a href="founder_g.html" class="vertical-cta">Candidati al Dominio Studio →</a>
+                <a href="mailto:info@c-t-d.group?subject=Candidatura%20Early%20Adopter%20-%20Carriera%20Executive" class="persona-btn persona-btn-secondary">Candidati per il Dominio Carriera →</a>
             </div>
 
         </section>
