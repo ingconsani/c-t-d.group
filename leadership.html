@@ -1,51 +1,351 @@
-<div class="leadership-hero-wrap" style="max-width: 1080px; margin: 40px auto; text-align: left; padding: 40px; background-color: #0a0a0d !important; border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); border: 1px solid #242038; display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
-    
-    <!-- LATO SINISTRO: I TESTI -->
-    <div style="flex: 1.2; min-width: 300px;">
-        <div class="badge-founder" style="display: inline-block; background: rgba(245, 197, 24, 0.1) !important; color: #f5c518 !important; border: 1px solid #f5c518; padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px; letter-spacing: 0.5px;">
-            L'Architetto del Valore & Pioniere AI Offline
-        </div>
-        
-        <h1 class="leadership-title" style="font-size: 3.2rem; font-weight: 800; line-height: 1.1; margin: 0 0 20px 0; color: #ffffff !important;">
-            Alberto Consani<br>
-            <span style="color: #f5c518 !important; font-size: 1.8rem; display: block; margin-top: 10px; font-weight: 600;">La Proliferazione della Persona e del Business</span>
-        </h1>
-        
-        <p style="font-size: 1.15rem; color: #cfcfe0 !important; line-height: 1.65; margin-bottom: 30px;">
-            A 75 anni utilizzo l'Intelligenza Artificiale in prima persona per trasformare il <strong>Talento</strong> in risultati matematici e asseverabili. Dopo 50 anni di Sales Leadership, ho brevettato un motore Edge AI per guidare le imprese oltre il vecchio CRM, in totale conformità GDPR e Zero-Cloud.
-        </p>
-        
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <a href="services.html" style="background: #f5c518 !important; color: #000000 !important; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(245, 197, 24, 0.3);">Esplora l'Infrastruttura CtD</a>
-            <a href="https://www.linkedin.com/in/albertoconsani/" target="_blank" style="background: transparent !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.4); padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Connettiti su LinkedIn</a>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect the DOTS (CtD) - Leadership & Visione Beyond CRM</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0d;
+            --card-bg: #141419;
+            --accent-gold: #f5c518;
+            --accent-purple: #7042d2;
+            --accent-purple-light: #b085f5;
+            --text-gray: #a0a0aa;
+            --border-color: #242038;
+            --green-secure: #3cd070;
+        }
 
-    <!-- LATO DESTRO: LA FOTO CON EFFETTO "TECH PORTAL" -->
-    <div style="flex: 0.8; min-width: 280px; display: flex; justify-content: center; position: relative; align-items: center;">
-        
-        <!-- Il bagliore (Glow) posteriore per dare profondità -->
-        <div style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(112, 66, 210, 0.4) 0%, rgba(10, 10, 13, 0) 70%); filter: blur(15px); z-index: 0;"></div>
-        
-        <!-- La Cornice circolare e l'immagine -->
-        <div style="position: relative; z-index: 1; width: 280px; height: 280px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, #b085f5, #f5c518); box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
-            
-            <div style="position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background-color: #0a0a0d !important;">
-                
-                <!-- NOME FILE CORRETTO: alberto_linkedin.jpeg -->
-                <img src="alberto_linkedin.jpeg" alt="Alberto Consani" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) brightness(0.9);">
-                
-                <!-- Filtro Colore e "Scanlines" per l'effetto monitor / ologramma -->
-                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(112, 66, 210, 0.2) 0%, rgba(245, 197, 24, 0.1) 100%); pointer-events: none; mix-blend-mode: color;"></div>
-                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px); pointer-events: none;"></div>
-                <div style="position: absolute; inset: 0; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); pointer-events: none; border-radius: 50%;"></div>
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigazione */
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(10, 10, 13, 0.9);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .leadership-hero-wrap {
+            max-width: 1080px;
+            margin: 40px auto;
+            background-color: #0a0a0d;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            border: 1px solid #242038;
+        }
+
+        .badge-founder {
+            display: inline-block;
+            background: rgba(245, 197, 24, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .leadership-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0 0 20px 0;
+            color: #ffffff;
+        }
+
+        .leadership-title span {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Executive Highlights Grid */
+        .exec-grid {
+            max-width: 1080px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .exec-stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 140px;
+        }
+
+        .exec-stat-card strong {
+            display: block;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 8px;
+            font-weight: 800;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .exec-stat-card span {
+            font-size: 0.78rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Content Sections */
+        .content-wrap {
+            max-width: 1080px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .narrative-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .narrative-card h2 {
+            font-size: 1.35rem;
+            color: #fff;
+            margin: 0 0 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .narrative-card p {
+            font-size: 0.95rem;
+            color: #cfcfe0;
+            line-height: 1.65;
+            margin: 0 0 16px 0;
+        }
+
+        .patent-highlight {
+            background: #0d0d12;
+            border-left: 3px solid var(--accent-purple-light);
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        /* CTA Section */
+        .leadership-cta {
+            max-width: 1080px;
+            margin: 0 auto 60px auto;
+            background: #0e0e14;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .leadership-cta h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0 0 10px 0;
+        }
+
+        .leadership-cta p {
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto 25px auto;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 860px) {
+            .exec-grid, .content-wrap {
+                grid-template-columns: 1fr;
+            }
+            .leadership-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-logo">Connect the DOTS (CtD)</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="platform.html">Platform & IP</a>
+                <a href="services.html">Advisory & B2B</a>
+                <a href="business.html">Ecosistema & GTM</a>
+                <a href="founders.html">Autarchia PMI</a>
+                <a href="leadership.html" class="active">Leadership</a>
+                | <a href="en/leadership.html" style="color: var(--accent-gold); font-weight: bold;">EN</a>
             </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION (LA TUA FOTO E TITOLI) -->
+        <div class="leadership-hero-wrap">
             
-            <!-- Etichetta di Sistema Fluttuante -->
-            <div style="position: absolute; bottom: 5px; right: 10px; background: #0a0a0d !important; border: 1px solid #f5c518; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #ffffff !important; box-shadow: 0 5px 15px rgba(0,0,0,0.4); display: flex; align-items: center; gap: 8px; z-index: 2;">
-                <div style="width: 8px; height: 8px; background: #3cd070; border-radius: 50%; box-shadow: 0 0 8px #3cd070;"></div>
-                SME | EDGE AI
+            <!-- LATO SINISTRO: I TESTI -->
+            <div style="flex: 1.2; min-width: 300px;">
+                <div class="badge-founder">
+                    L'Architetto del Valore & Pioniere AI Offline
+                </div>
+                
+                <h1 class="leadership-title">
+                    Alberto Consani<br>
+                    <span>La Proliferazione della Persona e del Business</span>
+                </h1>
+                
+                <p style="font-size: 1.15rem; color: #cfcfe0; line-height: 1.65; margin-bottom: 30px;">
+                    A 75 anni utilizzo l'Intelligenza Artificiale in prima persona per trasformare il <strong>Talento</strong> in risultati matematici e asseverabili. Dopo 50 anni di Sales Leadership, ho brevettato un motore Edge AI per guidare le imprese oltre il vecchio CRM, in totale conformità GDPR e Zero-Cloud.
+                </p>
+                
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="services.html" style="background: var(--accent-gold); color: #000; padding: 14px 28px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(245, 197, 24, 0.3);">Esplora l'Infrastruttura CtD</a>
+                    <a href="https://www.linkedin.com/in/albertoconsani/" target="_blank" style="background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block;">Connettiti su LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- LATO DESTRO: LA FOTO CON EFFETTO "TECH PORTAL" -->
+            <div style="flex: 0.8; min-width: 280px; display: flex; justify-content: center; position: relative; align-items: center;">
+                
+                <!-- Il bagliore (Glow) posteriore per dare profondità -->
+                <div style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(112, 66, 210, 0.4) 0%, rgba(10, 10, 13, 0) 70%); filter: blur(15px); z-index: 0;"></div>
+                
+                <!-- La Cornice circolare e l'immagine -->
+                <div style="position: relative; z-index: 1; width: 280px; height: 280px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-gold)); box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
+                    
+                    <div style="position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background-color: var(--bg-dark);">
+                        
+                        <!-- IMMAGINE CORRETTA (NOME CHE HAI USATO SU GITHUB) -->
+                        <img src="alberto_linkedin.jpeg" alt="Alberto Consani" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) brightness(0.9);">
+                        
+                        <!-- Filtro Colore e "Scanlines" per l'effetto monitor / ologramma -->
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(112, 66, 210, 0.2) 0%, rgba(245, 197, 24, 0.1) 100%); pointer-events: none; mix-blend-mode: color;"></div>
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px); pointer-events: none;"></div>
+                        <div style="position: absolute; inset: 0; box-shadow: inset 0 0 20px rgba(0,0,0,0.8); pointer-events: none; border-radius: 50%;"></div>
+                    </div>
+                    
+                    <!-- Etichetta di Sistema Fluttuante -->
+                    <div style="position: absolute; bottom: 5px; right: 10px; background: var(--bg-dark); border: 1px solid var(--accent-gold); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.4); display: flex; align-items: center; gap: 8px; z-index: 2;">
+                        <div style="width: 8px; height: 8px; background: var(--green-secure); border-radius: 50%; box-shadow: 0 0 8px var(--green-secure);"></div>
+                        SME | EDGE AI
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+
+        <!-- GRIGLIA STATISTICHE -->
+        <section class="exec-grid">
+            <div class="exec-stat-card">
+                <strong>50+ Anni</strong>
+                <span>Leadership Enterprise, Sales & Software Delivery</span>
+            </div>
+            <div class="exec-stat-card">
+                <strong>7 Startups</strong>
+                <span>Lanciate con successo sul mercato</span>
+            </div>
+            <div class="exec-stat-card">
+                <strong style="font-size: 1.8rem;">Connect the DOTS</strong>
+                <span>L'evoluzione darwiniana del CRM: da push a pull</span>
+            </div>
+        </section>
+
+        <!-- SEZIONI NARRATIVE -->
+        <section class="content-wrap">
+            <div class="narrative-card">
+                <div>
+                    <h2>50 Anni di Innovazione Enterprise</h2>
+                    <p>Ho iniziato la mia carriera come programmatore software per poi formarmi nell'università delle vendite di <strong>IBM</strong>, dove ho ideato e lanciato su scala internazionale i primi programmi di collaborazione con terze parti e contribuito allo sviluppo delle prime applicazioni informatiche per le PMI in Italia.</p>
+                    <p>Nel corso dei decenni ho guidato grandi progetti di software delivery e system integration per i più importanti gruppi manifatturieri mondiali, le principali telco e i primari istituti finanziari europei. Come imprenditore ho co-fondato e sviluppato una boutique di consulenza direzionale certificata nelle più avanzate metodologie di vendita enterprise, operando come strategic advisor e coach per CEO ed executive internazionali.</p>
+                </div>
+                <div class="patent-highlight">
+                    <strong>Il Ruolo Recente:</strong> Senior Executive Advisor per BIP (la principale società di consulenza direzionale italiana) e specialista nell'evoluzione strategica delle piattaforme CRM ed Enterprise Architecture.
+                </div>
+            </div>
+
+            <div class="narrative-card">
+                <div>
+                    <h2>Il Salto Verso il Modello Deterministico</h2>
+                    <p>I sistemi CRM tradizionali registrano passivamente il passato, mentre i moderni wrapper di intelligenza artificiale cloud-based producono sintesi statistiche soggette ad allucinazioni e presentano gravi vulnerabilità per la privacy aziendale.</p>
+                    <p>Ho dedicato gli ultimi anni alla progettazione e allo sviluppo full-stack dell'architettura <strong>Connect the DOTS (CtD)</strong>. Utilizzando ambienti di sviluppo avanzati in parallelo, ho strutturato un modello deterministico proprietario basato sull'equazione additiva <strong>S = C × P × R</strong>.</p>
+                    <p>CtD non è un semplice software: è un'infrastruttura difendibile che opera <strong>al 100% offline</strong> con calcolo in RAM (<em>_healDatabaseRollups</em>), proteggendo il <strong>Profilo aggiornato</strong> locale degli utenti ed eliminando alla radice ogni rischio di data leakage e violazione del GDPR.</p>
+                </div>
+                <div class="patent-highlight">
+                    <strong>Asset Brevettato:</strong> Domanda di Brevetto per Invenzione Industriale n. 102025000001002 depositata presso l'UIBM: <em>"Metodo per accrescere le conoscenze di un utente e rispettivo programma per computer"</em>.
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="leadership-cta">
+            <h2>Costruiamo Insieme il Nuovo Standard Decisionale</h2>
+            <p>Valuta l'integrazione del modello CtD per il tuo studio professionale, per la tua rete d'imprese o per un'alleanza strategica di licenza IP a livello internazionale.</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="services.html" style="background: var(--accent-gold); color: #000; padding: 12px 26px; border-radius: 6px; font-weight: 700; text-decoration: none;">Soluzioni Advisory & B2B</a>
+                <a href="business.html" style="background: transparent; color: var(--accent-purple-light); border: 1px solid var(--accent-purple); padding: 12px 26px; border-radius: 6px; font-weight: 700; text-decoration: none;">Valuta una Partnership IP</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="text-align: center; padding: 20px; border-top: 1px solid var(--border-color); color: var(--text-gray); font-size: 0.9rem;">
+            <p>&copy; 2026 Connect the DOTS (CtD). Tutti i diritti riservati. Brevetto per Invenzione Industriale n. 102025000001002.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
