@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#070B14"/><stop offset="100%" stop-color="#0F172A"/></linearGradient>
+    <linearGradient id="glowIndigo" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient>
+    <linearGradient id="streamLeft2" gradientUnits="userSpaceOnUse" x1="380" y1="385" x2="445" y2="300"><stop offset="0%" stop-color="#7F1D1D"/><stop offset="100%" stop-color="#818CF8"/></linearGradient>
+    <linearGradient id="streamRight2" gradientUnits="userSpaceOnUse" x1="555" y1="300" x2="590" y2="170"><stop offset="0%" stop-color="#818CF8"/><stop offset="100%" stop-color="#6366F1"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000" flood-opacity="0.6"/></filter>
+    <filter id="neonIndigo"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="neonRed"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    
+    <g id="ctd-dot">
+      <circle cx="0" cy="0" r="14" fill="#CBD5E1" />
+      <path d="M 0 0 L 0 -14 A 14 14 0 0 0 -14 0 Z" fill="#EF4444" />
+      <path d="M 0 0 L -14 0 A 14 14 0 0 0 0 14 Z" fill="#EF4444" />
+      <line x1="-14" y1="0" x2="14" y2="0" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="0" y1="-14" x2="0" y2="14" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    </g>
+    <g id="ctd-halo">
+      <circle cx="0" cy="0" r="24" fill="#6366F1" opacity="0.3"/>
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#6366F1" stroke-width="2"/>
+    </g>
+
+    <style>
+      .txt-title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; fill: #F8FAFC; letter-spacing: 0.5px; }
+      .txt-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #94A3B8; }
+      .txt-ui { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #E2E8F0; }
+      .txt-chat { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-style: italic; fill: #F1F5F9; }
+      .dash-line { stroke-dasharray: 6 6; animation: dash 20s linear infinite; }
+      @keyframes dash { to { stroke-dashoffset: -100; } }
+    </style>
+  </defs>
+
+  <rect width="1000" height="500" fill="url(#bg)"/>
+  <line x1="500" y1="0" x2="500" y2="500" stroke="#1E293B" stroke-width="2" class="dash-line"/>
+
+  <!-- AS-IS -->
+  <text x="50" y="60" class="txt-title" fill="#64748B">AS-IS: FORMAZIONE TEORICA E RIGIDA</text>
+  <text x="50" y="80" class="txt-sub">Il manuale dà la stessa risposta a tutti. Il venditore resta bloccato.</text>
+
+  <g transform="translate(50, 110)" filter="url(#shadow)">
+    <rect width="360" height="360" rx="16" fill="#111827" stroke="#1F2937" stroke-width="2"/>
+    <rect x="30" y="30" width="300" height="46" rx="23" fill="#1F2937" stroke="#374151"/>
+    <text x="50" y="58" class="txt-chat">"Il cliente dice che costiamo troppo..."</text>
+    <rect x="90" y="120" width="180" height="80" rx="8" fill="#1E293B" stroke="#334155"/>
+    <text x="180" y="155" class="txt-ui" fill="#94A3B8" text-anchor="middle">Manuale di Vendita</text>
+    <text x="180" y="175" class="txt-ui" fill="#64748B" text-anchor="middle">(Teoria Generica)</text>
+    <rect x="30" y="240" width="300" height="70" rx="12" fill="#450A0A" stroke="#7F1D1D" stroke-width="1.5"/>
+    <text x="180" y="273" class="txt-ui" fill="#FCA5A5" text-anchor="middle">STALLO OPERATIVO</text>
+    <text x="180" y="293" class="txt-sub" fill="#FECACA" text-anchor="middle">Risposta non applicabile al caso reale</text>
+  </g>
+
+  <!-- ================= DATA STREAMS ANIMATI ================= -->
+  <rect width="0" height="0"><animate id="clock" attributeName="x" from="0" to="1" dur="14s" repeatCount="indefinite"/></rect>
+  <line x1="380" y1="385" x2="445" y2="300" stroke="#6366F1" stroke-width="3" opacity="0.2"/>
+  <line x1="555" y1="300" x2="590" y2="170" stroke="#6366F1" stroke-width="3" opacity="0.2"/>
+  
+  <g transform="translate(550, 110)">
+    <line x1="40" y1="60" x2="40" y2="300" stroke="#6366F1" stroke-width="3"/>
+    <circle cx="40" r="6" fill="#FFFFFF" filter="url(#neonIndigo)" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.463;0.464;0.5;0.501;1" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="60;60;170;170" keyTimes="0;0.464;0.5;1" dur="14s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="40" r="6" fill="#FFFFFF" filter="url(#neonIndigo)" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.713;0.714;0.75;0.751;1" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="170;170;300;300" keyTimes="0;0.714;0.75;1" dur="14s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <circle r="6" fill="#EF4444" filter="url(#neonRed)" opacity="0">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.214;0.215;1" dur="14s" repeatCount="indefinite" />
+    <animate attributeName="cx" values="380;445; 380;445; 380;445; 445;445" keyTimes="0;0.071; 0.072;0.142; 0.143;0.214; 0.215;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="385;300; 385;300; 385;300; 300;300" keyTimes="0;0.071; 0.072;0.142; 0.143;0.214; 0.215;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="6" fill="#FFFFFF" filter="url(#neonIndigo)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.213;0.214;0.25;0.251;1" dur="14s" repeatCount="indefinite" />
+    <animate attributeName="cx" values="555;555;590;590" keyTimes="0;0.214;0.25;1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="300;300;170;170" keyTimes="0;0.214;0.25;1" dur="14s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- CENTRO -->
+  <g transform="translate(500, 300)">
+    <circle cx="0" cy="0" r="55" fill="#0F172A" stroke="url(#glowIndigo)" stroke-width="4" filter="url(#neonIndigo)"/>
+    <circle cx="0" cy="0" r="45" fill="#1E293B"/>
+    <text x="0" y="-4" class="txt-title" fill="#818CF8" text-anchor="middle" font-size="24">CtD</text>
+    <text x="0" y="16" class="txt-ui" fill="#6366F1" text-anchor="middle" font-size="10" letter-spacing="0.5">COME</text>
+    <text x="0" y="30" class="txt-ui" fill="#6366F1" text-anchor="middle" font-size="10" letter-spacing="0.5">COACH</text>
+  </g>
+
+  <!-- DESTRA -->
+  <text x="550" y="60" class="txt-title" fill="#818CF8">TO-BE: NAVIGAZIONE VERSO L'AZIONE</text>
+  <text x="550" y="80" class="txt-sub">L'AI decodifica il bisogno tramite i 3 nodi (Anamnesi, Diagnostica, Terapia).</text>
+
+  <g transform="translate(550, 110)" filter="url(#shadow)">
+    <rect width="400" height="380" rx="16" fill="none" stroke="#3730A3" stroke-width="2"/>
+    
+    <text x="70" y="30" class="txt-ui" fill="#94A3B8">L1: Anamnesi (Negoziazione)</text>
+    <path d="M 40 60 L 70 60" stroke="#6366F1" stroke-width="2"/>
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.249;0.25;0.464;0.465;1" dur="14s" repeatCount="indefinite" /><use href="#ctd-halo" x="40" y="60" filter="url(#neonIndigo)"/></g>
+    <use href="#ctd-dot" x="40" y="60" />
+    <rect x="70" y="40" width="310" height="40" rx="12" fill="#3730A3" stroke="#6366F1" fill-opacity="0.3"/>
+    <text x="85" y="65" class="txt-chat">👤 "Il cliente dice che costiamo troppo..."</text>
+
+    <text x="70" y="115" class="txt-ui" fill="#94A3B8">L2: Diagnostica (Obiezioni)</text>
+    <path d="M 40 170 L 70 170" stroke="#6366F1" stroke-width="2"/>
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.499;0.5;0.714;0.715;1" dur="14s" repeatCount="indefinite" /><use href="#ctd-halo" x="40" y="170" filter="url(#neonIndigo)"/></g>
+    <use href="#ctd-dot" x="40" y="170" />
+    <rect x="70" y="125" width="310" height="90" rx="12" fill="#1E293B" stroke="#818CF8"/>
+    <text x="85" y="150" class="txt-chat" fill="#A5B4FC">🤖 "Mi hai detto in una conversazione</text>
+    <text x="85" y="170" class="txt-chat" fill="#A5B4FC">precedente che fatichi a giustificare il</text>
+    <text x="85" y="190" class="txt-chat" fill="#A5B4FC">prezzo. Devi chiedere aiuto al tuo SME."</text>
+
+    <text x="70" y="250" class="txt-title" fill="#F8FAFC" font-size="14">L3: Terapia (Script di Valore)</text>
+    <path d="M 40 300 L 70 300" stroke="#818CF8" stroke-width="3" filter="url(#neonIndigo)"/>
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.749;0.75;0.964;0.965;1" dur="14s" repeatCount="indefinite" /><use href="#ctd-halo" x="40" y="300" filter="url(#neonIndigo)"/></g>
+    <use href="#ctd-dot" x="40" y="300" />
+    <rect x="70" y="260" width="310" height="80" rx="12" fill="#2E1065" stroke="#818CF8" filter="url(#neonIndigo)"/>
+    <text x="85" y="285" class="txt-chat" font-weight="bold" fill="#FFFFFF">🎯 "Entra nella Palestra dell'SME per</text>
+    <text x="85" y="305" class="txt-chat" font-weight="bold" fill="#FFFFFF">imparare uno Script di Negoziazione</text>
+    <text x="85" y="325" class="txt-chat" font-weight="bold" fill="#FFFFFF">sul Valore."</text>
+  </g>
+</svg>
