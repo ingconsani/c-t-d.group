@@ -340,3 +340,109 @@ footer {
     border-top: 1px solid #333;
     padding-top: 30px;
 }
+
+/* ===================================================
+   SEZIONE USE CASES (CtD in Pratica)
+   =================================================== */
+
+.ctd-section {
+    padding: 60px 0; /* Adattato al tuo layout globale */
+}
+
+.ctd-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.ctd-section-header h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.ctd-section-header p {
+    color: #a0a0aa; /* Allineato al tuo --text-gray */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ctd-grid-uc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.ctd-card-uc {
+    background-color: #141419; /* Allineato al tuo --card-bg */
+    border: 1px solid #242038; /* Allineato al tuo --border-color */
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ctd-card-uc:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5); /* Allineato all'ombra delle tue card */
+    border-color: #8A4FFF; /* Richiamo al tuo viola */
+}
+
+.ctd-card-visual {
+    width: 100%;
+    background-color: #070B14;
+    border-bottom: 1px solid #242038;
+    aspect-ratio: 2 / 1; 
+    overflow: hidden;
+}
+
+.ctd-card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ctd-card-content {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ctd-card-content h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.ctd-card-content p {
+    font-size: 1.05em;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.ctd-card-content p strong {
+    color: #ffffff;
+}
+
+.ctd-badge-uc {
+    align-self: flex-start;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* Colori specifici dei badge degli Use Cases */
+.badge-cyan { background: rgba(6, 182, 212, 0.1); color: #06B6D4; border: 1px solid rgba(6, 182, 212, 0.2); }
+.badge-indigo { background: rgba(99, 102, 241, 0.1); color: #818CF8; border: 1px solid rgba(99, 102, 241, 0.2); }
+.badge-purple { background: rgba(168, 85, 247, 0.1); color: #D946EF; border: 1px solid rgba(168, 85, 247, 0.2); }
+.badge-emerald { background: rgba(16, 185, 129, 0.1); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.2); }
+
+@media (max-width: 768px) {
+    .ctd-grid-uc { grid-template-columns: 1fr; }
+}
