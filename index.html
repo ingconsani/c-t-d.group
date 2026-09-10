@@ -75,10 +75,36 @@
             margin: 0 auto 30px auto;
         }
 
+        /* --- NUOVA SEZIONE ANIMAZIONE SVG --- */
+        .hero-animation-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0 30px 0;
+        }
+
+        .ctd-animation-wrapper {
+            width: 100%;
+            max-width: 1180px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        #hero-animation {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-color);
+            background-color: #050810;
+        }
+
         /* 3-DOTS TOP CONNECTOR PIPELINE */
         .dots-pipeline-container {
             max-width: 1180px;
-            margin: 30px auto 0 auto;
+            margin: 10px auto 0 auto;
             padding: 0 20px;
         }
 
@@ -269,36 +295,13 @@
         }
 
         /* Temi UC */
-        .uc-business {
-            background: var(--uc-business-bg);
-            border-color: var(--uc-business-border);
-        }
-        .uc-persona {
-            background: var(--uc-persona-bg);
-            border-color: var(--uc-persona-border);
-        }
-        .uc-training {
-            background: var(--uc-training-bg);
-            border-color: var(--uc-training-border);
-        }
-        .uc-wellness {
-            background: var(--uc-wellness-bg);
-            border-color: var(--uc-wellness-border);
-        }
+        .uc-business { background: var(--uc-business-bg); border-color: var(--uc-business-border); }
+        .uc-persona { background: var(--uc-persona-bg); border-color: var(--uc-persona-border); }
+        .uc-training { background: var(--uc-training-bg); border-color: var(--uc-training-border); }
+        .uc-wellness { background: var(--uc-wellness-bg); border-color: var(--uc-wellness-border); }
 
-        .uc-title {
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin: 0 0 4px 0;
-            color: #fff;
-        }
-
-        .uc-desc {
-            font-size: 0.78rem;
-            color: #c4c4d0;
-            margin: 0;
-            line-height: 1.35;
-        }
+        .uc-title { font-size: 0.9rem; font-weight: 700; margin: 0 0 4px 0; color: #fff; }
+        .uc-desc { font-size: 0.78rem; color: #c4c4d0; margin: 0; line-height: 1.35; }
 
         /* COLONNA 2 & 3 STILI */
         .calc-box {
@@ -309,20 +312,8 @@
             margin-bottom: 12px;
         }
 
-        .calc-tag {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .calc-val {
-            font-size: 0.88rem;
-            color: #ffffff;
-            margin: 0;
-        }
+        .calc-tag { font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; display: block; margin-bottom: 4px; }
+        .calc-val { font-size: 0.88rem; color: #ffffff; margin: 0; }
 
         .formula-callout {
             background: #18112c;
@@ -342,87 +333,35 @@
             margin-bottom: 14px;
         }
 
-        .nbd-title {
-            color: var(--accent-gold);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin: 0 0 6px 0;
-        }
-
-        .nbd-metric {
-            font-size: 0.78rem;
-            color: #3cd070;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+        .nbd-title { color: var(--accent-gold); font-size: 0.95rem; font-weight: 700; margin: 0 0 6px 0; }
+        .nbd-metric { font-size: 0.78rem; color: #3cd070; font-weight: 600; margin-bottom: 4px; }
 
         .action-button-diy {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            background: var(--accent-gold);
-            color: #000000;
-            font-weight: 700;
-            font-size: 0.88rem;
-            padding: 12px;
-            border-radius: 6px;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            transition: opacity 0.2s;
+            display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+            background: var(--accent-gold); color: #000000; font-weight: 700; font-size: 0.88rem;
+            padding: 12px; border-radius: 6px; border: none; cursor: pointer; margin-bottom: 10px;
+            box-sizing: border-box; transition: opacity 0.2s;
         }
-
-        .action-button-diy:hover {
-            opacity: 0.9;
-        }
+        .action-button-diy:hover { opacity: 0.9; }
 
         .action-button-sme {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            background: transparent;
-            color: var(--accent-purple-light);
-            border: 1px solid var(--accent-purple);
-            font-weight: 700;
-            font-size: 0.88rem;
-            padding: 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            box-sizing: border-box;
-            transition: all 0.2s;
+            display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+            background: transparent; color: var(--accent-purple-light); border: 1px solid var(--accent-purple);
+            font-weight: 700; font-size: 0.88rem; padding: 12px; border-radius: 6px; cursor: pointer;
+            box-sizing: border-box; transition: all 0.2s;
         }
-
-        .action-button-sme:hover {
-            background: rgba(112, 66, 210, 0.2);
-            color: #fff;
-        }
+        .action-button-sme:hover { background: rgba(112, 66, 210, 0.2); color: #fff; }
 
         .res-summary-box {
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            margin-top: auto;
-            padding-top: 10px;
+            font-size: 0.8rem; color: var(--text-gray); margin-top: auto; padding-top: 10px;
             border-top: 1px solid var(--border-color);
         }
 
         @media (max-width: 900px) {
-            .simulator-grid, .dots-pipeline-track {
-                grid-template-columns: 1fr;
-            }
-            .dots-pipeline-track::before {
-                display: none;
-            }
-            .carousel-wrapper {
-                max-height: 400px;
-            }
-            .hero-title {
-                font-size: 2rem;
-            }
+            .simulator-grid, .dots-pipeline-track { grid-template-columns: 1fr; }
+            .dots-pipeline-track::before { display: none; }
+            .carousel-wrapper { max-height: 400px; }
+            .hero-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -460,6 +399,13 @@
                 Usa il meglio dell'Intelligenza Artificiale senza collegarti ad internet e mantenendo le informazioni confidenziali nella memoria criptata nel tuo device evitando di perderne il controllo quando le devi usare necessariamente per avere una risposta personalizzata e senza allucinazioni.
             </p>
         </div>
+
+        <!-- Ctd Hero Animation Section (SVG INJECTED HERE) -->
+        <section class="hero-animation-section">
+            <div class="ctd-animation-wrapper">
+                <img id="hero-animation" src="assets/animazione.svg" alt="Connect the DOTS - Dal Pensiero all'Azione" />
+            </div>
+        </section>
 
         <!-- 3-DOTS TOP CONNECTOR PIPELINE -->
         <div class="dots-pipeline-container">
