@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect the DOTS (CtD) - Deterministic Offline AI Platform</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <style>
         :root {
             --bg-dark: #0a0a0d;
@@ -371,10 +371,10 @@
             </p>
         </div>
 
-        <!-- Ctd Hero Animation Section: Path assoluto per forzare il file SVG corretto -->
+        <!-- Ctd Hero Animation Section: Path RELATIVO corretto -->
         <section class="hero-animation-section">
             <div class="ctd-animation-wrapper">
-                <img id="hero-animation" src="/assets/animazione_en.svg" alt="Connect the DOTS - From Thought to Action" />
+                <img id="hero-animation" src="../assets/animazione_en.svg" alt="Connect the DOTS - From Thought to Action" />
             </div>
         </section>
 
@@ -405,17 +405,17 @@
                 <div>
                     <div class="col-header">▲ Select Operating Domain</div>
                     
-                    <div class="persona-selector-btn active">
+                    <div class="persona-selector-btn active" onclick="selectUseCase('b1', this)">
                         <h4>CPA & Advisory Firm</h4>
                         <p>Scaling tax compliance into strategic management control across 50 clients.</p>
                     </div>
 
-                    <div class="persona-selector-btn">
+                    <div class="persona-selector-btn" onclick="selectUseCase('b2', this)">
                         <h4>Manufacturing SME</h4>
                         <p>Order contribution margin gap analysis and bottleneck auditing without external advisors.</p>
                     </div>
 
-                    <div class="persona-selector-btn">
+                    <div class="persona-selector-btn" onclick="selectUseCase('b3', this)">
                         <h4>B2B Network & Associations</h4>
                         <p>Automated member requirement mapping and qualified cross-sector referrals.</p>
                     </div>
@@ -431,18 +431,18 @@
                     <div class="col-header">Local State & Engine Weights</div>
 
                     <div class="state-box">
-                        <div class="state-box-title">[P] Profilo aggiornato (AS-IS State)</div>
-                        <div class="state-box-content">CPA Firm Profile (Parallel Token)</div>
+                        <div class="state-box-title">[P] Updated Profile (AS-IS State)</div>
+                        <div class="state-box-content" id="out-p">CPA Firm Profile (Parallel Token)</div>
                     </div>
 
                     <div class="state-box" style="border-left-color: var(--accent-purple-light);">
                         <div class="state-box-title" style="color: var(--accent-purple-light);">[C] Activated Skill Nodes</div>
-                        <div class="state-box-content">400+ DOTs Directional & Margin Control</div>
+                        <div class="state-box-content" id="out-c">400+ DOTs Directional & Margin Control</div>
                     </div>
 
                     <div class="state-box" style="border-left-color: var(--green-secure);">
                         <div class="state-box-title" style="color: var(--green-secure);">[R] Operational Constraints</div>
-                        <div class="state-box-content">Tax Advisor / Fractional CFO</div>
+                        <div class="state-box-content" id="out-r">Tax Advisor / Fractional CFO</div>
                     </div>
                 </div>
 
@@ -458,17 +458,17 @@
 
                     <div class="nbd-card">
                         <span class="nbd-badge">Computed Next Best DOT (NBD)</span>
-                        <div class="nbd-title">▶ #412: Margin & Overdue Gap Analysis</div>
-                        <div class="nbd-metric">⚡ Timeframe: 3 weeks vs 6 months | 💰 Cost: -75%</div>
-                        <p class="nbd-desc">
+                        <div class="nbd-title" id="out-nbd-title">▶ #412: Margin & Overdue Gap Analysis</div>
+                        <div class="nbd-metric" id="out-nbd-metric">⚡ Timeframe: 3 weeks vs 6 months | 💰 Cost: -75%</div>
+                        <p class="nbd-desc" id="out-nbd-desc">
                             The CPA firm executes the complete management audit autonomously for their client company on-device.
                         </p>
                     </div>
                 </div>
 
                 <div>
-                    <a href="/en/founders.html" class="btn-action-diy">⚡ DIY Execution (Tutor Guided)</a>
-                    <a href="/en/services.html" class="btn-action-partner">👥 Connect SME Partner (L3 Node)</a>
+                    <button class="btn-action-diy" id="btn-diy" onclick="alert('Starting DIY Guided Tutorial for the selected Node.')">⚡ DIY Execution (Tutor Guided)</button>
+                    <button class="btn-action-partner" id="btn-sme" onclick="alert('Connecting with a certified SME Partner for this Node.')">👥 Connect SME Partner (L3 Node)</button>
                 </div>
             </div>
 
@@ -479,5 +479,49 @@
         <p>&copy; 2026 Connect the DOTS (CtD). All rights reserved. Industrial Patent n. 102025000001002.</p>
     </footer>
 
+    <!-- SCRIPT RIPRISTINATO E TRADOTTO -->
+    <script>
+        const useCasesData = {
+            'b1': {
+                p: "CPA Firm Profile (Parallel Token)",
+                c: "400+ DOTs Directional & Margin Control",
+                r: "Tax Advisor / Fractional CFO",
+                nbdTitle: "▶ #412: Margin & Overdue Gap Analysis",
+                nbdMetric: "⚡ Timeframe: 3 weeks vs 6 months | 💰 Cost: -75%",
+                nbdDesc: "The CPA firm executes the complete management audit autonomously for their client company on-device."
+            },
+            'b2': {
+                p: "Manufacturing SME Profile (Production Data)",
+                c: "DOTs Line Efficiency & Hourly Cost Calculation",
+                r: "Owner / Production Manager",
+                nbdTitle: "▶ #184: Unproductive Cost Centers Mapping",
+                nbdMetric: "⚡ Execution: 48 hours | 💰 Est. Savings: €45k/year",
+                nbdDesc: "Immediate identification of operational bottlenecks without exposing balance sheet data to third parties."
+            },
+            'b3': {
+                p: "B2B Network Profile",
+                c: "B2B Synapse Matrix & Skill Mapping",
+                r: "Network President / Community Manager",
+                nbdTitle: "▶ #730: Smart Referral Generation",
+                nbdMetric: "⚡ Conversion rate: +60% | 💰 Zero commercial dispersion",
+                nbdDesc: "Scientific matching between expressed member needs and vertical skills within the network."
+            }
+        };
+
+        function selectUseCase(id, cardElement) {
+            document.querySelectorAll('.persona-selector-btn').forEach(c => c.classList.remove('active'));
+            cardElement.classList.add('active');
+
+            const data = useCasesData[id];
+            if (!data) return;
+
+            document.getElementById('out-p').innerText = data.p;
+            document.getElementById('out-c').innerText = data.c;
+            document.getElementById('out-r').innerText = data.r;
+            document.getElementById('out-nbd-title').innerText = data.nbdTitle;
+            document.getElementById('out-nbd-metric').innerText = data.nbdMetric;
+            document.getElementById('out-nbd-desc').innerText = data.nbdDesc;
+        }
+    </script>
 </body>
 </html>
