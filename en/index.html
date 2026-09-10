@@ -76,6 +76,32 @@
             line-height: 1.6;
         }
 
+        /* --- Ctd Hero Animation Section --- */
+        .hero-animation-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0 30px 0;
+        }
+
+        .ctd-animation-wrapper {
+            width: 100%;
+            max-width: 1180px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        #hero-animation {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            border: 1px solid var(--border-color);
+            background-color: #050810;
+        }
+
         /* 3 DOT Progression Stepper */
         .stepper-wrap {
             display: flex;
@@ -344,6 +370,14 @@
                 Harness artificial intelligence without an internet connection, keeping sensitive parameters locked in local encrypted memory to prevent loss of control while delivering fully tailored, hallucination-free decisions.
             </p>
         </div>
+
+        <!-- Ctd Hero Animation Section -->
+        <section class="hero-animation-section">
+            <div class="ctd-animation-wrapper">
+                <!-- Using the correct relative path to reach the assets folder in the root -->
+                <img id="hero-animation" src="../assets/animazione_en.svg" alt="Connect the DOTS - From Thought to Action" />
+            </div>
+        </section>
 
         <!-- 3 DOT STEPPER -->
         <div class="stepper-wrap">
