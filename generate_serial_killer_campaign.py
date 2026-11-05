@@ -1,5 +1,5 @@
 import os, subprocess
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 repo = "/Users/ingconsani/Development/c-t-d.group"
 assets_dir = os.path.join(repo, "assets")
@@ -43,6 +43,31 @@ def draw_wrapped_block(draw, x, y, max_w, text, font, fill, line_h):
         draw.text((x, y), ln, font=font, fill=fill)
         y += line_h
     return y
+
+def draw_speech_bubble(draw, box, tail_tip, fill_color, outline_color, width=3):
+    x1, y1, x2, y2 = box
+    tx, ty = tail_tip
+    cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
+    # Coda direzionale del fumetto verso il centro grafico
+    if ty > y2:
+        pts = [(cx - 18, y2 - 4), (cx + 18, y2 - 4), (tx, ty)]
+    elif ty < y1:
+        pts = [(cx - 18, y1 + 4), (cx + 18, y1 + 4), (tx, ty)]
+    elif tx > x2:
+        pts = [(x2 - 4, cy - 16), (x2 - 4, cy + 16), (tx, ty)]
+    else:
+        pts = [(x1 + 4, cy - 16), (x1 + 4, cy + 16), (tx, ty)]
+    draw.polygon(pts, fill=outline_color)
+    draw.rounded_rectangle(box, radius=18, fill=fill_color, outline=outline_color, width=width)
+
+def draw_badge_pill(draw, x, y, text, bg_color, text_color=(0, 0, 0), font_size=16):
+    f = get_font(font_size, True)
+    bbox = draw.textbbox((0, 0), text, font=f)
+    w = (bbox[2] - bbox[0]) + 24
+    h = (bbox[3] - bbox[1]) + 12
+    draw.rounded_rectangle([x, y, x + w, y + h], radius=10, fill=bg_color)
+    draw.text((x + 12, y + 4), text, font=f, fill=text_color)
+    return x + w
 
 vp_24_clean = [
     (1, '1 - Coach "intelligente (senza artificiale, ricco dell\'intelligenza umana degli SME) e privato": partire dal Cervello prima di Sinapsi o Pratica.'),
@@ -254,64 +279,109 @@ ss1_path = os.path.join(assets_dir, "ctd_plancia_ss1.png")
 base_ss1 = Image.open(ss1_path).convert("RGB").resize((1920, 1080))
 
 # ==============================================================================
-# COSTRUZIONE DELLA SLIDE "PUNTATA #00 — IL TRAILER (L'APP-NON-APP)"
+# NUOVA SLIDE "PUNTATA #00 — IL TRAILER" (100% GRAFICA CON FUMETTI)
 # ==============================================================================
 def build_trailer_slide(as_context_slide=False):
     s0 = Image.new("RGB", (1920, 1080), (10, 10, 15))
     d0 = ImageDraw.Draw(s0)
 
-    # Top Header
-    d0.rectangle([0, 0, 1920, 105], fill=(22, 16, 42))
+    # Top Header (Zero emoji -> zero quadratini [])
+    d0.rectangle([0, 0, 1920, 102], fill=(22, 16, 42))
     if as_context_slide:
-        d0.text((45, 16), "🎬 IL CONTESTO DELLA SERIE (PUNTATA #00 — TRAILER)  •  PERCHÉ QUESTA È UNA 'SERIAL KILLER APP'", font=get_font(21, True), fill=(60, 208, 112))
+        d0.text((45, 16), "★ IL CONTESTO DELLA SERIE (PUNTATA #00 — TRAILER)  •  PERCHÉ QUESTA È UNA 'SERIAL KILLER APP'", font=get_font(21, True), fill=(60, 208, 112))
     else:
-        d0.text((45, 16), "🎬 PUNTATA #00 (IL TRAILER UFFICIALE)  •  SERIE APERTA 'ANATOMIA DI UNA SERIAL KILLER APP' (VERSO GENNAIO 2027)", font=get_font(21, True), fill=(245, 197, 24))
+        d0.text((45, 16), "★ PUNTATA #00 (IL TRAILER UFFICIALE)  •  SERIE APERTA 'ANATOMIA DI UNA SERIAL KILLER APP' (VERSO GENNAIO 2027)", font=get_font(21, True), fill=(245, 197, 24))
     d0.text((45, 48), "Come si presenta al mercato la prima 'App-non-App' che non è mai esistita prima?", font=get_font(32, True), fill=(255, 255, 255))
 
-    # Left Column: La Sfida ("Perché è la prima App-non-App")
-    d0.rectangle([40, 125, 945, 995], fill=(16, 18, 28), outline=(245, 197, 24), width=3)
-    d0.rectangle([40, 125, 945, 180], fill=(34, 25, 60))
-    d0.text((60, 140), "🧩 LA SFIDA: PRESENTARE LA PRIMA 'APP-NON-APP'", font=get_font(22, True), fill=(245, 197, 24))
+    # ==========================================================================
+    # LATO SINISTRO (x=35..955): 100% GRAFICO CON SFONDO PLANCIA + NUCLEO + 5 FUMETTI
+    # ==========================================================================
+    # Sfondo olografico scuro della plancia dentro il pannello di sinistra
+    bg_left = ImageEnhance.Brightness(base_ss1.resize((920, 880))).enhance(0.24)
+    s0.paste(bg_left, (35, 120))
+    d0.rectangle([35, 120, 955, 1000], outline=(245, 197, 24), width=3)
+    d0.rectangle([35, 120, 955, 174], fill=(34, 24, 62))
+    d0.text((55, 134), "► LA SFIDA: PRESENTARE LA PRIMA 'APP-NON-APP' (5 FUMETTI CHIAVE)", font=get_font(21, True), fill=(245, 197, 24))
 
-    left_items = [
-        ("1. Uso Esteso dell'AI, ma 100% Offline", "Unisce la potenza dell'AI e l'intelligenza umana degli esperti (SME) girando interamente sul tuo dispositivo nel tuo Profilo aggiornato, a costo server zero."),
-        ("2. 24 Funzionalità in '3 Systems in 1 Platform'", "Non fa una cosa sola: integra Diagnosi Strategica (S = C + P + T + R e SWOT in RAM), Secondo Cervello (Palestra 21gg e PoR) e Network Engineering Pull."),
-        ("3. Progettata sia per Utenti P (Persona) che B (Business)", "Unisce Persone, Talenti, Professionisti (Proven SME con R >>), Imprenditori/PMI e Network (BNI, in-Lire) attraverso l'Esperanto comune di ~1.000 DOT."),
-        ("4. Nativamente EU AI Act & GDPR Compliant", "Scudo di Anonimizzazione AI automatico sulle domande libere, Regime Fiscale iniziale e micro-blockchain locale (local_source_chain) anti-manomissione."),
-        ("5. Il Dilemma Comunicativo", "Come raccontare un'architettura così vasta senza ridurla a un manuale di 200 pagine? Da questa domanda è nata la serie a puntate che state per seguire.")
+    # Nucleo Grafico Centrale ("CtD APP-NON-APP") a (cx=495, cy=525)
+    cx, cy = 495, 525
+    # Raggi luminosi verso i 4 fumetti
+    for tx, ty, col in [(255, 290, (56, 189, 248)), (735, 290, (245, 197, 24)), (255, 690, (192, 132, 252)), (735, 690, (60, 208, 112))]:
+        d0.line([(cx, cy), (tx, ty)], fill=col, width=3)
+
+    # Cerchi concentrici del Nucleo CtD
+    d0.ellipse([cx - 105, cy - 105, cx + 105, cy + 105], fill=(18, 14, 38), outline=(245, 197, 24), width=4)
+    d0.ellipse([cx - 92, cy - 92, cx + 92, cy + 92], fill=(28, 20, 58), outline=(56, 189, 248), width=2)
+    d0.text((cx - 68, cy - 48), "CONNECT", font=get_font(26, True), fill=(255, 255, 255))
+    d0.text((cx - 72, cy - 18), "THE DOTS", font=get_font(26, True), fill=(245, 197, 24))
+    draw_badge_pill(d0, cx - 74, cy + 18, "L'APP-NON-APP", (60, 208, 112), (0, 0, 0), 15)
+
+    # FUMETTO 1 (Alto Sinistra — Ciano)
+    b1 = [52, 192, 435, 382]
+    draw_speech_bubble(d0, b1, (cx - 55, cy - 55), (12, 28, 48), (56, 189, 248), width=3)
+    draw_badge_pill(d0, 70, 206, "1. AI ESTESA MA 100% OFFLINE", (56, 189, 248), (0, 0, 0), 16)
+    draw_wrapped_block(d0, 70, 246, 350, "\"Usa il meglio dell'AI + il sapere umano degli SME, ma gira al 100% OFFLINE nel tuo Profilo aggiornato!\"", get_font(19, True), (235, 248, 255), 26)
+
+    # FUMETTO 2 (Alto Destra — Oro)
+    b2 = [555, 192, 938, 382]
+    draw_speech_bubble(d0, b2, (cx + 55, cy - 55), (38, 28, 10), (245, 197, 24), width=3)
+    draw_badge_pill(d0, 573, 206, "2. 24 FUNZIONI IN 3 SISTEMI", (245, 197, 24), (0, 0, 0), 16)
+    draw_wrapped_block(d0, 573, 246, 350, "\"Non fa una cosa sola: unisce Diagnosi (S=C+P+T+R), 2° Cervello (21gg) e Network Pull in 1 sola Piattaforma!\"", get_font(19, True), (255, 248, 220), 26)
+
+    # FUMETTO 3 (Basso Sinistra — Viola)
+    b3 = [52, 605, 435, 795]
+    draw_speech_bubble(d0, b3, (cx - 55, cy + 55), (32, 16, 48), (192, 132, 252), width=3)
+    draw_badge_pill(d0, 70, 619, "3. SIA UTENTI 'P' CHE 'B'", (192, 132, 252), (0, 0, 0), 16)
+    draw_wrapped_block(d0, 70, 659, 350, "\"Parla una lingua sola ('Esperanto' di ~1.000 DOT) per Persone, Professionisti (R>>), PMI e Network!\"", get_font(19, True), (245, 235, 255), 26)
+
+    # FUMETTO 4 (Basso Destra — Verde)
+    b4 = [555, 605, 938, 795]
+    draw_speech_bubble(d0, b4, (cx + 55, cy + 55), (12, 38, 24), (60, 208, 112), width=3)
+    draw_badge_pill(d0, 573, 619, "4. NATIVA EU AI ACT & GDPR", (60, 208, 112), (0, 0, 0), 16)
+    draw_wrapped_block(d0, 573, 659, 350, "\"Scudo di Anonimizzazione AI sulle domande, Regime Fiscale e Micro-Blockchain a costo server zero!\"", get_font(19, True), (230, 255, 240), 26)
+
+    # FUMETTO PENSIERO 5 (In Basso a tutta larghezza sinistra — Ambra/Rosso con freccia verso Destra)
+    b5 = [52, 822, 938, 982]
+    # Pallini di pensiero dal nucleo centrale verso il fumetto 5
+    d0.ellipse([488, 765, 502, 779], fill=(245, 197, 24))
+    d0.ellipse([484, 790, 506, 812], fill=(245, 197, 24))
+    d0.rounded_rectangle(b5, radius=22, fill=(48, 20, 16), outline=(245, 197, 24), width=3)
+    draw_badge_pill(d0, 72, 838, "? IL NOSTRO DILEMMA COMUNICATIVO ?", (239, 68, 68), (255, 255, 255), 16)
+    draw_wrapped_block(d0, 72, 878, 845, "\"Di fronte a una 'App-non-App' così vasta e mai vista prima, ci siamo chiesti: COME FACCIAMO A RACCONTARLA SENZA SCRIVERE UN MANUALE DI 200 PAGINE?!\"  ══►", get_font(20, True), (255, 240, 200), 27)
+
+    # ==========================================================================
+    # LATO DESTRO (x=975..1885): LA RISPOSTA IN 4 FUMETTI SINTETICI + BOX PAYOFF
+    # ==========================================================================
+    d0.rectangle([975, 120, 1885, 1000], fill=(14, 22, 18), outline=(60, 208, 112), width=3)
+    d0.rectangle([975, 120, 1885, 174], fill=(20, 48, 34))
+    d0.text((995, 134), "► LA RISPOSTA: LA SERIE APERTA 'ANATOMIA DI UNA SERIAL KILLER APP'", font=get_font(20, True), fill=(60, 208, 112))
+
+    right_bubbles = [
+        ("PUNTATA DOPO PUNTATA", (239, 68, 68), "1 Puntata = 1 'Vittima' Illustre Eliminata", "Ogni episodio ti mette al volante di 1 singola funzione che uccide una vecchia illusione (chatbot vuoti, SWOT morte, finti guru, chiamate a freddo)."),
+        ("IMPATTO VISIVO IMMEDIATO", (56, 189, 248), "1 Slide che vale 1.000 Parole + Triplo Payoff", "Ogni uscita mostra lo zoom grafico della funzione e il Payoff specifico per Persona (P), Professionista (SME) e Imprenditore/PMI (B)."),
+        ("ZERO PUNTATE PERSE", (60, 208, 112), "Timeline col Check Verde [✓] & Sezione News", "Ogni post accende un Check Verde [✓] nella Timeline e diventa una News leggibile su www.c-t-d.group/news.html per recuperare tutto."),
+        ("PREMIO EARLY ADOPTER", (245, 197, 24), "1 Anno+ Gratis da Gennaio 2027 per il tuo Feedback", "Vai sul sito, lascia un feedback + la tua mail per la newsletter e ti assicuri l'uso gratuito per un anno o più al lancio di Gennaio 2027!")
     ]
-    ly = 200
-    for tit, desc in left_items:
-        d0.text((60, ly), "✦ " + tit, font=get_font(20, True), fill=(56, 189, 248))
-        ly = draw_wrapped_block(d0, 60, ly + 28, 860, desc, get_font(18, False), (230, 235, 245), 25) + 18
 
-    # Right Column: La Soluzione ("La Serie a Puntate + Triplo Payoff + 1 Anno+ Gratis")
-    d0.rectangle([975, 125, 1880, 995], fill=(14, 26, 20), outline=(60, 208, 112), width=3)
-    d0.rectangle([975, 125, 1880, 180], fill=(20, 48, 34))
-    d0.text((995, 140), "🔪 LA RISPOSTA: LA SERIE APERTA 'SERIAL KILLER APP'", font=get_font(22, True), fill=(60, 208, 112))
+    ry = 190
+    for badge_txt, col, title_txt, desc_txt in right_bubbles:
+        d0.rounded_rectangle([995, ry, 1865, ry + 132], radius=16, fill=(20, 30, 26), outline=col, width=2)
+        end_x = draw_badge_pill(d0, 1012, ry + 12, badge_txt, col, (0, 0, 0), 14)
+        d0.text((end_x + 14, ry + 12), title_txt, font=get_font(20, True), fill=(255, 255, 255))
+        draw_wrapped_block(d0, 1012, ry + 48, 835, desc_txt, get_font(18, False), (225, 238, 230), 24)
+        ry += 144
 
-    right_items = [
-        ("🔪 1 Puntata = 1 'Vittima' Illustre Eliminata", "Ogni episodio ti siede al volante di una singola funzione di CtD che uccide una vecchia inefficienza (chatbot vuoti, SWOT statiche, finti guru, networking a freddo)."),
-        ("🖼️ 1 Slide che vale 1.000 Parole + Triplo Payoff", "Ogni uscita isola il quadrante attivo della plancia e mostra in chiusura il Payoff specifico per Persona (P), Professionista (SME) e Imprenditore/PMI (B)."),
-        ("✅ Timeline col Check Verde [✓] & Sezione News", "Ogni puntata diventa una News integrale su www.c-t-d.group/news.html accompagnata dalla Timeline con i check verdi [✓] per recuperare gli episodi persi."),
-        ("🎁 1 Anno+ di Licenza Gratuita da Gennaio 2027", "Chi va sul sito, lascia un feedback sulle funzioni (anche con opzione 'Altro') + la mail per la newsletter blocca la versione gratuita per un anno o più!")
-    ]
-    ry = 200
-    for tit, desc in right_items:
-        d0.text((995, ry), tit, font=get_font(20, True), fill=(245, 197, 24))
-        ry = draw_wrapped_block(d0, 995, ry + 28, 860, desc, get_font(18, False), (235, 245, 235), 25) + 18
-
-    # Mini Box Payoff P / Prof / B in basso a destra
-    d0.rectangle([995, 760, 1860, 975], fill=(22, 16, 42), outline=(245, 197, 24), width=2)
-    d0.text((1015, 774), "🎯 COSA SCOPRIRAI PUNTATA DOPO PUNTATA PER IL TUO PROFILO:", font=get_font(19, True), fill=(245, 197, 24))
-    d0.text((1015, 810), "👤 Persona (P): Coach privato offline, Tasto Pausa ('0'), Palestra 21gg e Ore-Palestra.", font=get_font(18, False), fill=(180, 230, 255))
-    d0.text((1015, 855), "🎓 Professionista (SME): Cordone Ombelicale 21gg coi clienti e qualifica Proven SME (R >>).", font=get_font(18, False), fill=(255, 235, 160))
-    d0.text((1015, 900), "🏢 Imprenditore / PMI / Rete (B): SWOT in RAM, Salto del 1° Grado e Clearing HTLC B2B.", font=get_font(18, False), fill=(216, 180, 254))
-    d0.text((1015, 940), "👉 Tutte le puntate e il Form Early Adopter sono su: www.c-t-d.group/news.html", font=get_font(18, True), fill=(60, 208, 112))
+    # Box Finale Triplo Payoff P / SME / B
+    d0.rounded_rectangle([995, 772, 1865, 984], radius=16, fill=(24, 16, 44), outline=(245, 197, 24), width=3)
+    d0.text((1015, 786), "★ IL PAYOFF CHE SCOPRIRAI IN OGNI PUNTATA PER IL TUO PROFILO:", font=get_font(19, True), fill=(245, 197, 24))
+    d0.text((1015, 822), "● Persona (P): Coach privato offline, Tasto Pausa ('0'), Palestra 21gg e Ore-Palestra.", font=get_font(18, True), fill=(125, 211, 252))
+    d0.text((1015, 862), "● Professionista (SME): Cordone Ombelicale 21gg coi clienti e qualifica Proven SME (R >>).", font=get_font(18, True), fill=(253, 224, 71))
+    d0.text((1015, 902), "● Imprenditore / PMI / Rete (B): SWOT in RAM, Salto del 1° Grado e Clearing HTLC B2B.", font=get_font(18, True), fill=(216, 180, 254))
+    d0.text((1015, 944), "► Leggi le puntate e prenota 1 Anno+ Gratis su: www.c-t-d.group/news.html", font=get_font(18, True), fill=(60, 208, 112))
 
     # Bottom Bar
     d0.rectangle([0, 1015, 1920, 1080], fill=(22, 16, 42))
-    d0.text((45, 1033), "👉 Scorri le slide per la Mappa dei 3 Sistemi, i 24 Componenti e la Timeline [✓]  •  www.c-t-d.group/news.html", font=get_font(21, True), fill=(245, 197, 24))
+    d0.text((45, 1033), "► Scorri le slide per la Mappa dei 3 Sistemi, i 24 Componenti e la Timeline [✓]  •  www.c-t-d.group/news.html", font=get_font(21, True), fill=(245, 197, 24))
     return s0
 
 trailer_cover = build_trailer_slide(as_context_slide=False)
@@ -335,19 +405,18 @@ for ep in episodes:
     ep_num = ep["num"]
     pts_str = "Tutti (1..24)" if len(ep["pts"]) > 10 else ", ".join(str(p) for p in ep["pts"])
 
-    # SLIDE 1: Se ep_num == 0 usa direttamente la Slide Trailer, altrimenti la Slide da 1.000 Parole della puntata
     if ep_num == 0:
         s1 = trailer_cover.copy()
     else:
         s1 = Image.new("RGB", (1920, 1080), (10, 10, 15))
         ds1 = ImageDraw.Draw(s1)
         ds1.rectangle([0, 0, 1920, 105], fill=(22, 16, 42))
-        ds1.text((45, 16), f"🔪 ANATOMIA DI UNA SERIAL KILLER APP  •  PUNTATA #{ep_num:02d} ({ep['date']})  •  SERIE APERTA VERSO GENNAIO 2027", font=get_font(21, True), fill=(245, 197, 24))
+        ds1.text((45, 16), f"★ ANATOMIA DI UNA SERIAL KILLER APP  •  PUNTATA #{ep_num:02d} ({ep['date']})  •  SERIE APERTA VERSO GENNAIO 2027", font=get_font(21, True), fill=(245, 197, 24))
         ds1.text((45, 48), ep["title"], font=get_font(33, True), fill=(255, 255, 255))
 
         ds1.rectangle([40, 125, 900, 995], fill=(16, 16, 24), outline=(245, 197, 24), width=3)
         ds1.rectangle([40, 125, 900, 175], fill=(32, 24, 58))
-        ds1.text((60, 138), f"🔍 LA SLIDE CHE VALE 1.000 PAROLE  •  Componenti attivati: [{pts_str}]", font=get_font(20, True), fill=(245, 197, 24))
+        ds1.text((60, 138), f"► LA SLIDE CHE VALE 1.000 PAROLE  •  Componenti attivati: [{pts_str}]", font=get_font(20, True), fill=(245, 197, 24))
 
         cropped = base_ss1.crop(ep["crop"])
         cw, ch = cropped.size
@@ -359,28 +428,28 @@ for ep in episodes:
         rx1, rx2 = 930, 1880
         rw = rx2 - rx1 - 40
 
-        ds1.rectangle([rx1, 125, rx2, 305], fill=(36, 14, 20), outline=(239, 68, 68), width=2)
-        ds1.text((rx1 + 20, 140), "❌ LA VITTIMA ELIMINATA (VECCHIO MONDO)", font=get_font(21, True), fill=(252, 165, 165))
-        draw_wrapped_block(ds1, rx1 + 20, 175, rw, ep["victim"], get_font(20, False), (255, 235, 235), 28)
+        ds1.rounded_rectangle([rx1, 125, rx2, 305], radius=16, fill=(36, 14, 20), outline=(239, 68, 68), width=2)
+        draw_badge_pill(ds1, rx1 + 20, 140, "X LA VITTIMA ELIMINATA (VECCHIO MONDO)", (239, 68, 68), (255, 255, 255), 16)
+        draw_wrapped_block(ds1, rx1 + 20, 182, rw, ep["victim"], get_font(20, False), (255, 235, 235), 28)
 
-        ds1.rectangle([rx1, 325, rx2, 545], fill=(16, 28, 46), outline=(56, 189, 248), width=2)
-        ds1.text((rx1 + 20, 340), "⚡ LA KILLER FEATURE CtD (COSA FAI AL VOLANTE DELL'APP)", font=get_font(21, True), fill=(56, 189, 248))
-        draw_wrapped_block(ds1, rx1 + 20, 375, rw, ep["killer_feature"], get_font(20, False), (235, 248, 255), 28)
+        ds1.rounded_rectangle([rx1, 325, rx2, 545], radius=16, fill=(16, 28, 46), outline=(56, 189, 248), width=2)
+        draw_badge_pill(ds1, rx1 + 20, 340, "► LA KILLER FEATURE CtD (COSA FAI AL VOLANTE DELL'APP)", (56, 189, 248), (0, 0, 0), 16)
+        draw_wrapped_block(ds1, rx1 + 20, 382, rw, ep["killer_feature"], get_font(20, False), (235, 248, 255), 28)
 
-        ds1.rectangle([rx1, 565, rx2, 995], fill=(16, 34, 24), outline=(60, 208, 112), width=3)
-        ds1.text((rx1 + 20, 580), "🎯 IL PAYOFF CONCRETO PER IL TUO PROFILO:", font=get_font(22, True), fill=(60, 208, 112))
+        ds1.rounded_rectangle([rx1, 565, rx2, 995], radius=16, fill=(16, 34, 24), outline=(60, 208, 112), width=3)
+        draw_badge_pill(ds1, rx1 + 20, 580, "★ IL PAYOFF CONCRETO PER IL TUO PROFILO", (60, 208, 112), (0, 0, 0), 16)
 
-        py = 620
+        py = 626
         for badge_lbl, badge_col, p_txt in [
-            ("👤 SE SEI UNA PERSONA O UN TALENTO (P):", (56, 189, 248), ep["payoff_persona"]),
-            ("🎓 SE SEI UN PROFESSIONISTA / PROVEN SME (R >>):", (245, 197, 24), ep["payoff_prof"]),
-            ("🏢 SE SEI UN IMPRENDITORE / PMI O NETWORK (B):", (192, 132, 252), ep["payoff_pmi"])
+            ("● SE SEI UNA PERSONA O UN TALENTO (P):", (56, 189, 248), ep["payoff_persona"]),
+            ("● SE SEI UN PROFESSIONISTA / PROVEN SME (R >>):", (245, 197, 24), ep["payoff_prof"]),
+            ("● SE SEI UN IMPRENDITORE / PMI O NETWORK (B):", (192, 132, 252), ep["payoff_pmi"])
         ]:
             ds1.text((rx1 + 20, py), badge_lbl, font=get_font(19, True), fill=badge_col)
             py = draw_wrapped_block(ds1, rx1 + 20, py + 25, rw, p_txt, get_font(19, False), (240, 245, 240), 25) + 14
 
         ds1.rectangle([0, 1015, 1920, 1080], fill=(22, 16, 42))
-        ds1.text((45, 1033), "👉 Scorri per il Trailer 'App-non-App', la Mappa Generale e la Timeline [✓]  •  www.c-t-d.group/news.html", font=get_font(21, True), fill=(245, 197, 24))
+        ds1.text((45, 1033), "► Scorri per il Trailer 'App-non-App', la Mappa Generale e la Timeline [✓]  •  www.c-t-d.group/news.html", font=get_font(21, True), fill=(245, 197, 24))
         s1.save(os.path.join(assets_dir, f"news_ep_{ep_num:02d}.png"))
 
     # SLIDE MAPPA GENERALE
@@ -413,7 +482,7 @@ for ep in episodes:
         y3 += 37
     dlist.text((60, 1028), "Archivio completo delle News e dei 24 Componenti su: www.c-t-d.group/news.html  |  www.c-t-d.group/founders.html", font=get_font(16, True), fill=(245, 197, 24))
 
-    # SLIDE TIMELINE APERTA CON PUNTATA #00 IN CIMA
+    # SLIDE TIMELINE APERTA (ZERO EMOJI -> SOLO SIMBOLI NITIDI ✓, ★, +)
     s_time = Image.new("RGB", (1920, 1080), (10, 10, 14))
     dtime = ImageDraw.Draw(s_time)
     dtime.rectangle([0, 0, 1920, 98], fill=(22, 16, 42))
@@ -445,39 +514,32 @@ for ep in episodes:
             t_col = (245, 197, 24)
         else:
             dtime.rectangle([bx, by, bx + 40, by + 40], fill=(28, 28, 36), outline=(110, 110, 130), width=2)
-            dtime.text((bx + 7, by + 6), f"#{num:02d}", font=get_font(18, True), fill=(130, 130, 150))
+            dtime.text((bx + 5, by + 8), f"#{num:02d}", font=get_font(17, True), fill=(130, 130, 150))
             status_lbl = f"PUNTATA #{num:02d} ({dt}) — IN ARRIVO"
             t_col = (155, 155, 170)
 
         dtime.text((126, ty + 6), f"{status_lbl}:  {tit}", font=get_font(19, True), fill=t_col)
-        dtime.text((126, ty + 33), f"🔪 Focus: {vic[:115]}", font=get_font(16, False), fill=(220, 220, 230))
+        dtime.text((126, ty + 33), f"► Focus: {vic[:115]}", font=get_font(16, False), fill=(220, 220, 230))
         ty += 68
 
-    # Riga Serie Aperta Dinamica
     dtime.rectangle([50, ty, 1870, ty + 56], fill=(20, 26, 44), outline=(56, 189, 248), width=2)
-    dtime.text((70, ty + 8), "➕ SERIE APERTA IN CONTINUA EVOLUZIONE  •  NUOVE PUNTATE AGGIUNTE IN CORSA DAI VOSTRI FEEDBACK", font=get_font(18, True), fill=(56, 189, 248))
+    dtime.text((70, ty + 8), "+ SERIE APERTA IN CONTINUA EVOLUZIONE  •  NUOVE PUNTATE AGGIUNTE IN CORSA DAI VOSTRI FEEDBACK", font=get_font(18, True), fill=(56, 189, 248))
     dtime.text((70, ty + 31), "Suggerisci il prossimo caso d'uso su www.c-t-d.group/news.html e blocca 1 Anno+ Gratis da Gennaio 2027!", font=get_font(16, False), fill=(225, 240, 255))
 
-    # Footer CTA Early Adopter
     dtime.rectangle([50, 952, 1870, 1062], fill=(26, 16, 48), outline=(245, 197, 24), width=3)
-    dtime.text((75, 962), "🎁 VUOI USARE CONNECT THE DOTS GRATIS (PER UN ANNO O PIÙ) A PARTIRE DA GENNAIO 2027?", font=get_font(22, True), fill=(245, 197, 24))
+    dtime.text((75, 962), "★ VUOI USARE CONNECT THE DOTS GRATIS (PER UN ANNO O PIÙ) A PARTIRE DA GENNAIO 2027?", font=get_font(22, True), fill=(245, 197, 24))
     dtime.text((75, 994), "Vai su www.c-t-d.group/news.html • Lascia il tuo Feedback + la tua Email per iscriverti alla Newsletter delle puntate", font=get_font(19, False), fill=(255, 255, 255))
     dtime.text((75, 1024), "e assicurati subito il Programma Early Adopter (Persona P • Professionista/Proven SME • Imprenditore/PMI/Network B).", font=get_font(18, False), fill=(60, 208, 112))
 
     pdf_name = f"Carosello_LinkedIn_Puntata_{ep_num:02d}.pdf"
-    if ep_num == 0:
-        extra_slides = [s_map, s_list, s_time]
-    else:
-        # Nelle puntate 01..09 includiamo anche la Slide Trailer (#00) come Slide 2 di contesto!
-        extra_slides = [trailer_context, s_map, s_list, s_time]
-
+    extra_slides = [s_map, s_list, s_time] if ep_num == 0 else [trailer_context, s_map, s_list, s_time]
     s1.save(os.path.join(out_desktop_dir, pdf_name), "PDF", resolution=150.0, save_all=True, append_images=extra_slides)
     s1.save(os.path.join(caroselli_web_dir, pdf_name), "PDF", resolution=150.0, save_all=True, append_images=extra_slides)
 
-print("OK: Generati tutti i Caroselli PDF inclusa la Puntata #00 (Il Trailer 'App-non-App')!")
+print("OK: Rigenerati tutti i Caroselli PDF con Fumetti vettoriali e ZERO quadratini []!")
 
 # ==============================================================================
-# AGGIORNAMENTO DI news.html E en/news.html CON LA PUNTATA #00 IN TESTA
+# AGGIORNAMENTO DI news.html CON BOTTONE "1-CLICK LINKEDIN"
 # ==============================================================================
 def build_news_page(is_en=False):
     prefix = "../" if is_en else ""
@@ -504,15 +566,41 @@ def build_news_page(is_en=False):
         paras = "".join(f"<p style='color: #dedee8; font-size: 0.98rem; line-height: 1.65; margin-bottom: 14px;'>{p}</p>" for p in ep["body_paragraphs"])
         pts_str = "Tutti (1..24)" if len(ep["pts"]) > 10 else ", ".join(str(p) for p in ep["pts"])
 
+        # Testo pronto per LinkedIn per il bottone 1-Click
+        li_text_lines = [
+            f"🔪 Anatomia di una Serial Killer App — Puntata #{num:02d}: {ep['title']}",
+            f"({ep['subtitle']})",
+            "",
+            "\n\n".join(ep["body_paragraphs"]),
+            "",
+            "🎯 IL PAYOFF DI QUESTA FUNZIONE PER IL TUO PROFILO:",
+            f"👤 Se sei una Persona (P) o un Talento: {ep['payoff_persona']}",
+            f"🎓 Se sei un Professionista / Proven SME (R >>): {ep['payoff_prof']}",
+            f"🏢 Se sei un Imprenditore, PMI o Network (B): {ep['payoff_pmi']}",
+            "",
+            "🎁 VUOI USARE CONNECT THE DOTS GRATIS (PER UN ANNO O PIÙ) DA GENNAIO 2027?",
+            "Leggi tutte le puntate su https://www.c-t-d.group/news.html : lasciando un feedback sulle funzioni insieme alla tua email per iscriverti alla newsletter, ti assicuri il Programma Early Adopter con versione gratuita per un anno o più!",
+            "",
+            f"🔪 Prossimo passo: {ep['next_teaser']}",
+            "",
+            "#ConnectTheDOTS #SerialKillerApp #AppNonApp #3SystemsInOnePlatform #EdgeAI #AIAct #GDPR #Gennaio2027"
+        ]
+        li_full_text = "\n".join(li_text_lines).replace('"', '&quot;')
+
         articles_html += f"""
             <article id="news-ep-{num:02d}" style="background: #141419; border: 1px solid var(--border-color); border-top: 3px solid {border_col}; border-radius: 14px; padding: 28px; margin-bottom: 36px; box-shadow: 0 10px 30px rgba(0,0,0,0.45);">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
                     <span style="background: #18112c; color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">
                         {'🎬 Puntata #00 (Il Trailer)' if num == 0 else f'🔪 Puntata #{num:02d}'} • {ep['date']} • Componenti CtD: [{pts_str}]
                     </span>
-                    <a href="{prefix}assets/caroselli/Carosello_LinkedIn_Puntata_{num:02d}.pdf" target="_blank" style="background: rgba(245, 197, 24, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 6px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; text-decoration: none;">
-                        📥 Scarica il Carosello PDF ({n_slides} Slide)
-                    </a>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <a href="{prefix}assets/caroselli/Carosello_LinkedIn_Puntata_{num:02d}.pdf" target="_blank" style="background: rgba(245, 197, 24, 0.15); color: var(--accent-gold); border: 1px solid var(--accent-gold); padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; text-decoration: none;">
+                            📥 1. Scarica Carosello PDF ({n_slides} Slide)
+                        </a>
+                        <button type="button" data-litext="{li_full_text}" onclick="copyAndOpenLinkedIn(this, '{num:02d}')" style="background: var(--accent-gold); color: #000; border: none; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 800; cursor: pointer;">
+                            📋 2. Copia Testo Post + Apri LinkedIn
+                        </button>
+                    </div>
                 </div>
 
                 <h2 style="color: #ffffff; font-size: 1.75rem; margin: 0 0 6px 0;">Puntata #{num:02d} — {ep['title']}</h2>
@@ -658,6 +746,21 @@ def build_news_page(is_en=False):
     </footer>
 
     <script>
+        function copyAndOpenLinkedIn(btn, epNum) {{
+            var txt = btn.getAttribute('data-litext');
+            navigator.clipboard.writeText(txt).then(function() {{
+                var orig = btn.innerText;
+                btn.innerText = '✅ Testo Copiato! Ora premi Cmd+V su LinkedIn e allega Puntata_' + epNum + '.pdf';
+                btn.style.background = '#3cd070';
+                setTimeout(function() {{
+                    window.open('https://www.linkedin.com/feed/?shareActive=true', '_blank');
+                }}, 350);
+                setTimeout(function() {{
+                    btn.innerText = orig;
+                    btn.style.background = '#f5c518';
+                }}, 7000);
+            }});
+        }}
         function submitNewsFeedback(e) {{
             e.preventDefault();
             var name = document.getElementById('nw-name').value;
@@ -676,17 +779,4 @@ def build_news_page(is_en=False):
 
 open(os.path.join(repo, "news.html"), "w", encoding="utf-8").write(build_news_page(is_en=False))
 open(os.path.join(repo, "en", "news.html"), "w", encoding="utf-8").write(build_news_page(is_en=True))
-
-for root_dir, _, files in os.walk(repo):
-    if "/.git" in root_dir:
-        continue
-    for fn in sorted(files):
-        if not fn.endswith(".html") or fn == "news.html":
-            continue
-        p = os.path.join(root_dir, fn)
-        txt = open(p, encoding="utf-8").read()
-        if 'href="news.html"' not in txt:
-            txt = txt.replace('<a href="founders.html">', '<a href="news.html" style="color: var(--accent-gold); font-weight: 700;">News &amp; Serie</a>\n                <a href="founders.html">')
-            open(p, "w", encoding="utf-8").write(txt)
-
-print("OK: Pagina news.html e Carosello Puntata #00 (Il Trailer) pronti!")
+print("OK: Aggiornate news.html e en/news.html con bottone 1-Click LinkedIn!")
