@@ -47,8 +47,8 @@
 <body>
     <div class="top-bar">
         <div>
-            <strong style="color:#f5c518; font-size:1.15rem;">🎬 CABINA DI REGIA LINKEDIN (CON CONTROLLO ANTI-SFORAMENTO 3.000 CARATTERI)</strong>
-            <span style="display:block; font-size:0.8rem; color:#cbd5e1;">Tutti i testi #00..#09 sono calibrati e verificati sotto i 2.850 caratteri UTF-16 (Titoli <= 58 car.)</span>
+            <strong style="color:#f5c518; font-size:1.15rem;">🎬 CABINA DI REGIA LINKEDIN (2 SOLI BOTTONI: 1. TITOLO PDF • 2. TESTO POST TUTTO INCLUSO)</strong>
+            <span style="display:block; font-size:0.8rem; color:#cbd5e1;">Qualsiasi testo e link è già dentro l'unico riquadro PASSO 2 ed è assoggettato al controllo automatico <= 3.000 caratteri</span>
         </div>
         <div class="ep-jump">
             <span>Vai a:</span>
@@ -58,23 +58,12 @@
     </div>
 
     <main style="max-width: 1220px; margin: 30px auto; padding: 0 20px;">
-        <div style="background:#18112c; border:1px solid #f5c518; border-radius:12px; padding:18px 22px; margin-bottom:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
-            <div style="font-size:0.92rem; color:#e2e8f0;">
-                <strong>🛡️ Controllo Automatico Dimensione Massima LinkedIn Attivo:</strong><br>
-                • Il contatore calcola il peso esatto in unità UTF-16 (incluso il peso doppio delle emoji) come LinkedIn.<br>
-                • Se modifichi un testo e superi i <strong>3.000 caratteri</strong>, il riquadro diventa <strong>Rosso</strong> e ti indica esattamente di quanti caratteri accorciare prima di copiare.
-            </div>
-            <button type="button" onclick="resetAllTexts()" style="background:#334155; color:#fff; border:1px solid #64748b; padding:8px 14px; border-radius:6px; font-size:0.78rem; cursor:pointer;">
-                ↺ Ripristina Testi Calibrati Originali
-            </button>
-        </div>
-
         
         <div class="ep-card" id="regia-ep-00" style="background:#141419; border:2px solid #2c2c3a; border-radius:14px; padding:26px; margin-bottom:32px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #00 • Data prevista: 5 Novembre 2026
+                        PUNTATA #00 • Data prevista: 5 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">IL TRAILER: Come raccontare la prima 'App-non-App'?</h2>
                 </div>
@@ -89,7 +78,7 @@
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_00.png" alt="Puntata 00" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_00.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_00.pdf" download="Carosello_LinkedIn_Puntata_00.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -105,7 +94,7 @@
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-00" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 55/58 caratteri (OK)</span>
                         </div>
@@ -117,24 +106,24 @@
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-00" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-00" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2835 / 3000 caratteri LinkedIn (Margine sicuro: +165)
+                                    🟢 2906 / 3000 caratteri LinkedIn (Margine sicuro: +94)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-00" onclick="copyField('inp-body-00', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-00" onclick="copyField('inp-body-00', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-00" rows="14" oninput="updateBodyCount('00')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">Come si presenta al mercato la prima "App-non-App" che non è mai esistita prima?
+                        <textarea id="inp-body-00" rows="16" oninput="updateBodyCount('00')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">Come si presenta al mercato la prima "App-non-App" che non è mai esistita prima?
 Quando abbiamo provato a spiegare Connect the DOTS (in uscita a Gennaio 2027) con un post tradizionale, ci siamo accorti che era impossibile.
-Ecco perché da oggi parte "Anatomia di una Serial Killer App" (sfoglia le 4 slide del Trailer qui sotto 👇).
+Ecco perché da oggi parte "Anatomia di una Serial Killer App" (sfoglia le 2 slide del Trailer qui sotto 👇).
 
 Quando qualche mese fa la Ferrari ha svelato la sua prima vettura elettrica, la Luce, chi si è fermato alle prime foto statiche cercava i vecchi schemi del motore termico. Chi invece si è seduto al volante ha scoperto dieci auto diverse in una sola piattaforma.
 
@@ -150,7 +139,7 @@ Come raccontare tutto questo senza scrivere un manuale di 200 pagine?
 Con questa serie aperta di puntate:
 1️⃣ Ogni episodio ti siede al volante di 1 funzione che "uccide" una vecchia illusione (chatbot vuoti, SWOT morte nei PDF, finti guru, chiamate a freddo).
 2️⃣ Ogni uscita ha 1 Slide che vale 1.000 parole + il Triplo Payoff per Persona (P), Professionista (SME) e Imprenditore/PMI (B).
-3️⃣ Nella Timeline trovi i Check Verdi [✓] e su https://www.c-t-d.group/news.html leggi tutte le puntate come News.
+3️⃣ Nella Slide 2 trovi la Timeline progressiva col Check Verde [✓] e su https://www.c-t-d.group/news.html#news-ep-00 leggi le puntate come News.
 
 🎯 COSA SCOPRIRAI IN OGNI PUNTATA PER IL TUO PROFILO:
 👤 Persona (P): Coach privato offline, Tasto Pausa ('0'), Palestra 21gg e Ore-Palestra.
@@ -158,26 +147,11 @@ Con questa serie aperta di puntate:
 🏢 Imprenditore / PMI / Rete (B): SWOT in RAM oltre il fatturato, "Salto del 1° Grado" (senza mostrare debolezze 10/10 agli amici) e compensazione in-Lire Fluida (HTLC).
 
 🎁 IL TUO FEEDBACK VALE 1 ANNO+ DI LICENZA GRATUITA DA GENNAIO 2027
-Vai su https://www.c-t-d.group/news.html : lasciando un feedback sulle funzioni (anche con opzione "Altro") e la tua email per la newsletter, ti assicuri una versione gratuita per un anno o più nel Programma Early Adopter di Gennaio 2027!
+Vai su https://www.c-t-d.group/news.html#news-ep-00 : lasciando un feedback sulle funzioni (anche con opzione "Altro") e la tua email per la newsletter, ti assicuri una versione gratuita per un anno o più nel Programma Early Adopter di Gennaio 2027!
 
 Quale "falsa promessa" del digitale o della consulenza vorresti veder eliminata per prima? 👇
 
 #ConnectTheDOTS #SerialKillerApp #AppNonApp #3SystemsInOnePlatform #EdgeAI #AIAct #GDPR #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-00" value="🔗 Qui trovi la pagina News interattiva con le slide ad alta risoluzione e il modulo per bloccare 1 Anno+ di Licenza Gratuita Early Adopter (Gennaio 2027): https://www.c-t-d.group/news.html#news-ep-00" oninput="updateBodyCount('00')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-00', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -187,7 +161,7 @@ Quale "falsa promessa" del digitale o della consulenza vorresti veder eliminata 
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #01 • Data prevista: 7 Novembre 2026
+                        PUNTATA #01 • Data prevista: 7 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">Il Manifesto: 3 Systems in 1 Platform (S = C + P + T + R)</h2>
                 </div>
@@ -202,7 +176,7 @@ Quale "falsa promessa" del digitale o della consulenza vorresti veder eliminata 
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_01.png" alt="Puntata 01" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_01.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_01.pdf" download="Carosello_LinkedIn_Puntata_01.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -218,7 +192,7 @@ Quale "falsa promessa" del digitale o della consulenza vorresti veder eliminata 
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-01" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 55/58 caratteri (OK)</span>
                         </div>
@@ -230,23 +204,23 @@ Quale "falsa promessa" del digitale o della consulenza vorresti veder eliminata 
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-01" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-01" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2365 / 3000 caratteri LinkedIn (Margine sicuro: +635)
+                                    🟢 2408 / 3000 caratteri LinkedIn (Margine sicuro: +592)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-01" onclick="copyField('inp-body-01', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-01" onclick="copyField('inp-body-01', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-01" rows="14" oninput="updateBodyCount('01')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #01: Il Manifesto dei "3 Systems in 1 Platform" (S = C + P + T + R).
-(Hai perso la Puntata #00 Il Trailer? La trovi nella Slide 2 e nella Timeline [✓] del carosello qui sotto 👇).
+                        <textarea id="inp-body-01" rows="16" oninput="updateBodyCount('01')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #01: Il Manifesto dei "3 Systems in 1 Platform" (S = C + P + T + R).
+(Hai perso la Puntata #00 Il Trailer? La trovi nella Timeline [✓] in Slide 2 e su https://www.c-t-d.group/news.html 👇).
 
 Oggi la nostra Serial Killer App (in arrivo a Gennaio 2027) elimina la sua prima vittima illustre: i software isolati su Cloud che standardizzano le persone, divorano energia ed espongono i tuoi dati riservati.
 
@@ -263,26 +237,11 @@ Avresti 3 Sistemi integrati in 1 sola Piattaforma (3 Systems in 1 Platform) che 
 🏢 Se sei un Imprenditore, PMI o Network (B): unifichi diagnosi strategica, controllo d'esecuzione e ricerca riservata di partner in un'unica plancia deterministica a costo server zero.
 
 🎁 VUOI GUIDARLA GRATIS PER UN ANNO O PIÙ DA GENNAIO 2027?
-Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback insieme alla tua email per iscriverti alla newsletter delle puntate e blocca subito il tuo posto nel Programma Early Adopter!
+Vai su https://www.c-t-d.group/news.html#news-ep-01 : lascia il tuo feedback insieme alla tua email per iscriverti alla newsletter delle puntate e blocca subito il tuo posto nel Programma Early Adopter!
 
 🔪 Prossima puntata (#02): Come si uccide l'angolo cieco del "Non so cosa non so"? Vedremo cosa succede premendo il pulsante del Cervello.
 
 #ConnectTheDOTS #SerialKillerApp #3SystemsInOnePlatform #EdgeAI #StrategiaAziendale #Gennaio2027 #EarlyAdopter</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-01" value="🔗 Leggi la Puntata #01 integrale e prenota 1 Anno+ di Licenza Gratuita Early Adopter (Gennaio 2027) lasciando il tuo feedback qui: https://www.c-t-d.group/news.html#news-ep-01" oninput="updateBodyCount('01')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-01', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -292,7 +251,7 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback insieme alla t
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #02 • Data prevista: 9 Novembre 2026
+                        PUNTATA #02 • Data prevista: 9 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">Cervello, Orizzonti e Triage Diagnostico Causale</h2>
                 </div>
@@ -307,7 +266,7 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback insieme alla t
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_02.png" alt="Puntata 02" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_02.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_02.pdf" download="Carosello_LinkedIn_Puntata_02.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -323,7 +282,7 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback insieme alla t
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-02" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 54/58 caratteri (OK)</span>
                         </div>
@@ -335,22 +294,22 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback insieme alla t
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-02" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-02" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2304 / 3000 caratteri LinkedIn (Margine sicuro: +696)
+                                    🟢 2337 / 3000 caratteri LinkedIn (Margine sicuro: +663)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-02" onclick="copyField('inp-body-02', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-02" onclick="copyField('inp-body-02', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-02" rows="14" oninput="updateBodyCount('02')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #02: Come uccidere il foglio bianco dei chatbot e l'angolo cieco del "Non so cosa non so".
+                        <textarea id="inp-body-02" rows="16" oninput="updateBodyCount('02')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #02: Come uccidere il foglio bianco dei chatbot e l'angolo cieco del "Non so cosa non so".
 (Sfoglia il carosello per la Slide da 1.000 parole e la Timeline [✓] delle puntate pubblicate 👇).
 
 Avete presente il paradosso di ChatGPT e dei chatbot tradizionali? Per ottenere una risposta utile devi già sapere quale domanda fare. Ma nella vita e in azienda i blocchi più gravi nascono quando:
@@ -368,26 +327,11 @@ Ecco cosa fai al volante di Connect the DOTS (disponibile da Gennaio 2027) in 60
 🏢 Imprenditore / PMI (B): elimini le decisioni "di pancia" e le allucinazioni dei chatbot isolando in 3 minuti il vero collo di bottiglia operativo o finanziario.
 
 🎁 LASCIA IL TUO FEEDBACK = 1 ANNO+ GRATIS DA GENNAIO 2027
-Vai su https://www.c-t-d.group/news.html , dicci cosa ne pensi del Triage Diagnostico causale e iscriviti alla newsletter per assicurarti il Programma Early Adopter gratuito!
+Vai su https://www.c-t-d.group/news.html#news-ep-02 , dicci cosa ne pensi del Triage Diagnostico causale e iscriviti alla newsletter per assicurarti il Programma Early Adopter gratuito!
 
 🔪 Prossima puntata (#03): Cosa succede ai 900 nodi che non hai ancora esplorato? Scopriremo la SWOT in RAM (10/10) e il tasto sovrano "Pausa".
 
 #ConnectTheDOTS #SerialKillerApp #ProblemSolving #DecisionMaking #CoachPrivato #PMI #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-02" value="🔗 Recupera le puntate precedenti e blocca 1 Anno+ Gratis da Gennaio 2027 con un feedback su: https://www.c-t-d.group/news.html#news-ep-02" oninput="updateBodyCount('02')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-02', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -397,7 +341,7 @@ Vai su https://www.c-t-d.group/news.html , dicci cosa ne pensi del Triage Diagno
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #03 • Data prevista: 11 Novembre 2026
+                        PUNTATA #03 • Data prevista: 11 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">SWOT in RAM (Ignoto = 10/10) e il Tasto Sovrano 'Pausa'</h2>
                 </div>
@@ -412,7 +356,7 @@ Vai su https://www.c-t-d.group/news.html , dicci cosa ne pensi del Triage Diagno
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_03.png" alt="Puntata 03" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_03.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_03.pdf" download="Carosello_LinkedIn_Puntata_03.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -428,7 +372,7 @@ Vai su https://www.c-t-d.group/news.html , dicci cosa ne pensi del Triage Diagno
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-03" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 55/58 caratteri (OK)</span>
                         </div>
@@ -440,22 +384,22 @@ Vai su https://www.c-t-d.group/news.html , dicci cosa ne pensi del Triage Diagno
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-03" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-03" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2174 / 3000 caratteri LinkedIn (Margine sicuro: +826)
+                                    🟢 2205 / 3000 caratteri LinkedIn (Margine sicuro: +795)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-03" onclick="copyField('inp-body-03', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-03" onclick="copyField('inp-body-03', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-03" rows="14" oninput="updateBodyCount('03')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #03: La fine delle analisi SWOT dimenticate nei PDF e dei cruscotti che guardano solo il fatturato.
+                        <textarea id="inp-body-03" rows="16" oninput="updateBodyCount('03')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #03: La fine delle analisi SWOT dimenticate nei PDF e dei cruscotti che guardano solo il fatturato.
 
 Nella gestione tradizionale, ciò che non conosciamo viene ignorato: vale zero. Finché un giorno quell'angolo cieco esplode.
 
@@ -471,26 +415,11 @@ Se oggi stessi usando il tuo Profilo aggiornato in Connect the DOTS (in uscita a
 🏢 Imprenditore / PMI (B): vedi in tempo reale dove si annidano le minacce 10/10 nei tuoi 8 orizzonti aziendali senza che un solo byte esca dal tuo Mac o PC.
 
 🎁 BLOCCA 1 ANNO+ DI LICENZA GRATUITA DA GENNAIO 2027:
-Quali nodi metteresti subito in "Pausa" e quali accenderesti? Scrivicelo su https://www.c-t-d.group/news.html insieme alla tua email per la newsletter!
+Quali nodi metteresti subito in "Pausa" e quali accenderesti? Scrivicelo su https://www.c-t-d.group/news.html#news-ep-03 insieme alla tua email per la newsletter!
 
 🔪 Prossima puntata (#04): Perché bruciare gigawatt su server cloud per rielaborare risposte già note? Scopriremo l'"Esperanto" dei ~1.000 DOT.
 
 #ConnectTheDOTS #SerialKillerApp #SWOT #ControlloDiGestione #CFO #Imprenditori #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-03" value="🔗 Leggi la News #03 e prenota 1 Anno+ Gratis da Gennaio 2027 lasciando il tuo feedback su: https://www.c-t-d.group/news.html#news-ep-03" oninput="updateBodyCount('03')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-03', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -500,7 +429,7 @@ Quali nodi metteresti subito in "Pausa" e quali accenderesti? Scrivicelo su http
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #04 • Data prevista: 13 Novembre 2026
+                        PUNTATA #04 • Data prevista: 13 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">L'Esperanto dei ~1.000 DOT e la Micro-Blockchain Offline</h2>
                 </div>
@@ -515,7 +444,7 @@ Quali nodi metteresti subito in "Pausa" e quali accenderesti? Scrivicelo su http
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_04.png" alt="Puntata 04" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_04.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_04.pdf" download="Carosello_LinkedIn_Puntata_04.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -531,7 +460,7 @@ Quali nodi metteresti subito in "Pausa" e quali accenderesti? Scrivicelo su http
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-04" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 55/58 caratteri (OK)</span>
                         </div>
@@ -543,22 +472,22 @@ Quali nodi metteresti subito in "Pausa" e quali accenderesti? Scrivicelo su http
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-04" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-04" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 1957 / 3000 caratteri LinkedIn (Margine sicuro: +1043)
+                                    🟢 1987 / 3000 caratteri LinkedIn (Margine sicuro: +1013)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-04" onclick="copyField('inp-body-04', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-04" onclick="copyField('inp-body-04', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-04" rows="14" oninput="updateBodyCount('04')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #04: Uccidere lo spreco energetico dell'AI Cloud e la Babele dei linguaggi aziendali.
+                        <textarea id="inp-body-04" rows="16" oninput="updateBodyCount('04')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #04: Uccidere lo spreco energetico dell'AI Cloud e la Babele dei linguaggi aziendali.
 
 Ogni giorno milioni di utenti interrogano data center remoti bruciando quantità immense di energia per farsi rigenerare da zero risposte che gli esperti umani di dominio (SME) conoscono già. E quando una PMI cerca uno specialista, usano parole diverse e non si capiscono.
 
@@ -573,26 +502,11 @@ Ecco cosa accade in Connect the DOTS (Punti 2, 7, 16 — disponibile da Gennaio 
 🏢 Imprenditore / PMI (B): adotti l'AI in azienda azzerando i rischi sanzionatori di GDPR / EU AI Act e i canoni ricorrenti di server e token cloud.
 
 🎁 LASCIA IL TUO FEEDBACK PER AVERE 1 ANNO+ GRATIS DA GENNAIO 2027:
-Vai su https://www.c-t-d.group/news.html , lascia il tuo parere e iscriviti alla newsletter delle puntate!
+Vai su https://www.c-t-d.group/news.html#news-ep-04 , lascia il tuo parere e iscriviti alla newsletter delle puntate!
 
 🔪 Prossima puntata (#05): Capire il problema non basta se il buon proposito muore in una lista di To-Do. Entreremo in "2° CtD 2°B: Secondo Cervello".
 
 #ConnectTheDOTS #SerialKillerApp #EdgeAI #AIAct #GDPR #Sostenibilita #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-04" value="🔗 Tutte le puntate con Check Verde [✓] e il form per 1 Anno+ Gratis da Gennaio 2027 sono qui: https://www.c-t-d.group/news.html#news-ep-04" oninput="updateBodyCount('04')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-04', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -602,7 +516,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo parere e iscriviti alla
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #05 • Data prevista: 15 Novembre 2026
+                        PUNTATA #05 • Data prevista: 15 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">2° Cervello: Proliferazione To-Do -> L3 Progetto & Sinapsi</h2>
                 </div>
@@ -617,7 +531,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo parere e iscriviti alla
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_05.png" alt="Puntata 05" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_05.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_05.pdf" download="Carosello_LinkedIn_Puntata_05.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -633,7 +547,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo parere e iscriviti alla
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-05" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 54/58 caratteri (OK)</span>
                         </div>
@@ -645,22 +559,22 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo parere e iscriviti alla
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-05" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-05" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 1881 / 3000 caratteri LinkedIn (Margine sicuro: +1119)
+                                    🟢 1911 / 3000 caratteri LinkedIn (Margine sicuro: +1089)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-05" onclick="copyField('inp-body-05', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-05" onclick="copyField('inp-body-05', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-05" rows="14" oninput="updateBodyCount('05')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #05: Uccidere il cimitero delle liste "To-Do" scollegate dalla strategia.
+                        <textarea id="inp-body-05" rows="16" oninput="updateBodyCount('05')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #05: Uccidere il cimitero delle liste "To-Do" scollegate dalla strategia.
 
 Quante volte hai annotato un'idea o un'azione urgente su un'app di note perdendo dopo tre giorni il legame con l'obiettivo strategico che l'aveva generata?
 
@@ -675,26 +589,11 @@ Oggi entriamo nel secondo sistema integrato di Connect the DOTS — 2° CtD 2°B
 🏢 Imprenditore / PMI (B): colleghi ogni singolo task operativo del team all'obiettivo strategico padre eliminando la dispersione.
 
 🎁 ASSICURATI 1 ANNO+ DI LICENZA GRATUITA DA GENNAIO 2027:
-Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Proliferazione progettuale e iscriviti alla newsletter!
+Vai su https://www.c-t-d.group/news.html#news-ep-05 , lascia il tuo feedback sulla Proliferazione progettuale e iscriviti alla newsletter!
 
 🔪 Prossima puntata (#06): Chi esegue materialmente ogni mattone del cantiere e chi certifica il risultato? Scopriremo la Palestra di 21 Giorni e il PoR.
 
 #ConnectTheDOTS #SerialKillerApp #SecondoCervello #Execution #ProjectManagement #PMI #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-05" value="🔗 Scopri la Slide da 1.000 parole della Puntata #05 e prenota 1 Anno+ Gratis su: https://www.c-t-d.group/news.html#news-ep-05" oninput="updateBodyCount('05')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-05', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -704,7 +603,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Prolifer
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #06 • Data prevista: 17 Novembre 2026
+                        PUNTATA #06 • Data prevista: 17 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">Allocazione a 3 Vie, Palestra di 21 Giorni e Certificato PoR</h2>
                 </div>
@@ -719,7 +618,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Prolifer
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_06.png" alt="Puntata 06" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_06.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_06.pdf" download="Carosello_LinkedIn_Puntata_06.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -735,7 +634,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Prolifer
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-06" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 56/58 caratteri (OK)</span>
                         </div>
@@ -747,22 +646,22 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Prolifer
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-06" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-06" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 1911 / 3000 caratteri LinkedIn (Margine sicuro: +1089)
+                                    🟢 1941 / 3000 caratteri LinkedIn (Margine sicuro: +1059)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-06" onclick="copyField('inp-body-06', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-06" onclick="copyField('inp-body-06', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-06" rows="14" oninput="updateBodyCount('06')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #06: Uccidere la formazione teorica senza pratica e i risultati autodichiarati.
+                        <textarea id="inp-body-06" rows="16" oninput="updateBodyCount('06')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #06: Uccidere la formazione teorica senza pratica e i risultati autodichiarati.
 
 Quando apri un cantiere L3 Progetto in Connect the DOTS (in uscita a Gennaio 2027), davanti a ogni mattone che ti separa dal tuo Target (T) hai uno Smistamento Sovrano a 3 Vie (Punto 13 — più l'opzione "Altro" da specificare):
 🔹 1ª Via — Fai-da-Te nella Palestra di 21 Giorni (Punto 14): ti alleni sul campo per 21 giorni operativi consecutivi finché la competenza diventa abitudine.
@@ -777,26 +676,11 @@ E al 21° giorno? Scatta il Certificato Proof-of-Result (PoR — Punto 15): uno 
 🏢 Imprenditore / PMI (B): decidi mattone per mattone cosa fare internamente e cosa delegare all'esterno, misurando solo risultati certificati.
 
 🎁 PRENOTA 1 ANNO+ GRATIS DA GENNAIO 2027:
-Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Palestra di 21 Giorni e iscriviti alla newsletter!
+Vai su https://www.c-t-d.group/news.html#news-ep-06 , lascia il tuo feedback sulla Palestra di 21 Giorni e iscriviti alla newsletter!
 
 🔪 Prossima puntata (#07): Cosa accade quando il tuo parametro R su un DOT diventa altissimo (R >>)? Scopriremo il "Cordone Ombelicale" e la qualifica a Proven SME via NEXUS.
 
 #ConnectTheDOTS #SerialKillerApp #Palestra21Giorni #ProofOfResult #Meritocrazia #Coaching #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-06" value="🔗 Rileggi tutte le puntate e blocca 1 Anno+ Gratis da Gennaio 2027 con il tuo feedback su: https://www.c-t-d.group/news.html#news-ep-06" oninput="updateBodyCount('06')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-06', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -806,7 +690,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Palestra
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #07 • Data prevista: 19 Novembre 2026
+                        PUNTATA #07 • Data prevista: 19 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">Cordone Ombelicale 21gg e Qualifica Proven SME (R>>) NEXUS</h2>
                 </div>
@@ -821,7 +705,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Palestra
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_07.png" alt="Puntata 07" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_07.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_07.pdf" download="Carosello_LinkedIn_Puntata_07.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -837,7 +721,7 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Palestra
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-07" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 53/58 caratteri (OK)</span>
                         </div>
@@ -849,22 +733,22 @@ Vai su https://www.c-t-d.group/news.html , lascia il tuo feedback sulla Palestra
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-07" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-07" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2068 / 3000 caratteri LinkedIn (Margine sicuro: +932)
+                                    🟢 2097 / 3000 caratteri LinkedIn (Margine sicuro: +903)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-07" onclick="copyField('inp-body-07', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-07" onclick="copyField('inp-body-07', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-07" rows="14" oninput="updateBodyCount('07')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #07: Uccidere i finti guru da tastiera e l'abbandono del cliente dopo la consulenza.
+                        <textarea id="inp-body-07" rows="16" oninput="updateBodyCount('07')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #07: Uccidere i finti guru da tastiera e l'abbandono del cliente dopo la consulenza.
 
 Sui social tradizionali vince chi urla più forte, anche se non ha mai risolto un caso reale. E per i professionisti seri c'è un secondo dramma: finita la sessione di consulenza, il cliente torna in azienda travolto dalle urgenze e il legame si spezza.
 
@@ -878,26 +762,11 @@ A Gennaio 2027 Connect the DOTS eliminerà entrambe queste distorsioni (Punti 14
 🏢 Imprenditore / PMI (B): quando ti serve uno specialista su un mattone critico, attingi a Proven SME i cui risultati R >> sono stati verificati sul campo.
 
 🎁 LASCIA IL TUO FEEDBACK PER AVERE 1 ANNO+ GRATIS DA GENNAIO 2027:
-Vai su https://www.c-t-d.group/news.html , inviaci il tuo feedback e iscriviti alla newsletter!
+Vai su https://www.c-t-d.group/news.html#news-ep-07 , inviaci il tuo feedback e iscriviti alla newsletter!
 
 🔪 Prossima puntata (#08): Come chiedi aiuto alla tua rete senza mai far sapere ai tuoi amici o contatti diretti qual è la tua debolezza 10/10? Scopriremo il "Salto del 1° Grado".
 
 #ConnectTheDOTS #SerialKillerApp #ProvenSME #Consulenza #ProfessionalServices #NEXUS #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-07" value="🔗 Candidati come Early Adopter / Proven SME (1 Anno+ Gratis da Gennaio 2027) lasciando un feedback qui: https://www.c-t-d.group/news.html#news-ep-07" oninput="updateBodyCount('07')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-07', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -907,7 +776,7 @@ Vai su https://www.c-t-d.group/news.html , inviaci il tuo feedback e iscriviti a
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #08 • Data prevista: 21 Novembre 2026
+                        PUNTATA #08 • Data prevista: 21 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">Network Engineering: Score Ponte e 'Salto del 1° Grado'</h2>
                 </div>
@@ -922,7 +791,7 @@ Vai su https://www.c-t-d.group/news.html , inviaci il tuo feedback e iscriviti a
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_08.png" alt="Puntata 08" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_08.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_08.pdf" download="Carosello_LinkedIn_Puntata_08.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -938,7 +807,7 @@ Vai su https://www.c-t-d.group/news.html , inviaci il tuo feedback e iscriviti a
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-08" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 54/58 caratteri (OK)</span>
                         </div>
@@ -950,22 +819,22 @@ Vai su https://www.c-t-d.group/news.html , inviaci il tuo feedback e iscriviti a
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-08" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-08" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2143 / 3000 caratteri LinkedIn (Margine sicuro: +857)
+                                    🟢 2173 / 3000 caratteri LinkedIn (Margine sicuro: +827)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-08" onclick="copyField('inp-body-08', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-08" onclick="copyField('inp-body-08', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-08" rows="14" oninput="updateBodyCount('08')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #08: Uccidere l'imbarazzo di mostrare le proprie debolezze 10/10 agli amici o contatti di 1° grado.
+                        <textarea id="inp-body-08" rows="16" oninput="updateBodyCount('08')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #08: Uccidere l'imbarazzo di mostrare le proprie debolezze 10/10 agli amici o contatti di 1° grado.
 
 Quando un imprenditore o un professionista ha una criticità delicata (Debolezza 10/10), l'ultima cosa che vuole fare è telefonare al conoscente diretto dicendo "Ho questo problema grave". Eppure chi può risolverlo si trova quasi sempre al 2° grado (tra i contatti dei propri contatti).
 
@@ -980,26 +849,11 @@ Ecco come il terzo motore di Connect the DOTS — 3° CtD NE: Network Engineerin
 🏢 Imprenditore / PMI (B): trovi fornitori, partner o manager per risolvere una criticità 10/10 senza che concorrenti o conoscenti diretti sappiano del tuo problema.
 
 🎁 ASSICURATI 1 ANNO+ DI LICENZA GRATUITA DA GENNAIO 2027:
-Cosa ne pensi del "Salto del 1° Grado"? Scrivicelo su https://www.c-t-d.group/news.html insieme alla tua email per la newsletter!
+Cosa ne pensi del "Salto del 1° Grado"? Scrivicelo su https://www.c-t-d.group/news.html#news-ep-08 insieme alla tua email per la newsletter!
 
 🔪 Prossima puntata (#09): Trovato il match tra reti, professionisti e PMI, come ci si scambia valore anche senza bruciare liquidità? Ecco la Compensazione in-Lire Fluida (HTLC) a Doppio Binario.
 
 #ConnectTheDOTS #SerialKillerApp #NetworkEngineering #BNI #BusinessMatching #Privacy #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-08" value="🔗 Scopri i dettagli su Score Ponte e Salto del 1° Grado e prenota 1 Anno+ Gratis su: https://www.c-t-d.group/news.html#news-ep-08" oninput="updateBodyCount('08')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-08', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1009,7 +863,7 @@ Cosa ne pensi del "Salto del 1° Grado"? Scrivicelo su https://www.c-t-d.group/n
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid #2c2c3a; padding-bottom:14px; margin-bottom:18px;">
                 <div>
                     <span style="background:#18112c; color:#f5c518; border:1px solid #f5c518; padding:4px 12px; border-radius:16px; font-size:0.8rem; font-weight:800;">
-                        PUNTATA #09 • Data prevista: 23 Novembre 2026
+                        PUNTATA #09 • Data prevista: 23 Novembre 2026 • Carosello a 2 Slide (Zero Spoiler)
                     </span>
                     <h2 style="color:#fff; font-size:1.45rem; margin:8px 0 0 0;">Compensazione in-Lire Fluida (HTLC) a Doppio Binario</h2>
                 </div>
@@ -1024,7 +878,7 @@ Cosa ne pensi del "Salto del 1° Grado"? Scrivicelo su https://www.c-t-d.group/n
                     <div style="font-size:0.8rem; font-weight:700; color:#f5c518; margin-bottom:8px;">🖼️ Anteprima Slide 1 (1.000 Parole):</div>
                     <img src="assets/news_ep_09.png" alt="Puntata 09" style="width:100%; border-radius:8px; border:1px solid #333; margin-bottom:12px;">
                     <div style="font-size:0.8rem; color:#ccc; margin-bottom:10px;">
-                        📄 File Carosello PDF da allegare:<br>
+                        📄 File Carosello PDF (2 Slide senza spoiler):<br>
                         <code style="color:#38bdf8; font-weight:700;">Carosello_LinkedIn_Puntata_09.pdf</code>
                     </div>
                     <a href="assets/caroselli/Carosello_LinkedIn_Puntata_09.pdf" download="Carosello_LinkedIn_Puntata_09.pdf" style="display:block; text-align:center; background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:10px; border-radius:8px; font-weight:800; text-decoration:none; margin-bottom:10px; font-size:0.88rem;">
@@ -1040,7 +894,7 @@ Cosa ne pensi del "Salto del 1° Grado"? Scrivicelo su https://www.c-t-d.group/n
                     <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
                             <label style="font-size:0.86rem; font-weight:800; color:#f5c518;">
-                                PASSO 1 — Document title* (Max 58 caratteri):
+                                PASSO 1 — Document title* (da incollare sopra al PDF su LinkedIn • Max 58 caratteri):
                             </label>
                             <span id="cnt-title-09" style="font-size:0.82rem; font-weight:800; color:#3cd070;">🟢 53/58 caratteri (OK)</span>
                         </div>
@@ -1052,22 +906,22 @@ Cosa ne pensi del "Salto del 1° Grado"? Scrivicelo su https://www.c-t-d.group/n
                         </div>
                     </div>
 
-                    <!-- PASSO 2: TESTO COMPLETO CON CONTROLLO MAX 3000 CARATTERI UTF-16 -->
+                    <!-- PASSO 2 (UNICO TESTO): SHARE YOUR THOUGHTS TUTTO INCLUSO (MAX 3000 CHARS) -->
                     <div id="box-body-09" style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
                             <div>
                                 <label style="font-size:0.86rem; font-weight:800; color:#38bdf8; display:block;">
-                                    PASSO 2 — Testo Post ("Share your thoughts..." • Tetto Max LinkedIn: 3.000):
+                                    PASSO 2 — Unico Testo Completo del Post ("Share your thoughts..." • Già comprensivo di Link • Max 3.000):
                                 </label>
                                 <span id="cnt-body-09" style="font-size:0.82rem; font-weight:800; color:#3cd070;">
-                                    🟢 2062 / 3000 caratteri LinkedIn (Margine sicuro: +938)
+                                    🟢 2092 / 3000 caratteri LinkedIn (Margine sicuro: +908)
                                 </span>
                             </div>
-                            <button type="button" id="btn-body-09" onclick="copyField('inp-body-09', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:9px 18px; border-radius:6px; font-weight:800; cursor:pointer;">
-                                📋 2. Copia Testo Post (Cmd+V su LinkedIn)
+                            <button type="button" id="btn-body-09" onclick="copyField('inp-body-09', this, 3000)" style="background:#38bdf8; color:#000; border:none; padding:10px 20px; border-radius:6px; font-weight:800; cursor:pointer; font-size:0.92rem;">
+                                📋 2. Copia Testo Post Tutto Incluso (Cmd+V su LinkedIn)
                             </button>
                         </div>
-                        <textarea id="inp-body-09" rows="14" oninput="updateBodyCount('09')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #09: Uccidere la separazione tra network diversi e la staticità dei circuiti usati come cataloghi passivi.
+                        <textarea id="inp-body-09" rows="16" oninput="updateBodyCount('09')" style="width:100%; padding:12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#f1f5f9; font-family:inherit; font-size:0.9rem; line-height:1.55; box-sizing:border-box;">🔪 Anatomia di una Serial Killer App — Puntata #09: Uccidere la separazione tra network diversi e la staticità dei circuiti usati come cataloghi passivi.
 
 Perché tante aziende iscritte a circuiti di credito commerciale o a network professionali faticano a generare scambi continui? Perché cercano a catalogo dopo aver pensato a un acquisto banale, invece di partire dai propri cantieri strategici L3.
 
@@ -1084,24 +938,9 @@ Guarda cosa accade nei punti 22, 23 e 24 di Connect the DOTS (in arrivo a Gennai
 🏢 Imprenditore / PMI / Circuito B2B (B): finanzi i tuoi cantieri L3 tramite il Binario 2 (Crediti B2B), generando nuovi clienti e preservando la liquidità di cassa.
 
 🎁 SERIE APERTA + 1 ANNO+ DI LICENZA GRATUITA DA GENNAIO 2027:
-Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback (o proponi quale problema vuoi veder "eliminato" nella prossima puntata!) insieme alla tua email per assicurarti 1 Anno+ Gratis nel Programma Early Adopter!
+Vai su https://www.c-t-d.group/news.html#news-ep-09 : lascia il tuo feedback (o proponi quale problema vuoi veder "eliminato" nella prossima puntata!) insieme alla tua email per assicurarti 1 Anno+ Gratis nel Programma Early Adopter!
 
 #ConnectTheDOTS #SerialKillerApp #InLire #B2B #HTLC #EconomiaReale #Networking #Gennaio2027</textarea>
-                    </div>
-
-                    <!-- PASSO 3: PRIMO COMMENTO -->
-                    <div style="background:#0e0e13; border:1px solid #333; border-radius:10px; padding:14px;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                            <label style="font-size:0.84rem; font-weight:800; color:#3cd070;">
-                                PASSO 3 — Primo Commento da inserire appena pubblicato:
-                            </label>
-                        </div>
-                        <div style="display:flex; gap:10px;">
-                            <input type="text" id="inp-comm-09" value="🔗 Lascia il tuo feedback o proponi il tema della prossima puntata per assicurarti 1 Anno+ Gratis da Gennaio 2027: https://www.c-t-d.group/news.html#news-ep-09" oninput="updateBodyCount('09')" style="flex:1; padding:10px 12px; border-radius:6px; border:1px solid #444; background:#16161f; color:#d1fae5; font-size:0.88rem;">
-                            <button type="button" onclick="copyField('inp-comm-09', this, 1250)" style="background:#3cd070; color:#000; border:none; padding:10px 18px; border-radius:6px; font-weight:800; cursor:pointer; white-space:nowrap;">
-                                📋 3. Copia 1° Commento
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1110,18 +949,23 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback (o proponi qua
     </main>
 
     <script>
+        function countLinkedInChars(str) {
+            var s = str.replace(/\r\n/g, '\n').replace(/\n/g, '\r\n');
+            return s.length;
+        }
+
         function copyField(inputId, btn, maxLimit) {
             var el = document.getElementById(inputId);
-            var len = el.value.length;
+            var len = (maxLimit === 3000) ? countLinkedInChars(el.value) : el.value.length;
             if (maxLimit && len > maxLimit) {
-                alert('⚠️ ATTENZIONE: Il testo supera il limite massimo di LinkedIn di ' + (len - maxLimit) + ' caratteri (' + len + '/' + maxLimit + '). Accorcialo prima di incollarlo su LinkedIn!');
+                alert('⚠️ ATTENZIONE: Il testo supera il limite massimo di LinkedIn di ' + (len - maxLimit) + ' caratteri (' + len + '/' + maxLimit + '). Accorcialo prima di copiarlo!');
                 return;
             }
             el.select();
             navigator.clipboard.writeText(el.value).then(function() {
                 var origText = btn.innerText;
                 var origBg = btn.style.background;
-                btn.innerText = '✅ COPIATO (' + len + '/' + maxLimit + ' car.)! Premi Cmd+V su LinkedIn';
+                btn.innerText = '✅ COPIATO (' + len + '/' + maxLimit + ' car.)! Ora premi Cmd+V su LinkedIn';
                 btn.style.background = '#3cd070';
                 setTimeout(function() {
                     btn.innerText = origText;
@@ -1136,7 +980,7 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback (o proponi qua
             var len = inp.value.length;
             cnt.innerText = (len <= 58 ? '🟢 ' : '🔴 ') + len + '/58 caratteri';
             cnt.style.color = (len <= 58) ? '#3cd070' : '#ef4444';
-            localStorage.setItem('ctd_li_v2_title_' + epNum, inp.value);
+            localStorage.setItem('ctd_li_v3_title_' + epNum, inp.value);
         }
 
         function updateBodyCount(epNum) {
@@ -1144,13 +988,12 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback (o proponi qua
             var cnt = document.getElementById('cnt-body-' + epNum);
             var box = document.getElementById('box-body-' + epNum);
             var btn = document.getElementById('btn-body-' + epNum);
-            var commVal = document.getElementById('inp-comm-' + epNum).value;
-            var len = inp.value.length;
+            var len = countLinkedInChars(inp.value);
             var diff = 3000 - len;
 
             if (diff >= 0) {
                 cnt.innerText = '🟢 ' + len + ' / 3000 caratteri LinkedIn (Margine sicuro: +' + diff + ')';
-                cnt.style.color = (diff > 100) ? '#3cd070' : '#f5c518';
+                cnt.style.color = (diff > 80) ? '#3cd070' : '#f5c518';
                 box.style.borderColor = '#333';
                 btn.style.background = '#38bdf8';
             } else {
@@ -1159,47 +1002,30 @@ Vai su https://www.c-t-d.group/news.html : lascia il tuo feedback (o proponi qua
                 box.style.borderColor = '#ef4444';
                 btn.style.background = '#ef4444';
             }
-            localStorage.setItem('ctd_li_v2_body_' + epNum, inp.value);
-            localStorage.setItem('ctd_li_v2_comm_' + epNum, commVal);
+            localStorage.setItem('ctd_li_v3_body_' + epNum, inp.value);
         }
 
         function saveDoneState(epNum) {
             var chk = document.getElementById('chk-ep-' + epNum);
             var card = document.getElementById('regia-ep-' + epNum);
-            localStorage.setItem('ctd_li_v2_done_' + epNum, chk.checked ? '1' : '0');
+            localStorage.setItem('ctd_li_v3_done_' + epNum, chk.checked ? '1' : '0');
             card.style.borderColor = chk.checked ? '#3cd070' : '#2c2c3a';
-        }
-
-        function resetAllTexts() {
-            if (confirm('Vuoi ripristinare tutti i testi calibrati sotto i 3.000 caratteri?')) {
-                for (var i = 0; i <= 9; i++) {
-                    var k = (i < 10 ? '0' + i : '' + i);
-                    localStorage.removeItem('ctd_li_v2_title_' + k);
-                    localStorage.removeItem('ctd_li_v2_body_' + k);
-                    localStorage.removeItem('ctd_li_v2_comm_' + k);
-                }
-                location.reload();
-            }
         }
 
         window.addEventListener('DOMContentLoaded', function() {
             for (var i = 0; i <= 9; i++) {
                 var k = (i < 10 ? '0' + i : '' + i);
-                var savedTitle = localStorage.getItem('ctd_li_v2_title_' + k);
+                var savedTitle = localStorage.getItem('ctd_li_v3_title_' + k);
                 if (savedTitle !== null && document.getElementById('inp-title-' + k)) {
                     document.getElementById('inp-title-' + k).value = savedTitle;
                     updateTitleCount(k);
                 }
-                var savedBody = localStorage.getItem('ctd_li_v2_body_' + k);
+                var savedBody = localStorage.getItem('ctd_li_v3_body_' + k);
                 if (savedBody !== null && document.getElementById('inp-body-' + k)) {
                     document.getElementById('inp-body-' + k).value = savedBody;
                     updateBodyCount(k);
                 }
-                var savedComm = localStorage.getItem('ctd_li_v2_comm_' + k);
-                if (savedComm !== null && document.getElementById('inp-comm-' + k)) {
-                    document.getElementById('inp-comm-' + k).value = savedComm;
-                }
-                var savedDone = localStorage.getItem('ctd_li_v2_done_' + k);
+                var savedDone = localStorage.getItem('ctd_li_v3_done_' + k);
                 if (savedDone === '1' && document.getElementById('chk-ep-' + k)) {
                     document.getElementById('chk-ep-' + k).checked = true;
                     document.getElementById('regia-ep-' + k).style.borderColor = '#3cd070';
