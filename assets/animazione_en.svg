@@ -172,8 +172,8 @@
       <rect x="40" y="-40" width="360" height="80" rx="12" fill="#111827" stroke="#4C1D95" filter="url(#shadow)"/>
       <rect x="40" y="-40" width="6" height="80" fill="#8B5CF6" rx="3"/>
       <text x="65" y="-15" class="txt-node">L2: Diagnostics (The AI Engine)</text>
-      <text x="65" y="5" class="txt-desc">Cross-referencing historical data with the offline Vault.</text>
-      <text x="65" y="25" class="txt-desc" fill="#A855F7" font-weight="bold">The magic formula activates: S = C x P x R</text>
+      <text x="65" y="5" class="txt-desc">Cross-referencing historical data with the Profilo aggiornato offline.</text>
+      <text x="65" y="25" class="txt-desc" fill="#A855F7" font-weight="bold">The magic formula activates: S = C + P + T + R</text>
     </g>
   </g>
 
