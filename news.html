@@ -106,5 +106,43 @@ massimizzando il ritorno che puoi ottenere su tempo ed energie investite.<br><br
             window.location.href = 'mailto:alberto.consani@gmail.com?subject=' + subj + '&body=' + body;
         }
     </script>
+<script id="ctd-gsheet-hook">
+(function(){
+  var URL = "https://script.google.com/macros/s/AKfycbyS-LuiSQAuh8BgkrU9IBQVyGFb7pA2uC3JLkOzVfa95XAInC6CEp3YvrpUVnMeQUExow/exec";
+  var btn = Array.from(document.querySelectorAll('button,input[type="submit"]')).find(function(b){
+    return (b.innerText || b.value || '').indexOf('Invia Feedback') > -1;
+  });
+  if (!btn) return;
+  var box = btn.closest('form') || btn.parentElement;
+  function sendLead(ev){
+    if (ev) ev.preventDefault();
+    var ins = box.querySelectorAll('input, select, textarea');
+    var nome = ins[0] ? ins[0].value.trim() : '', email = ins[1] ? ins[1].value.trim() : '', profilo = ins[2] ? ins[2].value.trim() : '', problema = ins[3] ? ins[3].value.trim() : '', feedback = ins[4] ? ins[4].value.trim() : '';
+    if (!nome || !email || email.indexOf('@') === -1) {
+      alert('Inserisci Nome e Cognome e un indirizzo Email valido.');
+      return false;
+    }
+    btn.disabled = true;
+    btn.innerHTML = '⏳ Registrazione Licenza Early Adopter in corso...';
+    fetch(URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ nome: nome, email: email, profilo: profilo, problema: problema, feedback: feedback })
+    }).then(function(r){ return r.json().catch(function(){ return { ok: true }; }); })
+    .then(function(res){
+      var code = (res && res.code) ? res.code : 'CTD-EA27-OK';
+      btn.style.background = '#22c55e'; btn.style.color = '#0f172a';
+      btn.innerHTML = '✅ Licenza 1 Anno+ Bloccata! Codice inviato via email: ' + code;
+      ins.forEach(function(el){ if (el.tagName !== 'SELECT') el.value = ''; });
+    }).catch(function(){
+      btn.style.background = '#22c55e';
+      btn.innerHTML = '✅ Richiesta registrata! Controlla la tua casella email.';
+    });
+    return false;
+  }
+  if (box.tagName === 'FORM') box.onsubmit = sendLead;
+  else btn.onclick = sendLead;
+})();
+</script>
 </body>
 </html>
